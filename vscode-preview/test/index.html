@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <title>CCX Documentation foundation - OSS Documentation</title>
+    <link rel="stylesheet" href="./assets/css/slds.css" />
+    <link rel="stylesheet" href="./assets/css/prism.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="./assets/js/main.js"></script>
+</head>
+
+<body style="background-color: white;">
+    <header class="slds-builder-header" style="position: fixed;width: 100%;top: 0;left: 0;z-index: 100;">
+        <div class="slds-builder-header__item" style="width: 1000px; margin: 0 auto;">
+            <div class="slds-builder-header__item-label slds-media slds-media_center">
+                <div class="slds-media__body">
+                    <h1>
+                        <a href="/index.html" class="slds-page-header__title slds-truncate" title="CCX Documentation"
+                            style="color: white">2-author-build-validate.md</a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="content home">
+        <section style="padding-top: 50px;">
+
+            <body data-gr-c-s-loaded="true">
+                <div class="slds-p-around--large slds-container--large">
+                    <section>
+                        <h1>Author, Validate, Build, and Preview Locally</h1>
+                        <p>Once you create your new feature branch, you are all set to start authoring your docs!</p>
+                        <p>Before you begin, familiarize yourself with the <a href="repo-structure.md">repository folder
+                                structure</a>.</p>
+                        <p>Start by creating new Markdown files and adding your content. Use <a
+                                href="markdown-cheatsheet.md">Markdown reference</a> to learn more about supported
+                            Markdown syntax for your docs.</p>
+                        <!-- TODO: add short video on writing in Markdown -->
+                        <h2>Working with TOC files</h2>
+                        <p>The TOC (Table of Content) files help with structuring your guide and work as a source for
+                            the sidebar navigation. They are in simple and easy YAML (Yet-Another-Markup-Language)
+                            format.</p>
+                        <!-- TODO: Add short video on TOC file -->
+                        <blockquote>
+                            <p>We recommend that you name the TOC file as <code>_toc.yaml</code> and store it in your
+                                guide folder.</p>
+                        </blockquote>
+                        <p>Here's an example of a typical TOC file strucutre:</p>
+                        <pre><code class="language-yaml"># Sample TOC file format
+- title: Overview # title of your guide topic
+  link: overview.md # relative link to your markdown file
+- title: Setup Your Local Environment
+  link: setup-your-local-env.md
+- title: Understand your Doc-set Repository Structure
+  link: repo-structure.md,
+- title: Create and Publish Your Documentation Project
+  link: create-publish-from-scratch.md
+  topics: # List of child topics
+    - title: Step 1 - Clone the Repository &#x26; Create a Branch
+      link: 1-clone-create-branch.md
+    - title: Step 2 - Author, Build, Validate, and Preview
+      link: 2-author-build-validate.md
+    - title: Step 3 - Commit and Push Your Changes
+      link: 3-commit-push-pr.md
+- title: Resources
+  link: resources.md
+</code></pre>
+                        <p>The TOC file is structured in the parent-child tree format. Each node of the tree has a title
+                            and link. A node can contain multiple children, defined under <code>topics</code> list.</p>
+                        <ul>
+                            <li><strong>title</strong>: title of your guide topic</li>
+                            <li><strong>link</strong>: relative link to your markdown file</li>
+                            <li><strong>topics</strong>: list of child topics.</li>
+                        </ul>
+                        <h2>Validate Your Docs</h2>
+                        <p>There are two ways to validate the Markdown syntax of your docs locally.</p>
+                        <ol>
+                            <li>
+                                <p>Use the <code>markdownlint</code> syntax linter provided within the VSCode toolkit.
+                                    However, note that we may not support this linter in the future.</p>
+                            </li>
+                            <li>
+                                <p>Use <code>sfdocs validate</code> command.</p>
+                                <blockquote>
+                                    <p>We are still working validations for <code>sfdocs validate</code> command, and it
+                                        may not match with what you see in <code>markdownlint</code>. We welcome your
+                                        feedback.</p>
+                                </blockquote>
+                            </li>
+                        </ol>
+                        <p><code>sfdocs validate</code> command also validates broken links. This links include external
+                            urls as well as cross-references to other markdown files and images.</p>
+                        <p>You can also use Acrolinx VSCode plug-in to test the quality of your content. Acrolinx checks
+                            your content against Salesforce's styleguide recommendations and provides you with easy
+                            fixes using clicks.</p>
+                        <div class="admonition admonition-caution alert alert--warning">
+                            <div class="admonition-heading">
+                                <h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z">
+                                            </path>
+                                        </svg></span>caution</h5>
+                            </div>
+                            <div class="admonition-content">
+                                <p>Acrolinx content profile at present doesn't recognize our custom Markdown extensions
+                                    that use <code>:::</code> syntax. Hence those will be flagged as violations. Once we
+                                    finalize our Markdown syntax, we will be working with Acrolinx team to fix this.</p>
+                            </div>
+                        </div>
+                        <h2>Build Your Docs</h2>
+                        <p>When you are ready to send your changes to remote, it's always a good idea to build your docs
+                            locally and confirm if they are error free. You also must build your docs the first time, to
+                            be able to preview them locally.</p>
+                        <p>Use <code>sfdocs build</code> command to build your docs.</p>
+                        <h2>Preview Your Docs Locally</h2>
+                        <p>You can preview your documentation changes locally, without merging them. This way you can
+                            confirm if your changes looks the same when they get merged.</p>
+                        <p>Use <code>sfdocs Preview</code> for viewing your docs on <code>localhost:3000</code>.</p>
+                        <h3>Live Preview</h3>
+                        <p>You can also preview your docs live as you type. However, changes in TOC or reusable files
+                            aren't supported in the live preview mode.</p>
+                        <p>Use <code>sfdocs Preview -live</code> to view the content changes as you type on
+                            <code>localhost:3000</code>.</p>
+
+                    </section>
+                </div>
+            </body>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="content-wrapper flex-wrapper"
+            style="width: 1000px;margin: 0 auto;color: white;height: 40px;padding-top: 10px;">
+            <div class="copyright">
+                <div>
+                    <a href="" target="_blank" rel="noopener" style="color: white;">CCX Documentation</a>
+                    Copyright &copy; 2020 Salesforce.com, Inc.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+html {
+    font-family: "Salesforce Sans",Arial,sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    background: #b0c4df;
+    color: #080707;
+    -webkit-tap-highlight-color: transparent
+}
+
+body {
+    font-family: "Salesforce Sans",Arial,sans-serif;
+    width: 100%;
+    min-width: 400px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.vscode-body {
+    background: #ffffff;
+}
+
+/* Index Page */
+
+/** Header **/
+.header-title-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slds-global-header {
+    background: #16325c;
+}
+
+/** Body **/
+.main-content {
+    background: white;
+}
+
+.main-continer{
+    padding-bottom: 600px;
+}
+
+.code-line {
+    padding-left: 6px;
+}
+.showEditorSelection .code-active-line {
+    border-left: 4px solid rgba(0, 0, 0, 0.15);
+    padding-left: 2px;
+}
+
+/* Content */
+article *{
+    box-sizing:border-box;
+    font-family: "Salesforce Sans",Arial,sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    color: #080707;
+    -webkit-tap-highlight-color: transparent
+}
+
+article ul {
+    font-weight: 100;
+    line-height:19.5px;
+    list-style-image: none;
+    list-style-position:outside;
+    list-style-type: disc;
+    padding-left: 40px;
+    padding-inline-start: 40px;
+    margin: 13px 0px 13px 0px;
+    display: block;
+}
+
+article ul li {
+    list-style-image: none;
+    list-style-position:outside;
+    list-style-type: disc;
+    padding: 0px;
+    margin: 0px;
+    display: list-item;
+}
+
+article ol {
+    font-weight: 100;
+    line-height:19.5px;
+    list-style-image: none;
+    list-style-position:outside;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding-left: 40px;
+    padding-inline-start: 40px;
+    margin: 13px 0px 13px 0px;
+    display: block;
+}
+
+article ol li {
+    list-style-image: none;
+    list-style-position:outside;
+    list-style-type: decimal;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    display: list-item;
+}
+
+article blockquote {
+    background:none;
+    border-color:none;
+}
+
+article p {
+    font-weight: 100;
+    font-family:"Salesforce Sans",Arial,sans-serif;
+    display: block;
+    font-size:13px;
+    margin-block-end:13px;
+    margin-block-start:13px;
+    margin:13px 0px 13px 0px;
+    text-size-adjust:100%;
+}
+
+article a {
+    color:rgb(0, 109, 204);
+    font-weight: 200;
+    font-family:"Salesforce Sans",Arial,sans-serif;
+    cursor:pointer;
+    display: inline;
+    font-size:13px;
+    text-decoration: none solid rgb(0, 109, 204);
+    text-size-adjust:100%;
+    -webkit-transition: color .1s linear;
+    transition: color .1s linear
+}
+
+article pre {
+    white-space:pre;
+    margin: 13px 0px 13px 0px;
+    overflow: auto;
+    font-family:monospace, monospace;
+    box-sizing:border-box;
+    color:rgb(8, 7, 7);
+    display:block;
+}
+
+article table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 5px;
+  }
+  
+  article table td, article table  th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  article table  tr:nth-child(even){background-color: #f2f2f2;}
+  
+  article table  tr:hover {background-color: #ddd;}
+  
+  article table  th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #006dcc;
+    color: white;
+  }
+
+  article pre code {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #006dcc;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-break: break-all;
+  }
+
+/** Content Navigation **/
+main nav h3 {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+
+.slds-page-header__title{
+    color: white;
+    text-transform: capitalize;
+}
+
+.hljs-section,.hljs-quote, .hljs-tag, .hljs-name {
+    color: #666;
+}
+
+footer {
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #16325c;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 1.1em;
+}

@@ -1,0 +1,16 @@
+.vscode/**
+.vscode-test/**
+test/**
+.gitignore
+vsc-extension-quickstart.md
+**/jsconfig.json
+**/*.map
+**/.eslintrc.json
+**/*.ts
+**/tsconfig.json
+!file.ts
+webpack.config.js
+shared.tsconfig.js
+dependency_license_report.json
+test-workspace
+package.schema.json

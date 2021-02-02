@@ -1,0 +1,336 @@
+{
+	"name": "salesforce-docs-markdown-preview",
+	"displayName": "%displayName%",
+	"description": "%description%",
+	"version": "1.0.0",
+	"icon": "icon.png",
+	"publisher": "opendocs",
+	"license": "BSD 3-Clause",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"main": "./out/src/extension",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown",
+		"onCommand:salesforcedocs.preview.toggleLock",
+		"onCommand:salesforcedocs.preview.refresh",
+		"onCommand:salesforcedocs.showPreview",
+		"onCommand:salesforcedocs.showPreviewToSide",
+		"onCommand:salesforcedocs.showLockedPreviewToSide",
+		"onCommand:salesforcedocs.showSource",
+		"onWebviewPanel:salesforcedocs.preview",
+		"onCustomEditor:vscode.salesforcedocs.preview.editor"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "salesforcedocs.showPreview",
+				"title": "%salesforcedocs.preview.title%",
+				"category": "SFDoc",
+				"icon": "$(open-preview)"
+			},
+			{
+				"command": "salesforcedocs.showPreviewToSide",
+				"title": "%salesforcedocs.previewSide.title%",
+				"category": "SFDoc",
+				"icon": {
+					"light": "./media/preview-light.svg",
+					"dark": "./media/preview-dark.svg"
+				}
+			},
+			{
+				"command": "salesforcedocs.showLockedPreviewToSide",
+				"title": "%salesforcedocs.showLockedPreviewToSide.title%",
+				"category": "SFDoc",
+				"icon": {
+					"light": "./media/preview-light.svg",
+					"dark": "./media/preview-dark.svg"
+				}
+			},
+			{
+				"command": "salesforcedocs.showSource",
+				"title": "%salesforcedocs.showSource.title%",
+				"category": "SFDoc",
+				"icon": "$(go-to-file)"
+			},
+			{
+				"command": "salesforcedocs.preview.refresh",
+				"title": "%salesforcedocs.preview.refresh.title%",
+				"category": "SFDoc"
+			},
+			{
+				"command": "salesforcedocs.preview.toggleLock",
+				"title": "%salesforcedocs.preview.toggleLock.title%",
+				"category": "SFDoc"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "salesforcedocs.showPreviewToSide",
+					"when": "editorLangId == markdown && !notebookEditorFocused",
+					"alt": "salesforcedocs.showPreview",
+					"group": "navigation"
+				},
+				{
+					"command": "salesforcedocs.showSource",
+					"when": "markdownPreviewFocus",
+					"group": "navigation"
+				},
+				{
+					"command": "salesforcedocs.preview.refresh",
+					"when": "markdownPreviewFocus",
+					"group": "1_markdown"
+				},
+				{
+					"command": "salesforcedocs.preview.toggleLock",
+					"when": "markdownPreviewFocus",
+					"group": "1_markdown"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "salesforcedocs.showPreview",
+					"when": "resourceLangId == markdown",
+					"group": "navigation"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "salesforcedocs.showPreview",
+					"when": "resourceLangId == markdown",
+					"group": "1_open"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "salesforcedocs.showPreview",
+					"when": "editorLangId == markdown && !notebookEditorFocused",
+					"group": "navigation"
+				},
+				{
+					"command": "salesforcedocs.showPreviewToSide",
+					"when": "editorLangId == markdown && !notebookEditorFocused",
+					"group": "navigation"
+				},
+				{
+					"command": "salesforcedocs.showLockedPreviewToSide",
+					"when": "editorLangId == markdown && !notebookEditorFocused",
+					"group": "navigation"
+				},
+				{
+					"command": "salesforcedocs.showSource",
+					"when": "markdownPreviewFocus",
+					"group": "navigation"
+				},
+				{
+					"command": "salesforcedocs.preview.toggleLock",
+					"when": "markdownPreviewFocus"
+				},
+				{
+					"command": "salesforcedocs.preview.refresh",
+					"when": "editorLangId == markdown && !notebookEditorFocused"
+				},
+				{
+					"command": "salesforcedocs.preview.refresh",
+					"when": "markdownPreviewFocus"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "salesforcedocs.showPreview",
+				"key": "ctrl+k f",
+				"mac": "cmd+k f",
+				"when": "editorLangId == markdown && !notebookEditorFocused"
+			},
+			{
+				"command": "salesforcedocs.showPreviewToSide",
+				"key": "ctrl+k s",
+				"mac": "cmd+k s",
+				"when": "editorLangId == markdown && !notebookEditorFocused"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "SalesforceDocs Preview",
+			"order": 20,
+			"properties": {
+				"salesforcedocs.preview.style.preset": {
+					"type": "string",
+					"default": "SalesforceDocs",
+					"description": "%configuration.salesforcedocs.preview.style.preset.description%",
+					"scope": "resource",
+					"enum": [
+						"SalesforceDocs",
+						"VSCode"
+					],
+					"enumDescriptions": [
+						"%configuration.salesforcedocs.preview.style.preset.salesforcedocs%",
+						"%configuration.salesforcedocs.preview.style.preset.VSCode%"
+					]
+				},
+				"salesforcedocs.preview.styles": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "%salesforcedocs.styles.dec%",
+					"scope": "resource"
+				},
+				"salesforcedocs.preview.breaks": {
+					"type": "boolean",
+					"default": false,
+					"description": "%salesforcedocs.preview.breaks.desc%",
+					"scope": "resource"
+				},
+				"salesforcedocs.preview.scrollPreviewWithEditor": {
+					"type": "boolean",
+					"default": true,
+					"description": "%salesforcedocs.preview.scrollPreviewWithEditor.desc%",
+					"scope": "resource"
+				},
+				"salesforcedocs.preview.markEditorSelection": {
+					"type": "boolean",
+					"default": true,
+					"description": "%salesforcedocs.preview.markEditorSelection.desc%",
+					"scope": "resource"
+				},
+				"salesforcedocs.preview.scrollEditorWithPreview": {
+					"type": "boolean",
+					"default": true,
+					"description": "%salesforcedocs.preview.scrollEditorWithPreview.desc%",
+					"scope": "resource"
+				},
+				"salesforcedocs.preview.doubleClickToSwitchToEditor": {
+					"type": "boolean",
+					"default": true,
+					"description": "%salesforcedocs.preview.doubleClickToSwitchToEditor.desc%",
+					"scope": "resource"
+				},
+				"salesforcedocs.preview.openMarkdownLinks": {
+					"type": "string",
+					"default": "inPreview",
+					"description": "%configuration.salesforcedocs.preview.openMarkdownLinks.description%",
+					"scope": "resource",
+					"enum": [
+						"inPreview",
+						"inEditor"
+					],
+					"enumDescriptions": [
+						"%configuration.salesforcedocs.preview.openMarkdownLinks.inPreview%",
+						"%configuration.salesforcedocs.preview.openMarkdownLinks.inEditor%"
+					]
+				},
+				"salesforcedocs.links.openLocation": {
+					"type": "string",
+					"default": "currentGroup",
+					"description": "%configuration.salesforcedocs.links.openLocation.description%",
+					"scope": "resource",
+					"enum": [
+						"currentGroup",
+						"beside"
+					],
+					"enumDescriptions": [
+						"%configuration.salesforcedocs.links.openLocation.currentGroup%",
+						"%configuration.salesforcedocs.links.openLocation.beside%"
+					]
+				},
+				"salesforcedocs.trace": {
+					"type": "string",
+					"enum": [
+						"off",
+						"verbose"
+					],
+					"default": "off",
+					"description": "%salesforcedocs.trace.desc%",
+					"scope": "window"
+				}
+			}
+		},
+		"configurationDefaults": {
+			"[salesforcedocs]": {
+				"editor.wordWrap": "on",
+				"editor.quickSuggestions": false
+			}
+		},
+		"salesforcedocs.previewStyles": [
+			"./media/css/slds.css",
+			"./media/css/admonitions.css",
+			"./media/css/main.css"
+		],
+		"markdown.default.previewStyles": [
+			"./media/css/markdown.css",
+			"./media/css/highlight.css"
+		],
+		"salesforcedocs.previewScripts": [
+			"./media/pre.js",
+			"./media/index.js",
+			"./media/main.js"
+		],
+		"customEditors": [
+			{
+				"viewType": "vscode.salesforcedocs.preview.editor",
+				"displayName": "SalesforceDocs Preview (Experimental)",
+				"priority": "option",
+				"selector": [
+					{
+						"filenamePattern": "*.md"
+					}
+				]
+			}
+		]
+	},
+	"scripts": {
+		"compile": "rm -rf out && tsc -p ./ && npm run build-preview",
+		"watch": "tsc -watch -p ./",
+		"package": "vsce package",
+		"vscode:publish": "vsce publish",
+		"vscode:prepublish": "npm run compile",
+		"build-preview": "webpack --mode production",
+		"lint": "eslint src --ext ts",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/src/test/runTest.js"
+	},
+	"dependencies": {
+		"highlight.js": "9.15.10",
+		"unified": "9.2.0",
+		"unist-util-visit": "2.0.3",
+		"remark-parse": "8.0.3",
+		"remark-frontmatter": "2.0.0",
+		"remark-html": "12.0.0",
+		"remark-highlight.js": "6.0.0",
+		"mdurl": "^1.0.0",
+		"vscode-nls": "^4.0.0",
+		"vsce": "1.81.1",
+		"@sfdocs-internal/markdown-compiler": "0.1.52"
+	},
+	"devDependencies": {
+		"@types/vscode": "1.45.0",
+		"@types/jest": "26.0.19",
+		"@types/mocha": "8.2.0",
+		"@types/highlight.js": "9.12.3",
+		"@types/lodash.throttle": "^4.1.3",
+		"@types/markdown-it": "0.0.2",
+		"@types/node": "^12.11.7",
+		"@typescript-eslint/eslint-plugin": "^2.26.0",
+		"@typescript-eslint/parser": "^2.26.0",
+		"eslint": "^6.8.0",
+		"prettier": "^2.0.5",
+		"eslint-config-prettier": "^6.10.1",
+		"eslint-plugin-prettier": "^3.1.2",
+		"lodash.throttle": "^4.1.1",
+		"mocha-junit-reporter": "^1.17.0",
+		"mocha-multi-reporters": "^1.1.7",
+		"ts-loader": "^6.2.1",
+		"typescript": "^3.7.3",
+		"vscode-test": "1.4.0",
+		"webpack": "^4.41.2",
+		"webpack-cli": "^3.3.0"
+	},
+	"repository": "https://github.com/salesforcedocs/vscode-salesforcedocs-preview"
+}

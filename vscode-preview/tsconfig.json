@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es6",
+		"outDir": "out",
+		"lib": [
+			"es2018",
+			"DOM.Iterable",
+			"dom"
+		],
+		"sourceMap": true,
+		"rootDir": ".",
+		"skipLibCheck": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
