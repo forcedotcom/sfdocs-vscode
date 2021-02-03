@@ -21,7 +21,7 @@ You can also install using the VS Code --install-extension command-line switch p
 
 To run this extension in development mode , follow below steps:
 
-* Checkout the code : [SalesforceDocs Preview](https://github.com/salesforcedocs/vscode-salesforcedocs-preview)
+* Checkout the code : [SalesforceDocs Preview](https://github.com/forcedotcom/sfdocs-vscode/vscode-preview)
 * Install all dependent packages : `npm install`
 * Compile the code : `npm run compile`
 * To run/debug the extension in Development hit: `F5` (**Function 5**) key in keyboard.
