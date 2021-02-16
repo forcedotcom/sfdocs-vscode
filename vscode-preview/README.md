@@ -4,7 +4,7 @@ This extension will use Micromark processor to generate markdown Preview.
 
 ## Features
 
-![Details](https://github.com/salesforcedocs/vscode-salesforcedocs-preview/blob/master/media/images/configDetails.png?raw=true)
+![Details](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-preview/media/images/configDetails.png?raw=true)
 
 ## Extension file
 
