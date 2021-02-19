@@ -2,7 +2,7 @@
 
 ![Features GIF](./media/images/preview.gif)
 
-SalesforceDocs Markdown Preview is a Micromark-compliant VS Code extension for Markdown previews. By default, the exrension uses Salesforce docs look-and-feel for previews. It features [most of the out-of-the-box Markdown preview features](https://code.visualstudio.com/docs/languages/markdown) like:
+SalesforceDocs Markdown Preview is a [Micromark-compliant](https://github.com/micromark/micromark) VS Code extension for Markdown previews. By default, the exrension uses Salesforce docs look-and-feel for previews. It features [most of the out-of-the-box Markdown preview features](https://code.visualstudio.com/docs/languages/markdown) like:
 
 - Dynamic previews
 - Editor and preview synchronization
