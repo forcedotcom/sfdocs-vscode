@@ -332,5 +332,5 @@
 		"webpack": "^4.41.2",
 		"webpack-cli": "^3.3.0"
 	},
-	"repository": "https://github.com/salesforcedocs/vscode-salesforcedocs-preview"
+	"repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/vscode-preview"
 }
