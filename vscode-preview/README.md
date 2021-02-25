@@ -1,44 +1,29 @@
-# vscode-salesforcedocs-preview README
+# SalesforceDocs Markdown Preview
 
-This extension will use Micromark processor to generate markdown Preview.
+![Features GIF](./media/images/preview.gif)
 
-## Features
+SalesforceDocs Markdown Preview is a [Micromark-compliant](https://github.com/micromark/micromark) VS Code extension for Markdown previews. By default, the exrension uses Salesforce docs look-and-feel for previews. It features [most of the out-of-the-box Markdown preview features](https://code.visualstudio.com/docs/languages/markdown) like:
 
-![Details](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-preview/media/images/configDetails.png?raw=true)
+- Dynamic previews
+- Editor and preview synchronization
+- Custom CSS
 
-## Extension file
+## Prerequisites
 
-The extension is not yet published to VS Code Marketplace but you can download the extension packaged file from here : [SalesforceDocs Preview](https://drive.google.com/uc?export=download&id=1vOKc9g4on0P-0iuH2BTtwTNrxziuiDWy)
+Before you use the plugin, disable the default markdown-language-feature extension of VS Code by following these steps:
+![Manual Install](./media/images/disable_default_preview.png)
 
-You can manually install a VS Code extension packaged in a **.vsix** file. 
-Using the Install from VSIX command in the Extensions view command drop-down, or the Extensions: Install from VSIX command in the Command Palette, point to the .vsix file.
+1. Click on the **Extension** icon in the Activity Bar on the side of VS Code or use the **View: Extensions** command (⇧⌘X).
+2. In the extension filter, type and select **@builtin**.
+3. Scroll down and select **Markdown Language Features**
+4. Click the **Disable** button.
+5. Click the **Reload Required** button to reload VS Code.
 
-You can also install using the VS Code --install-extension command-line switch providing the path to the .vsix file.
+## Keybindings
 
-```code --install-extension salesforcedocs-preview-1.0.0.vsix```
+> The `cmd` key for *Windows* is `ctrl`.
 
-## Development Mode
-
-To run this extension in development mode , follow below steps:
-
-* Checkout the code : [SalesforceDocs Preview](https://github.com/forcedotcom/sfdocs-vscode/vscode-preview)
-* Install all dependent packages : `npm install`
-* Compile the code : `npm run compile`
-* To run/debug the extension in Development hit: `F5` (**Function 5**) key in keyboard.
-
-**Note:** 
-To use this extension , It’s better to disable the default markdown-language-feature extension of VS Code. I was trying to find a way to disable default extension whenever this extension get activated but unable to find any api for that. SO we have to do this manually for now.(Any suggestion for this)
-
-Steps to disable the default markdown-language-feature extension:
-
-1. Click on extensions icon on the left hand side Activity bar
-2. In the extension filter , type @builtin and hit Enter
-    1. It will show you all the built in extension from VS Code
-3. Go to Markdown Language Feature extension 
-4. Click on to the Settings icon
-5. Click on Disable option
-
-*💡 Exact same steps can be used to enable the feature extension back.*
-
-
-**Enjoy!**
+| Shortcuts               | Functionality                                       |
+| ----------------------- | --------------------------------------------------- |
+| `cmd-k f` or `ctrl-k f` | Open SalesforceDocs Preview in full screen mode     |
+| `cmd-k s` or `ctrl-k s` | Open SalesforceDocs Preview in the side editor mode |
