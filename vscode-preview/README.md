@@ -27,3 +27,7 @@ Before you use the plugin, disable the default markdown-language-feature extensi
 | ----------------------- | --------------------------------------------------- |
 | `cmd-k f` or `ctrl-k f` | Open SalesforceDocs Preview in full screen mode     |
 | `cmd-k s` or `ctrl-k s` | Open SalesforceDocs Preview in the side editor mode |
+
+## Configurations
+
+The SalesforceDocs Markdown Preview offers most configuration options that are provided by the default Markdown preview of Visual Studio Code. In addition to that, you can also select your style preset to match SalesforceDocs, or the default Visual Studio Code preview, in the Settings. 
