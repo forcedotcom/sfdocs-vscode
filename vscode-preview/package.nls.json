@@ -1,12 +1,12 @@
 {
 	"displayName": "SalesforceDocs Markdown Preview",
-	"description": "Provides preview for Markdown Using Micromark Processor.",
-	"salesforcedocs.preview.breaks.desc": "Sets how line-breaks are rendered in the markdown preview. Setting it to 'true' creates a <br> for newlines inside paragraphs.",
+	"description": "Provides preview for Markdown Using MicroMark Processor.",
+	"salesforcedocs.preview.breaks.desc": "Sets how line-breaks are rendered in the Markdown preview. Setting it to 'true' creates a <br> for newlines inside paragraphs.",
 	"salesforcedocs.preview.doubleClickToSwitchToEditor.desc": "Double click in the markdown preview to switch to the editor.",
 	"salesforcedocs.preview.markEditorSelection.desc": "Mark the current editor selection in the markdown preview.",
 	"salesforcedocs.preview.scrollEditorWithPreview.desc": "When a markdown preview is scrolled, update the view of the editor.",
 	"salesforcedocs.preview.scrollPreviewWithEditor.desc": "When a markdown editor is scrolled, update the view of the preview.",
-	"salesforcedocs.preview.title": "Open SalesforceDocs Preview",
+	"salesforcedocs.preview.title": "Open SalesforceDocs Markdown Preview",
 	"salesforcedocs.previewSide.title": "Open SalesforceDocs Preview to the Side",
 	"salesforcedocs.showLockedPreviewToSide.title": "Open Locked SalesforceDocs Preview to the Side",
 	"salesforcedocs.showSource.title": "Show Markdown",
@@ -23,5 +23,5 @@
 	"configuration.salesforcedocs.links.openLocation.beside": "Open links beside the active editor.",
 	"configuration.salesforcedocs.preview.style.preset.description": "Choose the base style preset for your Preview",
 	"configuration.salesforcedocs.preview.style.preset.salesforcedocs": "Choose Salesforcedocs styling for your preview",
-	"configuration.salesforcedocs.preview.style.preset.VSCode": "Choose basic VS Code markdown styling for your preview"
+	"configuration.salesforcedocs.preview.style.preset.VSCode": "Choose basic Visual Studio Code markdown styling for your preview"
 }
