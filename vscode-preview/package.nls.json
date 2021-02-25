@@ -1,6 +1,6 @@
 {
 	"displayName": "SalesforceDocs Markdown Preview",
-	"description": "Provides preview for Markdown Using Remark Processor.",
+	"description": "Provides preview for Markdown Using Micromark Processor.",
 	"salesforcedocs.preview.breaks.desc": "Sets how line-breaks are rendered in the markdown preview. Setting it to 'true' creates a <br> for newlines inside paragraphs.",
 	"salesforcedocs.preview.doubleClickToSwitchToEditor.desc": "Double click in the markdown preview to switch to the editor.",
 	"salesforcedocs.preview.markEditorSelection.desc": "Mark the current editor selection in the markdown preview.",
