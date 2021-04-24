@@ -1,4 +1,10 @@
-import { markdownCompiler } from '@sfdocs-internal/markdown-compiler';
+import * as remark from 'remark';
+import {
+    genericDirective,
+    internalReferencePlugin,
+    remark_directive,
+} from '@sfdocs-internal/generic-directive-plugin';
+import * as remarkGfm from 'remark-gfm';
 import * as remarkFrontmatter from 'remark-frontmatter';
 import * as vscode from 'vscode';
 import * as u from 'unist-builder';
@@ -10,6 +16,9 @@ import * as highlight from 'remark-highlight.js';
 import * as normalize from 'mdurl/encode';
 import { SkinnyTextDocument } from './tableOfContentsProvider';
 import { hash } from './util/hash';
+import { sfdocsCustomPlugin } from './generic-directive-plugin/index';
+import admonitionsPlugin from './generic-directive-plugin/admonitionsPlugin';
+import { include } from './generic-directive-plugin/includePlugin';
 import { all, wrap, listLoose, listItemLoose } from './util/mdast-util';
 
 const UNICODE_NEWLINE_REGEX = /\u2028|\u2029/g;
@@ -85,7 +94,7 @@ export class MarkdownEngine {
 	private md?: any;
 	private _tokenCache = new TokenCache();
 
-	private commonHandler = {
+	private commonHandler: any = {
 		heading: this.headerHandler,
 		paragraph: this.paragraphHandler,
 		blockquote: this.blockquoteHandler,
@@ -95,9 +104,22 @@ export class MarkdownEngine {
 		image: this.imageHandler
 	}
 
-	private async getEngine(): Promise<any> {
+	private async getEngine(currentFilePath: string): Promise<any> {
 		if (!this.md) {
-			this.md = markdownCompiler().use(remarkFrontmatter, { type: 'yaml', marker: '-' }).use(highlight).use(html, { handlers: this.commonHandler });
+
+			const sfdocsPlugin = sfdocsCustomPlugin();
+			
+			this.md = remark()
+			.use(remarkGfm)
+			.use(html, { handlers: this.commonHandler })
+			.use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
+			.use(sfdocsPlugin)
+			.use(genericDirective())
+			.use(internalReferencePlugin({}))
+			.use(remark_directive)
+			.use(admonitionsPlugin)
+			.use(include, {cwd: currentFilePath})
+			.use(highlight);
 		}
 
 		const md = await this.md!;
@@ -120,8 +142,8 @@ export class MarkdownEngine {
 		return tokens;
 	}
 
-	public async render(input: SkinnyTextDocument | string): Promise<string> {
-		const engine = await this.getEngine();
+	public async render(input: any | string): Promise<string> {
+		const engine = await this.getEngine(input.fileName);
 
 		const tokens = typeof input === 'string'
 			? input
