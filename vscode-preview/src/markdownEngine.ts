@@ -1,24 +1,13 @@
-import * as remark from 'remark';
-import {
-    genericDirective,
-    internalReferencePlugin,
-    remark_directive,
-} from '@sfdocs-internal/generic-directive-plugin';
-import * as remarkGfm from 'remark-gfm';
-import * as remarkFrontmatter from 'remark-frontmatter';
+import { markdownCompiler } from './markdownCompiler';
 import * as vscode from 'vscode';
 import * as u from 'unist-builder';
 import * as html from 'remark-html';
 import * as parse from 'remark-parse';
 import * as visit from 'unist-util-visit';
 import * as unified from 'unified';
-import * as highlight from 'remark-highlight.js';
 import * as normalize from 'mdurl/encode';
 import { SkinnyTextDocument } from './tableOfContentsProvider';
 import { hash } from './util/hash';
-import { sfdocsCustomPlugin } from './generic-directive-plugin/index';
-import admonitionsPlugin from './generic-directive-plugin/admonitionsPlugin';
-import { include } from './generic-directive-plugin/includePlugin';
 import { all, wrap, listLoose, listItemLoose } from './util/mdast-util';
 
 const UNICODE_NEWLINE_REGEX = /\u2028|\u2029/g;
@@ -106,20 +95,8 @@ export class MarkdownEngine {
 
 	private async getEngine(currentFilePath: string): Promise<any> {
 		if (!this.md) {
-
-			const sfdocsPlugin = sfdocsCustomPlugin();
-			
-			this.md = remark()
-			.use(remarkGfm)
-			.use(html, { handlers: this.commonHandler })
-			.use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
-			.use(sfdocsPlugin)
-			.use(genericDirective())
-			.use(internalReferencePlugin({}))
-			.use(remark_directive)
-			.use(admonitionsPlugin)
-			.use(include, {cwd: currentFilePath})
-			.use(highlight);
+			this.md = markdownCompiler(currentFilePath)
+			.use(html, { handlers: this.commonHandler });
 		}
 
 		const md = await this.md!;

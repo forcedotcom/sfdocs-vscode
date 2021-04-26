@@ -12,8 +12,8 @@
 		"rootDir": ".",
 		"skipLibCheck": true,
 		"noImplicitReturns": false,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true
+		"noUnusedLocals": false,
+		"noUnusedParameters": false
 	},
 	"exclude": [
 		"node_modules"

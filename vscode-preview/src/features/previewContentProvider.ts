@@ -91,7 +91,7 @@ export class MarkdownContentProvider {
                     <section>
                         <body data-gr-c-s-loaded="true">
                             <div class="slds-p-around--medium slds-container--medium">
-                                <article class="main-continer">	
+                                <article class="main-continer content-type-guide">	
 									${body}
 									<div class="code-line" data-line="${markdownDocument.lineCount}"></div>
 									${this.getScripts(resourceProvider, nonce)}

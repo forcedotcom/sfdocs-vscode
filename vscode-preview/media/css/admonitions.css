@@ -45,71 +45,71 @@
   
   /** native types */
   .admonition-caution {
-    background-color: rgba(230, 126, 34, 0.1);
-    border-left: 8px solid #e67e22;
+    background-color: var(--dx-g-red-natural-95);
+    border-left: 6px solid var(--dx-g-red-vibrant-50);;
   }
   
   .admonition-caution h5 {
-    color: #e67e22;
+    color: var(--dx-g-red-vibrant-50);;
   }
   
   .admonition-caution .admonition-icon svg {
-    stroke: #e67e22;
-    fill: #e67e22;
+    stroke: var(--dx-g-red-vibrant-50);;
+    fill: var(--dx-g-red-vibrant-50);;
   }
   
   .admonition-tip {
-    background-color: rgba(46, 204, 113, 0.1);
-    border-left: 8px solid #2ecc71;
+    background-color: var(--dx-g-green-natural-95);
+    border-left: 6px solid var(--dx-g-green-vibrant-60);
   }
   
   .admonition-tip h5 {
-    color: #2ecc71;
+    color: var(--dx-g-green-vibrant-60);
   }
   
   .admonition-tip .admonition-icon svg {
-    stroke: #2ecc71;
-    fill: #2ecc71;
+    stroke: var(--dx-g-green-vibrant-60);
+    fill: var(--dx-g-green-vibrant-60);
   }
   
   .admonition-warning {
-    background-color: rgba(231, 76, 60, 0.1);
-    border-left: 8px solid #e74c3c;
+    background-color: rgb(254, 243, 217);
+    border-left: 6px solid var(--dx-g-yellow-vibrant-80);
   }
   
   .admonition-warning h5 {
-    color: #e74c3c;
+    color: var(--dx-g-yellow-vibrant-80);
   }
   
   .admonition-warning .admonition-icon svg {
-    stroke: #e74c3c;
-    fill: #e74c3c;
+    stroke: var(--dx-g-gray-10);
+    fill: var(--dx-g-gray-10);
   }
   
   .admonition-important {
-    background-color: rgba(52, 152, 219, 0.1);
-    border-left: 8px solid #3498db;
+    background-color: var(--dx-g-blue-vibrant-95);
+    border-left: 6px solid var(--dx-g-blue-vibrant-50);
   }
   
   .admonition-important h5 {
-    color: #3498db;
+    color: var(--dx-g-blue-vibrant-50);
   }
   
   .admonition-important .admonition-icon svg {
-    stroke: #3498db;
-    fill: #3498db;
+    stroke: var(--dx-g-blue-vibrant-50);
+    fill: var(--dx-g-blue-vibrant-50);
   }
   
   .admonition-note {
-    background-color: rgba(241, 196, 15, 0.1);
-    border-left: 8px solid #f1c40f;
+    background-color: var(--dx-g-blue-vibrant-95);
+    border-left: 6px solid var(--dx-g-blue-vibrant-50);
   }
   
   .admonition-note h5 {
-    color: #f1c40f;
+    color: var(--dx-g-blue-vibrant-50);
   }
   
   .admonition-note .admonition-icon svg {
-    stroke: #f1c40f;
-    fill: #f1c40f;
+    stroke: var(--dx-g-blue-vibrant-50);
+    fill: var(--dx-g-blue-vibrant-50);
   }

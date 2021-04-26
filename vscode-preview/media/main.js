@@ -14,8 +14,3 @@ function getMeta(name) {
     }
     return;
 }
-
-async function getHtmlContent(url) {
-    const response = await fetch(url);
-    return await response.text();
-}
