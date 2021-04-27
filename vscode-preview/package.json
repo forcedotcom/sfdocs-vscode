@@ -303,7 +303,6 @@
 		"@sfdocs-internal/logger": "0.5.123",
 		"@sfdocs-internal/types": "0.5.123",
 		"@sfdocs-internal/generic-directive-plugin": "0.5.123",
-		"@sfdocs-internal/markdown-compiler": "0.1.52",
 		"find-up": "5.0.0",
 		"highlight.js": "9.15.10",
 		"hastscript": "6.0.0",
@@ -325,7 +324,7 @@
 		"unified": "9.2.0",
 		"unist-builder": "2.0.3",
 		"unist-util-visit": "2.0.3",
-		"vsce": "1.81.1",
+		"vsce": "1.87.1",
 		"vscode-nls": "^4.0.0"
 	},
 	"devDependencies": {
