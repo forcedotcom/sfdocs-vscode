@@ -53,6 +53,7 @@ function genericContainerDirective(currentFilePath) {
 
                         metadata.set('inputDom', inputDom);
                         metadata.set('calloutTitle', title);
+                        metadata.set('mdLineNumber', node.position.start.line - 1);
 
                         const renderedDomInfo = calloutTransform(metadata);
                         if (renderedDomInfo && renderedDomInfo.size !== 0) {
@@ -98,6 +99,7 @@ function genericContainerDirective(currentFilePath) {
                         metadata.set('title', title);
                         metadata.set('type', type);
                         metadata.set('alt', alt);
+                        metadata.set('mdLineNumber', node.position.start.line - 1);
 
                         const renderedDomInfo = transformToVideo(metadata);
                         if (renderedDomInfo && renderedDomInfo.size !== 0) {

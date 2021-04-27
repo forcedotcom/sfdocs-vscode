@@ -57,7 +57,7 @@ const types = {
         if (calloutType) {
             const domResponse = new Map<string, string>();
             const typeDetails = types[calloutType];
-            const outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary">
+            const outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${metadata.get('mdLineNumber')}>
             <div class="admonition-heading">
                 <h5>
                     <span class="admonition-icon">${typeDetails.svg}</span>

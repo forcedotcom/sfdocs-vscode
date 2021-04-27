@@ -30,7 +30,7 @@ import h = require('hastscript');
         const domResponse = new Map<string, string>();
     
         if (type === 'youtube') {
-            const outputDom = `<div class="video-player-parent" data-name="codeBlock">
+            const outputDom = `<div class="video-player-parent code-line" data-line=${metadata.get('mdLineNumber')} data-name="codeBlock">
             <div class="code-toolbar dx-theme-dark dx-variant-card video-body">
                 <div class="codeblock video-plugin-container">
                             <iframe src='${sourceUrl}'> 

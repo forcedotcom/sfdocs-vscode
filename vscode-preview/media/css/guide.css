@@ -405,7 +405,7 @@ pre[class*="language-"] > code[class*="language-"] {position: relative;display: 
 pre[id].linkable-line-numbers span.line-numbers-rows {pointer-events: all;}
 pre[id].linkable-line-numbers span.line-numbers-rows > span::before {cursor: pointer;}
 pre[id].linkable-line-numbers span.line-numbers-rows > span:hover::before {background-color: rgba(128, 128, 128, 0.2);}
-pre[class*="language-"].line-numbers {position: relative;padding-left: 3.4em;counter-reset: linenumber; max-height: 300px;}
+pre[class*="language-"].line-numbers {position: relative;padding-left: 3.4em;counter-reset: linenumber; max-height: 300px; overflow-y: overlay;}
 pre[class*="language-"].line-numbers > code {position: relative;white-space: inherit;}
 .line-numbers .line-numbers-rows {position: absolute;pointer-events: none;top: 20px;font-size: 100%;left: -0.4em;width: 3em;letter-spacing: -1px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
 .line-numbers-rows > span {display: block;counter-increment: linenumber;}

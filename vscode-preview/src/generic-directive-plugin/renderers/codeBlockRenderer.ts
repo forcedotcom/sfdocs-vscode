@@ -43,10 +43,10 @@ export default function transform(metadata: Map<string, string>) {
 
         lineNumbersWrapper = `<span aria-hidden="true" class="line-numbers-rows">${lines}</span>`;
 
-        const updatedDom = `<div class="code-parent-container" data-name="codeBlock">
+        const updatedDom = `<div class="code-parent-container code-line" data-line=${metadata.get('mdLineNumber')} data-name="codeBlock">
         <div class="code-toolbar dx-theme-dark dx-variant-card">
-            <pre class="codeblock brush:apex line-numbers language-${lang}">
-                <code class="language-${lang}">${urlEncodedText}</code>
+            <pre class="codeblock brush:apex line-numbers language-${lang}" style="${linesNum*60< 600? `overflow-y: hidden`: 'height:600px'}; ">
+                <code class="language-${lang}" style="min-height: 40px">${urlEncodedText}</code>
                 ${lineNumbersWrapper}
             </pre>
             <div class="toolbar">

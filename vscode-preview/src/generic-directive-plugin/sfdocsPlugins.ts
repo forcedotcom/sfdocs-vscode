@@ -64,6 +64,7 @@ export function sfdocsCustomPlugin(currentFilePath: string) {
                         );
                         metadata.set('title', meta && meta['title'] ? meta['title'] : '');
                         metadata.set('src', meta && meta['src'] ? meta['src'] : '');
+                        metadata.set('mdLineNumber', node.position.start.line - 1);
                         const renderedDomInfo = renderCodeBlockFn(metadata);
                         if (renderedDomInfo && renderedDomInfo.size !== 0) {
                             node.type = renderedDomInfo.get('nodeType');
@@ -125,6 +126,7 @@ export function sfdocsCustomPlugin(currentFilePath: string) {
                                 metadata.set('lang', meta && meta['lang'] ? meta['lang'] : 'text');
                                 metadata.set('title', meta && meta['title'] ? meta['title'] : '');
                                 metadata.set('src', meta && meta['src'] ? meta['src'] : '');
+                                metadata.set('mdLineNumber', node.position.start.line - 1);
 
                                 const renderedDomInfo = renderCodeBlockFn(metadata);
                                 if (renderedDomInfo && renderedDomInfo.size !== 0) {
@@ -147,6 +149,7 @@ export function sfdocsCustomPlugin(currentFilePath: string) {
                         metadata.set('lang', meta && meta['lang'] ? meta['lang'] : 'text');
                         metadata.set('title', meta && meta['title'] ? meta['title'] : '');
                         metadata.set('src', meta && meta['src'] ? meta['src'] : '');
+                        metadata.set('mdLineNumber', node.position.start.line - 1);
 
                         const renderedDomInfo = renderCodeBlockFn(metadata);
                         if (renderedDomInfo && renderedDomInfo.size !== 0) {
