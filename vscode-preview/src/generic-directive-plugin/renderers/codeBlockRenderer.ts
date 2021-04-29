@@ -45,10 +45,10 @@ export default function transform(metadata: Map<string, string>) {
 
         const updatedDom = `<div class="code-parent-container code-line" data-line=${metadata.get('mdLineNumber')} data-name="codeBlock">
         <div class="code-toolbar dx-theme-dark dx-variant-card">
-            <pre class="codeblock brush:apex line-numbers language-${lang}" style="${linesNum*60< 600? `overflow-y: hidden`: 'height:600px'}; ">
-                <code class="language-${lang}" style="min-height: 40px">${urlEncodedText}</code>
+            <div class="codeblock brush:apex line-numbers language-${lang}">
+                <pre class="language-${lang}" style="min-height: 40px">${urlEncodedText}</pre>
                 ${lineNumbersWrapper}
-            </pre>
+            </div>
             <div class="toolbar">
                 <div class="dx-text-heading-8 dx-code-block-heading">${title}</div>
             </div>
