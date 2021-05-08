@@ -1,11 +1,14 @@
 import { markdownCompiler } from './markdownCompiler';
 import * as vscode from 'vscode';
+import * as path from 'path';
 import * as u from 'unist-builder';
 import * as html from 'remark-html';
 import * as parse from 'remark-parse';
 import * as visit from 'unist-util-visit';
 import * as unified from 'unified';
 import * as normalize from 'mdurl/encode';
+import * as vfile from 'vfile';
+import { VFile } from 'vfile';
 import { SkinnyTextDocument } from './tableOfContentsProvider';
 import { hash } from './util/hash';
 import { all, wrap, listLoose, listItemLoose } from './util/mdast-util';
@@ -125,7 +128,12 @@ export class MarkdownEngine {
 		const tokens = typeof input === 'string'
 			? input
 			: input.getText();
-		const prossesedDoc = await engine.process(tokens.replace(UNICODE_NEWLINE_REGEX, ''));
+		const file : VFile = vfile({
+			dirname: path.dirname(input.fileName),
+			path: input.fileName,
+            contents: tokens.replace(UNICODE_NEWLINE_REGEX, ''),
+		});
+		const prossesedDoc = await engine.process(file);
 		return prossesedDoc.contents;
 	}
 

@@ -22,15 +22,17 @@ import h = require('hastscript');
  * 
  * @param metadata Contains all the information need to create a new DOM
  */
-   function transformToVideo(metadata: Map<string, string>): Map<string, string> {
+ export default function transformToVideo(metadata: Map<string, string>): Map<string, string> {
         const sourceUrl = metadata.get('sourceUrl');
         const title = metadata.get('title');
         const type = metadata.get('type');
         const alt = metadata.get('alt');
+        const node:any = metadata.get('node');
+        const mdLineNumber = node.position.start.line;
         const domResponse = new Map<string, string>();
     
         if (type === 'youtube') {
-            const outputDom = `<div class="video-container">
+            const outputDom = `<div class="video-container" data-line=${mdLineNumber} data-name="videoBlock">
             <div class="video-plugin-title-div">
                 <div class= "video-toolbar dx-text-heading-7 dx-video-heading">${title}</div>
             </div>
@@ -46,7 +48,7 @@ import h = require('hastscript');
             return domResponse;
         } else if (type === 'local') {
 
-            const outputDom = `<div class="video-container">
+            const outputDom = `<div class="video-container" data-line=${mdLineNumber} data-name="videoBlock">
             <div class="video-plugin-title-div">
                 <div class= "video-toolbar dx-text-heading-7 dx-video-heading">${title}</div>
             </div>
@@ -62,7 +64,7 @@ import h = require('hastscript');
         } else if (type === 'vidyard') {
             // TODO: download and attach the vidyard script fom doc-framework https://gus.lightning.force.com/lightning/r/ADM_Work__c/a07B0000008aH8jIAE/view
 
-            const outputDom = `<div class="video-container">
+            const outputDom = `<div class="video-container" data-line=${mdLineNumber} data-name="videoBlock">
             <div class="video-plugin-title-div">
                 <div class= "video-toolbar dx-text-heading-7 dx-video-heading">${title}</div>
             </div>
@@ -78,6 +80,3 @@ import h = require('hastscript');
             return domResponse;
         }
     }
-    
-
-export { transformToVideo };

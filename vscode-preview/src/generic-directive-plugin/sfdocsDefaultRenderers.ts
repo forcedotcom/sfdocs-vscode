@@ -1,6 +1,7 @@
 import renderCodeBlock from './renderers/codeBlockRenderer';
 import renderVideo from './renderers/videoPreviewRenderer';
 import renderBanner from './renderers/bannerRenderer';
+import renderCallout from './renderers/calloutRenderer';
 import type { RenderFunction } from '@sfdocs-internal/types';
 
 /**
@@ -8,10 +9,11 @@ import type { RenderFunction } from '@sfdocs-internal/types';
  * These are mainly focused with apihub for now - uses dx/doc components and lwc.
  * Add any new function as per the needs.
  */
-export default function renderFunctions(): { [key: string]: RenderFunction } {
+export default function sfdocsRenderFunctions(): { [key: string]: RenderFunction } {
     return {
         renderVideo,
         renderBanner,
         renderCodeBlock,
+        renderCallout
     };
 }

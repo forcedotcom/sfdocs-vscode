@@ -34,7 +34,8 @@ export default function transform(metadata: Map<string, string>) {
 
     if (urlEncodedText) {
         const domResponse = new Map<string, string>();
-
+        const node:any = metadata.get('node');
+        const mdLineNumber = node.position.start.line;
         var NEW_LINE_EXP = /\n(?!$)/g;
         var lineNumbersWrapper;
         var match = urlEncodedText.match(NEW_LINE_EXP);
@@ -43,7 +44,7 @@ export default function transform(metadata: Map<string, string>) {
 
         lineNumbersWrapper = `<span aria-hidden="true" class="line-numbers-rows">${lines}</span>`;
 
-        const updatedDom = `<div class="code-parent-container code-line" data-line=${metadata.get('mdLineNumber')} data-name="codeBlock">
+        const updatedDom = `<div class="code-parent-container code-line" data-line=${mdLineNumber} data-name="codeBlock">
         <div class="code-toolbar dx-theme-dark dx-variant-card">
             <div class="codeblock brush:apex line-numbers language-${lang}">
                 <pre class="language-${lang}" style="min-height: 40px">${urlEncodedText}</pre>

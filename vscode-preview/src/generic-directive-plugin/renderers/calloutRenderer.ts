@@ -43,21 +43,19 @@ const types = {
     :::tip
         First line of tip text
     :::
-    to
-    <doc-content-callout title="Tip" variant="tip">
-        <p>First line of tip text</p>
-    </doc-content-callout>
  * 
  * @param metadata Contains all the information need to create a new DOM
  */
-    export function calloutTransform(metadata: Map<string, string>): Map<string, string> {
+  export default function calloutTransform(metadata: Map<string, string>): Map<string, string> {
         const calloutType = metadata.get('calloutType').toLowerCase();
         const calloutTitle = metadata.get('calloutTitle');
+        const node:any = metadata.get('node');
+        const mdLineNumber = node.position.start.line;
         const inputDom = metadata.get('inputDom');
         if (calloutType) {
             const domResponse = new Map<string, string>();
             const typeDetails = types[calloutType];
-            const outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${metadata.get('mdLineNumber')}>
+            const outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${mdLineNumber}>
             <div class="admonition-heading">
                 <h5>
                     <span class="admonition-icon">${typeDetails.svg}</span>
