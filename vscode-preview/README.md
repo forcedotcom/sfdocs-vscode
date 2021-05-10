@@ -44,7 +44,7 @@ The extension supports all CommonMark syntax and the following additional plugin
 
 Renders to
 
-![content re-use](./media/content-reuse.png)
+![content re-use](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-preview/media/content-reuse.png?raw=true)
 
 ### Pull code samples from multiple sources
 
