@@ -2,7 +2,7 @@
 	"name": "salesforce-docs-markdown-preview",
 	"displayName": "%displayName%",
 	"description": "%description%",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"icon": "icon.png",
 	"preview": true,
 	"publisher": "salesforce",
