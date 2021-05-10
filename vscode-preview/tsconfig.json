@@ -11,9 +11,9 @@
 		"sourceMap": true,
 		"rootDir": ".",
 		"skipLibCheck": true,
-		"noImplicitReturns": true,
-		"noUnusedLocals": true,
-		"noUnusedParameters": true
+		"noImplicitReturns": false,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false
 	},
 	"exclude": [
 		"node_modules"

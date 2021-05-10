@@ -2,7 +2,7 @@
 	"name": "salesforce-docs-markdown-preview",
 	"displayName": "%displayName%",
 	"description": "%description%",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"icon": "icon.png",
 	"preview": true,
 	"publisher": "salesforce",
@@ -260,9 +260,10 @@
 			}
 		},
 		"salesforcedocs.previewStyles": [
+			"./media/css/main.css",
 			"./media/css/slds.css",
 			"./media/css/admonitions.css",
-			"./media/css/main.css"
+			"./media/css/guide.css"
 		],
 		"markdown.default.previewStyles": [
 			"./media/css/markdown.css",
@@ -271,7 +272,8 @@
 		"salesforcedocs.previewScripts": [
 			"./media/pre.js",
 			"./media/index.js",
-			"./media/main.js"
+			"./media/main.js",
+			"./media/prism.js"
 		],
 		"customEditors": [
 			{
@@ -298,17 +300,33 @@
 		"test": "node ./out/src/test/runTest.js"
 	},
 	"dependencies": {
+		"@sfdocs-internal/logger": "0.5.123",
+		"@sfdocs-internal/types": "0.5.123",
+		"@sfdocs-internal/generic-directive-plugin": "alpha",
+		"@sfdocs-internal/sfdocs-directive-plugin": "alpha",
+		"find-up": "5.0.0",
 		"highlight.js": "9.15.10",
-		"unified": "9.2.0",
-		"unist-util-visit": "2.0.3",
-		"remark-parse": "8.0.3",
-		"remark-frontmatter": "2.0.0",
-		"remark-html": "12.0.0",
-		"remark-highlight.js": "6.0.0",
+		"hastscript": "6.0.0",
 		"mdurl": "^1.0.0",
-		"vscode-nls": "^4.0.0",
-		"vsce": "1.81.1",
-		"@sfdocs-internal/markdown-compiler": "0.1.52"
+		"node-html-parser": "2.0.2",
+		"path": "0.12.7",
+		"prismjs": "^1.23.0",
+		"sync-fetch": "0.3.0",
+		"remark": "13.0.0",
+		"remark-admonitions": "1.2.1",
+		"rehype-format": "3.1.0",
+		"remark-frontmatter": "2.0.0",
+		"remark-gfm": "1.0.0",
+		"remark-highlight.js": "6.0.0",
+		"remark-html": "12.0.0",
+		"remark-parse": "8.0.3",
+		"remark-rehype": "8.1.0",
+		"rehype-stringify": "8.0.0",
+		"unified": "9.2.0",
+		"unist-builder": "2.0.3",
+		"unist-util-visit": "2.0.3",
+		"vsce": "1.88.0",
+		"vscode-nls": "^4.0.0"
 	},
 	"devDependencies": {
 		"@types/vscode": "1.45.0",
