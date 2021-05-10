@@ -302,8 +302,8 @@
 	"dependencies": {
 		"@sfdocs-internal/logger": "0.5.123",
 		"@sfdocs-internal/types": "0.5.123",
-		"@sfdocs-internal/generic-directive-plugin": "latest",
-		"@sfdocs-internal/sfdocs-directive-plugin": "latest",
+		"@sfdocs-internal/generic-directive-plugin": "alpha",
+		"@sfdocs-internal/sfdocs-directive-plugin": "alpha",
 		"find-up": "5.0.0",
 		"highlight.js": "9.15.10",
 		"hastscript": "6.0.0",
