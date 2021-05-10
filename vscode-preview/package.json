@@ -325,7 +325,7 @@
 		"unified": "9.2.0",
 		"unist-builder": "2.0.3",
 		"unist-util-visit": "2.0.3",
-		"vsce": "1.87.1",
+		"vsce": "1.88.0",
 		"vscode-nls": "^4.0.0"
 	},
 	"devDependencies": {
