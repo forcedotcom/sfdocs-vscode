@@ -42,3 +42,8 @@ code --install-extension myextension.vsix
 
 Example: `code --install-extension ~/sfdocs-vscode/vscode-preview/salesforce-docs-markdown-preview-1.0.5.vsix`
 
+If the above command doesn't work - follow the below procedure mentioned here:  
+https://stackoverflow.com/questions/42017617/how-to-install-vs-code-extension-manually
+
+![Local Extension](https://i.stack.imgur.com/nPF49.png)
+
