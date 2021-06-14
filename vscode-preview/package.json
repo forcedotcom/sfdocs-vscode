@@ -2,7 +2,7 @@
 	"name": "salesforce-docs-markdown-preview",
 	"displayName": "%displayName%",
 	"description": "%description%",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"icon": "icon.png",
 	"preview": true,
 	"publisher": "salesforce",
@@ -260,8 +260,8 @@
 			}
 		},
 		"salesforcedocs.previewStyles": [
+			"./media/css/markdown.css",
 			"./media/css/main.css",
-			"./media/css/slds.css",
 			"./media/css/admonitions.css",
 			"./media/css/guide.css"
 		],

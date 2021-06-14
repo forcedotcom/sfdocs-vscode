@@ -22,3 +22,23 @@ In order to build you should have nodejs set up and either npm or yarn should in
 - On the developer extension window, you can open developer tool by 
 `ctrl + shift + P` and then select `Open webview Developer tools`
 
+### Create pakcage
+
+To  build a package for your changes - run the below command
+
+```
+yarn package
+```
+Note: Please increase the version if this is a new package.
+In order to test, first uninstall your existing code extension and then add this extension.
+
+### How to test without publishing package.
+
+To run the above created .vsix, you can run the below command.
+
+```
+code --install-extension myextension.vsix
+```
+
+Example: `code --install-extension ~/sfdocs-vscode/vscode-preview/salesforce-docs-markdown-preview-1.0.5.vsix`
+
