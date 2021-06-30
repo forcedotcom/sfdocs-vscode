@@ -263,7 +263,7 @@ export class MarkdownEngine {
 
 
 	private linkHandler(h: any, node: any) {
-		var props: any = { href: normalize(node.url) }
+		var props: any = { href: normalize(node.url), 'data-href': normalize(node.url) }
 
 		if (node.title !== null && node.title !== undefined) {
 			props.title = node.title;
