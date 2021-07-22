@@ -8,6 +8,7 @@
 		"vscode": "^1.57.0"
 	},
 	"preview": true,
+	"author": "Ayush Kumar Tarun",
 	"publisher": "salesforce",
 	"license": "BSD 3-Clause",
 	"categories": [
