@@ -1,6 +1,6 @@
 {
 	"name": "sfdocs-markdown-assistant",
-	"displayName": "Salesforcedocs Markdown Assistant",
+	"displayName": "SalesforceDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
 	"version": "0.0.1",
