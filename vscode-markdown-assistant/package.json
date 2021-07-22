@@ -1,0 +1,631 @@
+{
+	"name": "sfdocs-markdown-assistant",
+	"displayName": "Salesforcedocs Markdown Assistant",
+	"description": "Helps you to write clean Markdown files faster.",
+	"icon": "images/icon.png",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"preview": true,
+	"publisher": "salesforce",
+	"license": "BSD 3-Clause",
+	"categories": [
+		"Programming Languages",
+		"Formatters",
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"main": "./dist/extension.js",
+	"repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/vscode-markdown-assitance",
+	"contributes": {
+		"commands": [
+			{
+				"command": "sfdocs.editing.toggleBold",
+				"title": "Toggle Bold",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleItalic",
+				"title": "Toggle Italic",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleStrikethrough",
+				"title": "Toggle Strikethrough",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleCodeblock",
+				"title": "Toggle Codeblock",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleInlineCode",
+				"title": "Toggle Inline Code",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleBlockquote",
+				"title": "Toggle Blockquote",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.pasteHyperlink",
+				"title": "Make a Hyperlink",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.insertImage",
+				"title": "Insert Image",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleBulletList",
+				"title": "Toggle Bulleted List",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleNumberList",
+				"title": "Toggle Numbered List",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.checkList",
+				"title": "Check the List Items",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.toggleCheckList",
+				"title": "Toggle Check List",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.generateWithAlignment",
+				"title": "Table: Add with Alignment",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.generate",
+				"title": "Table: Add",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.insertColumnRight",
+				"title": "Table: Insert Column - Right",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.insertColumnLeft",
+				"title": "Table: Insert Column - Left",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.insertRow",
+				"title": "Table: Insert Row",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.deleteRows",
+				"title": "Table: Delete Selected Rows",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.deleteColumns",
+				"title": "Table: Delete Selected Columns",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.moveRowUp",
+				"title": "Table: Move Row Up",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.moveRowDown",
+				"title": "Table: Move Row Down",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.moveColumnLeft",
+				"title": "Table: Move Column Left",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.moveColumnRight",
+				"title": "Table: Move Column Right",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.pasteTable",
+				"title": "Table: Paste Table",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.copyColumn",
+				"title": "Table: Copy Column",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.pasteColumnLeft",
+				"title": "Table: Paste Column - Left",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.pasteColumnRight",
+				"title": "Table: Paste Column - Right",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.format",
+				"title": "Table: Format",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.table.removeFormatting",
+				"title": "Table: Remove Formatting",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.enhancedCallouts.tip",
+				"title": "Enhanced Callouts: Tip",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.enhancedCallouts.warning",
+				"title": "Enhanced Callouts: Warning",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.enhancedCallouts.caution",
+				"title": "Enhanced Callouts: Caution",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.enhancedCallouts.note",
+				"title": "Enhanced Callouts: Note",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.insertVideo.vidyard",
+				"title": "Insert Video: VidYard",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.insertVideo.youtube",
+				"title": "Insert Video: YouTube",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.insertVideo.local",
+				"title": "Insert Video: File Path",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.contentReuse",
+				"title": "Shared Markdown File (Include)",
+				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.enhancedCodeblock",
+				"title": "Enhanced Codeblock",
+				"category": "Salesforcedocs Markdown Assistant"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+				  "command": "sfdocs.custom.enhancedCallouts.tip",
+				  "when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.warning",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.caution",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.note",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.insertVideo.vidyard",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.insertVideo.youtube",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.insertVideo.local",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.contentReuse",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCodeblock",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "sfdocs.editing.toggleBold",
+					"group": "aa_author@4",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"command": "sfdocs.editing.toggleItalic",
+					"group": "aa_author@5",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"command": "sfdocs.editing.toggleStrikethrough",
+					"group": "aa_author@6",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"command": "sfdocs.editing.toggleCodeblock",
+					"group": "aa_author@2",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"command": "sfdocs.editing.toggleInlineCode",
+					"group": "aa_author@1",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"command": "sfdocs.editing.toggleBlockquote",
+					"group": "aa_author@3",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"submenu": "sfdocs.editing.insert",
+					"group": "aa_author1@2",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"submenu": "sfdocs.editing.lists",
+					"group": "aa_author1@1",
+					"when": "!editorReadonly && editorLangId == markdown"
+				},
+				{
+					"submenu": "sfdocs.table",
+					"group": "aa_author1@3",
+					"when": "!editorReadonly && editorLangId == markdown"
+				}
+			],
+			"sfdocs.table": [
+				{
+					"command": "sfdocs.table.generateWithAlignment",
+					"group": "aa_author2@2"
+				},
+				{
+					"command": "sfdocs.table.generate",
+					"group": "aa_author2@2"
+				},
+				{
+					"command": "sfdocs.table.insertColumnRight",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.insertColumnLeft",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.insertRow",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.deleteRows",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.deleteColumns",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.moveRowUp",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.moveRowDown",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.moveColumnLeft",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.moveColumnRight",
+					"group": "aa_author3@3"
+				},
+				{
+					"command": "sfdocs.table.pasteTable",
+					"group": "aa_author1@1"
+				},
+				{
+					"command": "sfdocs.table.copyColumn",
+					"group": "aa_author4@4"
+				},
+				{
+					"command": "sfdocs.table.pasteColumnLeft",
+					"group": "aa_author4@4"
+				},
+				{
+					"command": "sfdocs.table.pasteColumnRight",
+					"group": "aa_author4@4"
+				},
+				{
+					"command": "sfdocs.table.format",
+					"group": "aa_author5@5"
+				},
+				{
+					"command": "sfdocs.table.removeFormatting",
+					"group": "aa_author5@5"
+				}
+			],
+			"sfdocs.editing.lists":[
+				{
+					"command": "sfdocs.editing.toggleBulletList",
+					"group": "aa_author1@1"
+				},
+				{
+					"command": "sfdocs.editing.toggleNumberList",
+					"group": "aa_author1@2"
+				},
+				{
+					"command": "sfdocs.editing.checkList",
+					"group": "aa_author1@4"
+				},
+				{
+					"command": "sfdocs.editing.toggleCheckList",
+					"group": "aa_author1@3"
+				}
+			],
+			"sfdocs.editing.insert": [
+				{
+					"command": "sfdocs.editing.insertImage",
+					"group": "aa_author@2"
+				},
+				{
+					"command": "sfdocs.editing.pasteHyperlink",
+					"group": "aa_author@1"
+				},
+				{
+					"command": "sfdocs.custom.insertVideo.vidyard",
+					"group": "aa_author@3",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.insertVideo.youtube",
+					"group": "aa_author@4",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.insertVideo.local",
+					"group": "aa_author@5",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.tip",
+					"group": "aa_author@6",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.warning",
+					"group": "aa_author@7",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.caution",
+					"group": "aa_author@8",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCallouts.note",
+					"group": "aa_author@9",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.enhancedCodeblock",
+					"group": "aa_author@10",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.contentReuse",
+					"group": "aa_author@11",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"id": "sfdocs.table",
+				"label": "Table"
+			},
+			{
+				"id": "sfdocs.custom.enhancedCallouts",
+				"label": "Enhanced Callouts"
+			},
+			{
+				"id": "sfdocs.editing.insert",
+				"label": "Insert"
+			},
+			{
+				"id": "sfdocs.editing.lists",
+				"label": "Lists"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "sfdocs.editing.toggleBold",
+				"key": "ctrl+b",
+				"mac": "cmd+b",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+			},
+			{
+				"command": "sfdocs.editing.toggleItalic",
+				"key": "ctrl+i",
+				"mac": "cmd+i",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+			},
+			{
+				"command": "sfdocs.editing.toggleStrikethrough",
+				"key": "alt+s",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+			},
+			{
+				"command": "sfdocs.editing.checkList",
+				"key": "alt+c",
+				"when": "editorTextFocus && editorLangId == markdown"
+			},
+			{
+				"command": "sfdocs.editing.pasteHyperlink",
+				"key": "ctrl+l",
+				"mac": "cmd+l",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
+			},
+			{
+				"command": "sfdocs.onEnterKey",
+				"key": "enter",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorHasMultipleSelections && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
+			},
+			{
+				"command": "sfdocs.onShiftEnterKey",
+				"key": "shift+enter",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorHasMultipleSelections"
+			},
+			{
+				"command": "sfdocs.onBackspaceKey",
+				"key": "backspace",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorHasMultipleSelections && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
+			},
+			{
+				"command": "sfdocs.table.nextCell",
+				"key": "tab",
+				"when": "editorLangId == markdown && editorTextFocus && !editorReadonly && !editorTabMovesFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !inSnippetMode"
+			},
+			{
+				"command": "sfdocs.table.prevCell",
+				"key": "shift+tab",
+				"when": "editorLangId == markdown && editorTextFocus && !editorReadonly && !editorTabMovesFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !inSnippetMode"
+			},
+			{
+				"command": "sfdocs.custom.contentReuse",
+				"key": "ctrl+r",
+				"mac": "cmd+r",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !config.Salesforcedocs.markdownAssistant.disableCustom"
+			},
+			{
+				"command": "sfdocs.custom.insertVideoShortcut",
+				"key": "ctrl+shift+m",
+				"mac": "cmd+shift+m",
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !config.Salesforcedocs.markdownAssistant.disableCustom"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Salesforcedocs Markdown Assistant",
+			"properties": {
+				"Salesforcedocs.markdownAssistant.completion.respectVscodeSearchExclude": {
+					"type": "boolean",
+					"default": true,
+					"markdownDescription": "Select this to exclude files from auto-completion using VS Code's `#search.exclude#` setting. (`node_modules`, `bower_components` and `*.code-search` are **always excluded**, not affected by this option.)",
+					"scope": "resource"
+				},
+				"Salesforcedocs.markdownAssistant.completion.root": {
+					"type": "string",
+					"default": "",
+					"description": "The root folder used for the auto-completion.",
+					"scope": "resource"
+				},
+				"Salesforcedocs.markdownAssistant.italic.indicator": {
+					"type": "string",
+					"default": "_",
+					"description": "Use `*` or `_` to wrap italic text.",
+					"enum": [
+						"_",
+						"*"
+					]
+				},
+				"Salesforcedocs.markdownAssistant.orderedList.autoRenumber": {
+					"type": "boolean",
+					"default": true,
+					"description": "Auto-fix ordered list markers."
+				},
+				"Salesforcedocs.markdownAssistant.orderedList.marker": {
+					"type": "string",
+					"default": "ordered",
+					"description": "Ordered list marker.",
+					"enum": [
+						"one",
+						"ordered"
+					],
+					"markdownEnumDescriptions": [
+						"Always use `1.` as ordered list marker.",
+						"Use increasing numbers as ordered list marker."
+					]
+				},
+				"Salesforcedocs.markdownAssistant.list.indentationSize": {
+					"type": "string",
+					"enum": [
+						"adaptive",
+						"inherit"
+					],
+					"markdownEnumDescriptions": [
+						"%config.list.indentationSize.enumDescriptions.adaptive%",
+						"%config.list.indentationSize.enumDescriptions.inherit%"
+					],
+					"default": "adaptive",
+					"markdownDescription": "%config.list.indentationSize.description%",
+					"scope": "resource"
+				},
+				"Salesforcedocs.markdownAssistant.table.autoFormat": {
+					"type": "boolean",
+					"default": true,
+					"description": "Auto Format tables while editing"
+				},
+				"Salesforcedocs.markdownAssistant.disableCustom": {
+					"type": "boolean",
+					"default": false,
+					"description": "Disable Custom Salesforce Plugins"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run build:prod",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"build:prod": "webpack --mode production --devtool hidden-source-map",
+		"package": "vsce package",
+		"vscode:publish": "vsce publish",
+		"test-compile": "tsc -p ./",
+		"test-watch": "tsc -watch -p ./",
+		"pretest": "npm run test-compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "^14.17.4",
+		"@types/vscode": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^4.26.0",
+		"@typescript-eslint/parser": "^4.26.0",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"ts-loader": "^9.2.2",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2",
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.0"
+	},
+	"dependencies": {}
+}
