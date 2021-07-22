@@ -19,7 +19,7 @@
 		"onLanguage:markdown"
 	],
 	"main": "./dist/extension.js",
-	"repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/vscode-markdown-assitance",
+	"repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/vscode-markdown-assistant",
 	"contributes": {
 		"commands": [
 			{

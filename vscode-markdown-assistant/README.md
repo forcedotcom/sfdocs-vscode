@@ -60,11 +60,11 @@ All features are available in the command pallete, and all expect table cell nav
 -   Toggling works as expected when there is a selection in the editor.
 -   Toggling without any selection: In the below example, cmd+B is pressed once to toggle Bold on, and then once at the end to toggle it off.
 
-    ![BoldNoSelection](./images/BoldNoSel.gif)
+    ![BoldNoSelection](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/BoldNoSel.gif?raw=true)
 -   Single Word Styling: You can just click on the word and toggle the styles, no selection required.
 -   Reverting back the styling: Selecting the text and toggling works for this. But the easier way is to just click at the start or the end of the stylized text, and toggle the styles.
    
-    ![RevertBoldNoSelection](./images/BeforeBoldStartPattern.gif)
+    ![RevertBoldNoSelection](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/BeforeBoldStartPattern.gif?raw=true)
 -   For applying blockquotes to a single line, just click on the line, and select _Toggle Blockquote_ .
 
 
@@ -93,7 +93,7 @@ All features are available in the command pallete, and all expect table cell nav
 ### Tables
 
 -   Tables reformat as you type into a more readable format (if you navigate using Tab and Shift+Tab as mentioned).
-    ![AutoFormat](./images/Autoformat.gif)
+    ![AutoFormat](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/Autoformat.gif?raw=true)
 -   Tab (Next Cell) and Shift+Tab (Previous Cell) are the easiest ways to navigate through the cells.
 -   You can copy a table from any non markdown source and paste it in Markdown format using the **Table > Paste Table** in the contextual menu.
   
@@ -101,11 +101,11 @@ All features are available in the command pallete, and all expect table cell nav
 
 Select any portion of the rows/columns that you wish to delete and use the **Table > Delete Selected Rows/Columns** in the contextual menu.
 
-![DeleteRows](./images/DeleteRows.gif). 
+![DeleteRows](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/DeleteRows.gif?raw=true). 
 
 In the following example, the rows corresponding to Food, Home and Medical were selected, and **Table > Delete Selected Rows/Columns** is chosen from the right click menu.
     
-![DeleteColumns](./images/DeleteColumns.gif)
+![DeleteColumns](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/DeleteColumns.gif?raw=true)
 
 The columns corresponding to Budget and Actual were selected, and **Table > Delete Selected Columns** is chosen from the right click menu.
   
@@ -115,7 +115,7 @@ The columns corresponding to Budget and Actual were selected, and **Table > Dele
 
 Though these are available in the right click menu, the best way to insert these is by typing `:` (followed by appropriate letters to filter the suggestions) or ` (for sfdocs-code) as typing these trigger suggestions which you can select from.
 
-![invokeCustom](./images/invokeCustom.gif)
+![invokeCustom](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/invokeCustom.gif?raw=true)
 
 #### Keyboard Shortcuts for some of the custom plugins
 
