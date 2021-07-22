@@ -1,0 +1,27 @@
+{
+    "name": "salesforcedocs-vscode-extension-pack",
+    "displayName": "SalesforceDocs Extension Pack",
+    "description": "One stop shop for Salesforce Markdown writing productivity.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.58.0"
+    },
+    "categories": [
+        "Extension Packs"
+    ],
+    "extensionPack": [ 
+        "salesforce.salesforce-docs-markdown-preview",
+        "salesforce.sfdocs-markdown-assistant",
+        "MuleSoftInc.aml-vscode",
+        "vsls-contrib.codetour",
+        "donjayamanne.githistory",
+        "GitHub.vscode-pull-request-github",
+        "oderwat.indent-rainbow",
+        "Tyriar.lorem-ipsum",
+        "PKief.material-icon-theme",
+        "philosowaffle.openapi-designer",
+        "ionutvmi.path-autocomplete",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml"
+    ]
+}
