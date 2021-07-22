@@ -3,6 +3,8 @@
     "displayName": "SalesforceDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "version": "0.0.1",
+    "preview": true,
+    "author": {"name": "Ayush Kumar Tarun"},
     "engines": {
         "vscode": "^1.58.0"
     },
