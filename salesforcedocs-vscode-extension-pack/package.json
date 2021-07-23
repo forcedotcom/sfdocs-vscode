@@ -4,7 +4,9 @@
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "version": "0.0.1",
     "preview": true,
-    "author": {"name": "Ayush Kumar Tarun"},
+    "author": "Ayush Kumar Tarun",
+    "publisher": "salesforce",
+    "repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/salesforcedocs-vscode-extension-pack",
     "engines": {
         "vscode": "^1.58.0"
     },
