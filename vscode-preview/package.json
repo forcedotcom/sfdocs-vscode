@@ -160,20 +160,6 @@
 			"title": "SalesforceDocs Preview",
 			"order": 20,
 			"properties": {
-				"salesforcedocs.preview.style.preset": {
-					"type": "string",
-					"default": "SalesforceDocs",
-					"description": "%configuration.salesforcedocs.preview.style.preset.description%",
-					"scope": "resource",
-					"enum": [
-						"SalesforceDocs",
-						"VSCode"
-					],
-					"enumDescriptions": [
-						"%configuration.salesforcedocs.preview.style.preset.salesforcedocs%",
-						"%configuration.salesforcedocs.preview.style.preset.VSCode%"
-					]
-				},
 				"salesforcedocs.preview.styles": {
 					"type": "array",
 					"items": {
@@ -259,15 +245,10 @@
 				"editor.quickSuggestions": false
 			}
 		},
-		"salesforcedocs.previewStyles": [
-			"./media/css/markdown.css",
-			"./media/css/main.css",
-			"./media/css/admonitions.css",
-			"./media/css/guide.css"
-		],
 		"markdown.default.previewStyles": [
 			"./media/css/markdown.css",
-			"./media/css/highlight.css"
+			"./media/css/highlight.css",
+			"./media/css/admonitions.css"
 		],
 		"salesforcedocs.previewScripts": [
 			"./media/pre.js",

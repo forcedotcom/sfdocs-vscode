@@ -87,13 +87,7 @@ export namespace MarkdownContributions {
 		extension: vscode.Extension<any>
 	) {
 		const config = vscode.workspace.getConfiguration('salesforcedocs');
-		const stylePreset = config.get<string>('preview.style.preset', 'SalesforceDocs');
-		switch (stylePreset) {
-			case 'SalesforceDocs':
-				return resolveExtensionResources(extension, contributes['salesforcedocs.previewStyles']);
-			default:
-				return resolveExtensionResources(extension, contributes['markdown.default.previewStyles']);
-		}
+		return resolveExtensionResources(extension, contributes['markdown.default.previewStyles']);
 	}
 }
 
