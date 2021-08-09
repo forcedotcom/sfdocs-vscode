@@ -16,7 +16,7 @@ export default function renderInclude(metadata: Map<string, string>): Map<string
     const root: any = metadata.get('root');
     const node: any = metadata.get('node');
     const domResponse = new Map<string, string>();
-    const { children } = root;
+    root.contents = root.contents.replaceAll(/data-line=.*>/g,`data-line=${node.position.start.line}>`);
     const outputDom = `<div class="include-container code-line" data-line=${node.position.start.line} data-name="includeBlock">\n<div class="dx-text-heading-7 include-heading">${node.attributes['src']}</div>\n${root}\n</div>`;
     domResponse.set('outputDom', outputDom);
     return domResponse;

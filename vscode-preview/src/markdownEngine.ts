@@ -293,9 +293,9 @@ export class MarkdownEngine {
 			.replace(/\-+$/, '') // Remove trailing -
 		);
 		if (node.data) {
-			node.data.hProperties = { id: id, className: ['code-line'], dataLine: node.position.start.line - 1 }
+			node.data.hProperties = { id: id, className: ['code-line'], dataLine: node.position.start.line-1 }
 		} else {
-			node.data = { hProperties: { id: id, className: ['code-line'], dataLine: node.position.start.line - 1 } }
+			node.data = { hProperties: { id: id, className: ['code-line'], dataLine: node.position.start.line-1 } }
 		};
 		return h(node, 'h' + node.depth, all(h, node));
 	};
