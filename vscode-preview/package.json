@@ -247,8 +247,7 @@
 		},
 		"markdown.default.previewStyles": [
 			"./media/css/markdown.css",
-			"./media/css/highlight.css",
-			"./media/css/admonitions.css"
+			"./media/css/highlight.css"
 		],
 		"salesforcedocs.previewScripts": [
 			"./media/pre.js",
