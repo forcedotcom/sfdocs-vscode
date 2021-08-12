@@ -1,6 +1,7 @@
 node_modules
 out/
 .DS_Store
+../.DS_Store
 .vscode-test/
 .idea/
 package-lock.json
