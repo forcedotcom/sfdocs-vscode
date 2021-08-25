@@ -13,6 +13,7 @@ import { Logger } from './logger';
 import { MarkdownEngine } from './markdownEngine';
 import { getMarkdownExtensionContributions } from './markdownExtensions';
 import { ContentSecurityPolicyArbiter, ExtensionContentSecurityPolicyArbiter, PreviewSecuritySelector } from './security';
+import { telemetryService } from './telemetry';
 
 function registerMarkdownLanguageFeatures(
 ): vscode.Disposable {
@@ -48,7 +49,14 @@ function registerMarkdownCommands(
 	return commandManager;
 }
 
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
+	const extensionHRStart = process.hrtime();
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { name, aiKey, version } = require(context.asAbsolutePath(
+    './package.json'
+  ));
+  const machineId = vscode.env ? vscode.env.machineId : 'someValue.machineId';
+  await telemetryService.initializeService(context, name, aiKey, version,machineId);
 	vscode.commands.executeCommand('setContext', 'markdownPreviewFocus', false);
 
 	const contributions = getMarkdownExtensionContributions(context);
@@ -69,5 +77,12 @@ export function activate(context: vscode.ExtensionContext) {
 		logger.updateConfiguration();
 		previewManager.updateConfiguration();
 	}));
+	telemetryService.sendExtensionActivationEvent(extensionHRStart);
 }
+
+export function deactivate(): void {
+	// Send metric data.
+	telemetryService.sendExtensionDeactivationEvent();
+	telemetryService.dispose();
+  }
 
