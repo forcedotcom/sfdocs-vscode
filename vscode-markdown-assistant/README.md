@@ -89,6 +89,7 @@ All features are available in the command pallete, and all expect table cell nav
 -   Even a pre-existing list can be selected and can be converted to a different type of list by just toggling the desired list type.
 -   A subset of a checklist can be selected and it can be checked/unchecked by using the **Check List Items** in the contextual menu.
 -   Reverting back: A list can be selected and toggling the same list type as the selected list will remove the list syntax.
+-   Crossing out a list item: Just click on the list item and toggle strikethrough.
 
 ### Tables
 
