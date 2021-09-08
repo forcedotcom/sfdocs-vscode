@@ -23,5 +23,7 @@
 	"configuration.salesforcedocs.links.openLocation.beside": "Open links beside the active editor.",
 	"configuration.salesforcedocs.preview.style.preset.description": "Choose the base style preset for your Preview",
 	"configuration.salesforcedocs.preview.style.preset.salesforcedocs": "Choose Salesforcedocs styling for your preview",
-	"configuration.salesforcedocs.preview.style.preset.VSCode": "Choose basic Visual Studio Code markdown styling for your preview"
+	"configuration.salesforcedocs.preview.style.preset.VSCode": "Choose basic Visual Studio Code markdown styling for your preview",
+	"telemetry_setting_description": "Specifies whether to enable Salesforce telemetry. Even when enabled, still abides by the overall `telemetry.enableTelemetry` vscode setting."
 }
+

@@ -6,6 +6,7 @@
 	"icon": "icon.png",
 	"preview": true,
 	"publisher": "salesforce",
+	"aiKey": "",
 	"license": "BSD 3-Clause",
 	"engines": {
 		"vscode": "^1.52.0"
@@ -236,7 +237,12 @@
 					"default": "off",
 					"description": "%salesforcedocs.trace.desc%",
 					"scope": "window"
-				}
+				},
+				"salesforce-docs-markdown-preview.enableTelemetry": {
+					"type": "boolean",
+					"default": true,
+					"description": "%telemetry_setting_description%"
+				  }
 			}
 		},
 		"configurationDefaults": {
@@ -306,7 +312,8 @@
 		"unist-builder": "2.0.3",
 		"unist-util-visit": "2.0.3",
 		"vsce": "1.88.0",
-		"vscode-nls": "^4.0.0"
+		"vscode-nls": "^4.0.0",
+		"applicationinsights": "1.0.7"
 	},
 	"devDependencies": {
 		"@types/vscode": "1.45.0",
