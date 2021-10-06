@@ -1,12 +1,13 @@
 {
-    "name": "salesforcedocs-vscode-extension-pack",
-    "displayName": "SalesforceDocs Extension Pack",
+    "name": "sfdocs-vscode-extension-pack",
+    "displayName": "SFDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
+    "icon": "icon.png",
     "version": "0.0.1",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
-    "repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/salesforcedocs-vscode-extension-pack",
+    "repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/sfdocs-vscode-extension-pack",
     "engines": {
         "vscode": "^1.58.0"
     },
