@@ -1,6 +1,6 @@
 {
     "name": "sfdocs-vscode-extension-pack",
-    "displayName": "SFDocs Extension Pack",
+    "displayName": "SalesforceDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "icon": "icon.png",
     "version": "0.0.1",
