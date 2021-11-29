@@ -1,5 +1,7 @@
 # SFDocs Markdown Preview
 
+> ℹ️ For the best experience of **SFDocs Markdown Preview** extension , we suggest you to disable the builtin **Markdown Language Features** extension.
+
 SFDocs Markdown Preview provides [Micromark-compliant](https://github.com/micromark/micromark) Markdown previews. It features [most of the out-of-the-box Markdown preview features](https://code.visualstudio.com/docs/languages/markdown) like:
 
 - Dynamic previews
