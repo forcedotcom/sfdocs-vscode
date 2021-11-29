@@ -3,7 +3,7 @@
     "displayName": "SalesforceDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "icon": "icon.png",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
@@ -31,6 +31,7 @@
         "philosowaffle.openapi-designer",
         "ionutvmi.path-autocomplete",
         "esbenp.prettier-vscode",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "acrolinx.vscode-sidebar"
     ]
 }
