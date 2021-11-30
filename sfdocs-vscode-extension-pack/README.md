@@ -19,6 +19,7 @@ The extension pack is good for beginning and professional authors.
 - [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)–Provides path completion for visual studio code.
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)–Enforces a consistent style by parsing your code and reprinting it with its own style rules.
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)–Provides comprehensive YAML Language support to Visual Studio Code.
+- [Acrolinx for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=acrolinx.vscode-sidebar)-An AI-powered platform that eliminates content chaos and delivers strategy-aligned content, at scale.
 
 ## Contribute
 
