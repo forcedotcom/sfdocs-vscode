@@ -5,6 +5,7 @@ import {
     remark_directive,
 } from '@sfdocs-internal/generic-directive-plugin';
 import { sfdocsCustomPlugin } from '@sfdocs-internal/sfdocs-directive-plugin';
+import { defListPlugin } from '@sfdocs-internal/definition-list-plugin';
 import * as remarkGfm from 'remark-gfm';
 import * as remarkFrontmatter from 'remark-frontmatter';
 import admonitions from 'remark-admonitions';
@@ -16,6 +17,7 @@ export function markdownCompiler(currentFilePath: string) {
 
 	const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
     const genericPlugin = genericDirective(genericRenderFunctions());
+    const definitionListPlugin = defListPlugin();
     return remark()
             .use(remarkGfm)
             .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
@@ -24,5 +26,6 @@ export function markdownCompiler(currentFilePath: string) {
             .use(highlight)
             .use(remark_directive)
             .use(admonitions)
-            .use(genericPlugin);
+            .use(genericPlugin)
+            .use(definitionListPlugin);
 }

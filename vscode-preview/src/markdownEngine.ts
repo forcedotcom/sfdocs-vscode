@@ -141,7 +141,7 @@ export class MarkdownEngine {
 		const tree = await this.tokenizeDocument(document);
 		const tokenList = [];
 		if (node) {
-			visit(tree, node, function (node) {
+			visit(tree, node, function (node:any) {
 				let content = node.children[0].value;
 				let start = node.position.start.line;
 				let end = node.position.end.line;
