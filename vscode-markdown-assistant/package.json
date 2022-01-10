@@ -3,7 +3,7 @@
 	"displayName": "SalesforceDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
