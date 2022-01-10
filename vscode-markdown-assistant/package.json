@@ -212,6 +212,11 @@
 				"command": "sfdocs.custom.enhancedCodeblock",
 				"title": "Enhanced Codeblock",
 				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.custom.definitionList",
+				"title": "Shared Markdown File (Definition List)",
+				"category": "Salesforcedocs Markdown Assistant"
 			}
 		],
 		"menus": {
@@ -440,6 +445,11 @@
 				{
 					"command": "sfdocs.custom.contentReuse",
 					"group": "aa_author@11",
+					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "sfdocs.custom.definitionList",
+					"group": "aa_author@12",
 					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
 				}
 			]

@@ -27,3 +27,8 @@ export async function insertVideoShortcut(){
         return editor!.insertSnippet(new SnippetString(`\n::video{src="$1" title="$2" type="${videoType.label.toLowerCase()}"}\n`));
     }
 }
+
+export async function insertDefinitionList() {
+    let editor = window.activeTextEditor;
+    return editor!.insertSnippet(new SnippetString('\n- definition\n\n\t\t- : $1\n\n\t\t```Write your code```\n\n\t\t![img_label](image_url)\n'));
+}

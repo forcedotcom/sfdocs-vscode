@@ -1,4 +1,4 @@
-import {Selection } from 'vscode';
+import { Selection } from 'vscode';
 import { resetConfiguration, testCommand } from "../utils";
 
 suite("Custom Plugins", () => {
@@ -144,6 +144,26 @@ suite("Custom Plugins", () => {
                 '',
             ],
             new Selection(1, 15, 1, 15));
+    });
+
+    test("Insert Definition List", () => {
+        return testCommand('sfdocs.custom.definitionList',
+            [
+                ''
+            ],
+            new Selection(0, 1, 0, 1),
+            [
+                '',
+                '- definition',
+                '',
+                '        - : ',
+                '',
+                '        ```Write your code```',
+                '',
+                '        ![img_label](image_url)',
+                ''
+            ],
+            new Selection(3, 12, 3, 12));
     });
 
 });
