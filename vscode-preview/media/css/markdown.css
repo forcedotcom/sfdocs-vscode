@@ -429,10 +429,10 @@ div.video-toolbar {background-color: rgba(229, 229, 229, 1); color: black; min-h
 
   dl > dt {
     font-weight: bold;
-    color: #032d60;
   }
 
 dl > dd {
     margin-top: 16px;
     margin-bottom: 24px;
+    margin-left: 24px;
   }
