@@ -71,7 +71,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('sfdocs.custom.insertVideo.youtube', ()=>{insertVideo("youtube");}),
         commands.registerCommand('sfdocs.custom.insertVideo.local', ()=>{insertVideo("local");}),
         commands.registerCommand('sfdocs.custom.insertVideoShortcut', insertVideoShortcut),
-        commands.registerCommand('sfdocs.custom.definitionList',insertDefinitionList),
+        commands.registerCommand('sfdocs.custom.definitionList', insertDefinitionList),
 
         commands.registerCommand('sfdocs.custom.contentReuse', contentReuse),
         commands.registerCommand('sfdocs.custom.enhancedCodeblock', enhancedCodeblock)

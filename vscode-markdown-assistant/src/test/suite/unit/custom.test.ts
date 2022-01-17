@@ -152,18 +152,18 @@ suite("Custom Plugins", () => {
                 ''
             ],
             new Selection(0, 1, 0, 1),
-            [
-                '',
-                '- definition',
-                '',
-                '        - : ',
-                '',
-                '        ```Write your code```',
-                '',
-                '        ![img_label](image_url)',
-                ''
-            ],
-            new Selection(3, 12, 3, 12));
+            ['',
+            '- definition',
+            '',
+            '        - : This is paragraph',
+            '',
+            '            ```',
+            '            Write your code',
+            '            ```',
+            '',
+            '            ![img_label](image_url)',
+             ''],
+            new Selection(10, 0, 10, 0));
     });
 
 });

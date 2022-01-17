@@ -20,7 +20,7 @@ const customPlugins = [
     {label: ':::warning', insertText: new SnippetString(`\n:::warning\n$1\n:::\n`)},
     {label: '```sfdocs-code', insertText: new SnippetString('\n```sfdocs-code {"lang":"$1", "title": "$2", "src": "$3" }\n\n```\n')},
     {label: '```Codeblock```', insertText: new SnippetString('\n```\n$1\n```\n')},
-    {label: '- definition', insertText: new SnippetString('\n- definition\n\n\t\t- : $1\n\n\t\t```Write your code```\n\n\t\t![img_label](image_url)\n')}
+    {label: '-definition', insertText: new SnippetString('\n- definition\n\n\t\t- : This is paragraph\n\n\t\t\t```\n\t\t\tWrite your code\n\t\t\t```\n\n\t\t\t![img_label](image_url)\n')}
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {
@@ -117,8 +117,8 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
         
         return getFileSuggestions(['apex'], document, typedDir);
         //custom plugin suggestions
-        }else if(/(:)|(::)|(:::)|(`)|(``)|(- definition)|(```)$/.test(lineTextBefore)){
-            let match = lineTextBefore.search(/(:)|(::)|(:::)|(`)|(``)|(- definition)|(```)|$/);
+        }else if(/(:)|(::)|(:::)|(`)|(``)|(-)|(```)$/.test(lineTextBefore)){
+            let match = lineTextBefore.search(/(:)|(::)|(:::)|(`)|(``)|(-)|(```)|$/);
             let replaceRange: Range = new Range(position.line, match, position.line, position.character);
             return customPluginSuggestions(replaceRange);
         }

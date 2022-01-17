@@ -215,7 +215,7 @@
 			},
 			{
 				"command": "sfdocs.custom.definitionList",
-				"title": "Shared Markdown File (Definition List)",
+				"title": "Definition List",
 				"category": "Salesforcedocs Markdown Assistant"
 			}
 		],

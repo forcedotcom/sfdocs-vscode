@@ -30,5 +30,5 @@ export async function insertVideoShortcut(){
 
 export async function insertDefinitionList() {
     let editor = window.activeTextEditor;
-    return editor!.insertSnippet(new SnippetString('\n- definition\n\n\t\t- : $1\n\n\t\t```Write your code```\n\n\t\t![img_label](image_url)\n'));
+    return editor!.insertSnippet(new SnippetString('\n- definition\n\n\t\t- : This is paragraph\n\n\t\t\t```\n\t\t\tWrite your code\n\t\t\t```\n\n\t\t\t![img_label](image_url)\n'));
 }
