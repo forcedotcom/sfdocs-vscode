@@ -295,7 +295,7 @@
 		"mdurl": "^1.0.0",
 		"node-html-parser": "2.0.2",
 		"path": "0.12.7",
-		"prismjs": "^1.23.0",
+		"prismjs": "^1.25.0",
 		"sync-fetch": "0.3.0",
 		"remark": "13.0.0",
 		"remark-admonitions": "1.2.1",
