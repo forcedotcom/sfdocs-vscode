@@ -1,19 +1,24 @@
 {
-    "name": "salesforcedocs-vscode-extension-pack",
+    "name": "sfdocs-vscode-extension-pack",
     "displayName": "SalesforceDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
-    "version": "0.0.1",
+    "icon": "icon.png",
+    "version": "0.0.2",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
-    "repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/salesforcedocs-vscode-extension-pack",
+    "repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/sfdocs-vscode-extension-pack",
     "engines": {
         "vscode": "^1.58.0"
+    },
+    "scripts": {
+        "package": "vsce package",
+        "vscode:publish": "vsce publish"
     },
     "categories": [
         "Extension Packs"
     ],
-    "extensionPack": [ 
+    "extensionPack": [
         "salesforce.salesforce-docs-markdown-preview",
         "salesforce.sfdocs-markdown-assistant",
         "MuleSoftInc.aml-vscode",
@@ -26,6 +31,7 @@
         "philosowaffle.openapi-designer",
         "ionutvmi.path-autocomplete",
         "esbenp.prettier-vscode",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "acrolinx.vscode-sidebar"
     ]
 }
