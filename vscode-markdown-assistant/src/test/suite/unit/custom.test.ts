@@ -158,7 +158,7 @@ suite("Custom Plugins", () => {
             '        - : This is paragraph',
             '',
             '            ```',
-            '            Write your code',
+            '            Write your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.',
             '            ```',
             '',
             '            ![img_label](image_url)',
