@@ -5,7 +5,7 @@ export default function renderMockCodeContent(nodeMetadata:  Map<string, string>
     const args: any = nodeMetadata.get('node');
     if (args && args.lang === 'sfdocs-code') {
         if(args.meta && args.meta.indexOf("src") > 0){
-            args["value"] = `Your code content will be visible here. Currenly we don't support fetching remote content in VSCode`;
+            args["value"] = `sfdocs-code code content appears here. We don't support the preview of remote content in this extension.`;
         }
     }
     return nodeMetadata
