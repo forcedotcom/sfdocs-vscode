@@ -34,6 +34,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('sfdocs.editing.toggleCheckList', toggleCheckList),
         commands.registerCommand('sfdocs.editing.toggleBulletList', toggleBulletList),
         commands.registerCommand('sfdocs.editing.toggleNumberList', toggleNumberList),
+        commands.registerCommand('sfdocs.editing.definitionList', insertDefinitionList),
         commands.registerCommand('sfdocs.editing.checkList', checkTaskList),
 
         commands.registerCommand('sfdocs.onEnterKey', onEnterKey),
@@ -71,7 +72,6 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('sfdocs.custom.insertVideo.youtube', ()=>{insertVideo("youtube");}),
         commands.registerCommand('sfdocs.custom.insertVideo.local', ()=>{insertVideo("local");}),
         commands.registerCommand('sfdocs.custom.insertVideoShortcut', insertVideoShortcut),
-        commands.registerCommand('sfdocs.custom.definitionList', insertDefinitionList),
 
         commands.registerCommand('sfdocs.custom.contentReuse', contentReuse),
         commands.registerCommand('sfdocs.custom.enhancedCodeblock', enhancedCodeblock)

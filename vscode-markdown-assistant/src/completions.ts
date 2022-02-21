@@ -20,7 +20,7 @@ const customPlugins = [
     {label: ':::warning', insertText: new SnippetString(`\n:::warning\n$1\n:::\n`)},
     {label: '```sfdocs-code', insertText: new SnippetString('\n```sfdocs-code {"lang":"$1", "title": "$2", "src": "$3" }\n\n```\n')},
     {label: '```Codeblock```', insertText: new SnippetString('\n```\n$1\n```\n')},
-    {label: '-definition list', insertText: new SnippetString('\n- definition\n\n\t\t- : This is paragraph\n\n\t\t\t```\n\t\t\tWrite your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.\n\t\t\t```\n\n\t\t\t![img_label](image_url)\n')}
+    {label: '-definition list', insertText: new SnippetString('\n- definition\n\n\t- : This is paragraph\n\n\t\t```\n\t\tWrite your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.\n\t\t```\n\n\t\t![img_label](image_url)\n')}
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {

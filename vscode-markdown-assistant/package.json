@@ -214,7 +214,7 @@
 				"category": "Salesforcedocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.definitionList",
+				"command": "sfdocs.editing.definitionList",
 				"title": "Definition List",
 				"category": "Salesforcedocs Markdown Assistant"
 			}
@@ -391,7 +391,14 @@
 				{
 					"command": "sfdocs.editing.toggleCheckList",
 					"group": "aa_author1@3"
+				},
+				{
+				
+					"command": "sfdocs.editing.definitionList",
+					"group": "aa_author@14"
+				
 				}
+
 			],
 			"sfdocs.editing.insert": [
 				{
@@ -445,11 +452,6 @@
 				{
 					"command": "sfdocs.custom.contentReuse",
 					"group": "aa_author@11",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "sfdocs.custom.definitionList",
-					"group": "aa_author@12",
 					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
 				}
 			]

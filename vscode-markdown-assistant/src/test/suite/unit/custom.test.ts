@@ -155,14 +155,14 @@ suite("Custom Plugins", () => {
             ['',
             '- definition',
             '',
-            '        - : This is paragraph',
+            '    - : This is paragraph',
             '',
-            '            ```',
-            '            Write your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.',
-            '            ```',
+            '        ```',
+            '        Write your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.',
+            '        ```',
             '',
-            '            ![img_label](image_url)',
-             ''],
+            '        ![img_label](image_url)',
+            ''],
             new Selection(10, 0, 10, 0));
     });
 
