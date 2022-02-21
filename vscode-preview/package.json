@@ -284,7 +284,7 @@
 		"@sfdocs-internal/types": "latest",
 		"@sfdocs-internal/generic-directive-plugin": "latest",
 		"@sfdocs-internal/sfdocs-directive-plugin": "latest",
-		"@sfdocs-internal/definition-list-plugin": "0.6.43-alpha2",
+		"@sfdocs-internal/definition-list-plugin": "latest",
 		"@lwrjs/compiler":"0.5.11",
 		"@lwrjs/shared-utils": "0.5.11",
 		"@lwrjs/diagnostics": "0.3.14",
