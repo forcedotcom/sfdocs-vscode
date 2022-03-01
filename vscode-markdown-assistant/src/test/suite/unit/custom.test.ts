@@ -147,23 +147,18 @@ suite("Custom Plugins", () => {
     });
 
     test("Insert Definition List", () => {
-        return testCommand('sfdocs.custom.definitionList',
+        return testCommand('sfdocs.editing.definitionList',
             [
                 ''
             ],
             new Selection(0, 1, 0, 1),
             ['',
-            '- definition',
+            '- First Term',
             '',
-            '    - : This is paragraph',
-            '',
-            '        ```',
-            '        Write your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.',
-            '        ```',
-            '',
-            '        ![img_label](image_url)',
-            ''],
-            new Selection(10, 0, 10, 0));
+            '    - : This text defines the first term.',
+            ''
+            ],
+            new Selection(4, 0, 4, 0));
     });
 
 });

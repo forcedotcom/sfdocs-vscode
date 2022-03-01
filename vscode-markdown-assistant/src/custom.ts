@@ -30,5 +30,5 @@ export async function insertVideoShortcut(){
 
 export async function insertDefinitionList() {
     let editor = window.activeTextEditor;
-    return editor!.insertSnippet(new SnippetString('\n- definition\n\n\t- : This is paragraph\n\n\t\t```\n\t\tWrite your code here. This code block does not render in VSCode Markdown Preview extension. We are working to resolve this issue.\n\t\t```\n\n\t\t![img_label](image_url)\n'));
+    return editor!.insertSnippet(new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n'));
 }
