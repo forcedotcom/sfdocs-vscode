@@ -1,4 +1,4 @@
-import {Selection } from 'vscode';
+import { Selection } from 'vscode';
 import { resetConfiguration, testCommand } from "../utils";
 
 suite("Custom Plugins", () => {
@@ -144,6 +144,21 @@ suite("Custom Plugins", () => {
                 '',
             ],
             new Selection(1, 15, 1, 15));
+    });
+
+    test("Insert Definition List", () => {
+        return testCommand('sfdocs.editing.definitionList',
+            [
+                ''
+            ],
+            new Selection(0, 1, 0, 1),
+            ['',
+            '- First Term',
+            '',
+            '    - : This text defines the first term.',
+            ''
+            ],
+            new Selection(4, 0, 4, 0));
     });
 
 });

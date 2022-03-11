@@ -27,3 +27,8 @@ export async function insertVideoShortcut(){
         return editor!.insertSnippet(new SnippetString(`\n::video{src="$1" title="$2" type="${videoType.label.toLowerCase()}"}\n`));
     }
 }
+
+export async function insertDefinitionList() {
+    let editor = window.activeTextEditor;
+    return editor!.insertSnippet(new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n'));
+}

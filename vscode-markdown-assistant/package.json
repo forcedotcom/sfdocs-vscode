@@ -3,7 +3,7 @@
 	"displayName": "SalesforceDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
@@ -212,6 +212,11 @@
 				"command": "sfdocs.custom.enhancedCodeblock",
 				"title": "Enhanced Codeblock",
 				"category": "Salesforcedocs Markdown Assistant"
+			},
+			{
+				"command": "sfdocs.editing.definitionList",
+				"title": "Definition List",
+				"category": "Salesforcedocs Markdown Assistant"
 			}
 		],
 		"menus": {
@@ -386,7 +391,14 @@
 				{
 					"command": "sfdocs.editing.toggleCheckList",
 					"group": "aa_author1@3"
+				},
+				{
+				
+					"command": "sfdocs.editing.definitionList",
+					"group": "aa_author@14"
+				
 				}
+
 			],
 			"sfdocs.editing.insert": [
 				{
