@@ -21,6 +21,14 @@ Before you use the plugin, disable the default markdown-language-feature extensi
 4. Click the **Disable** button.
 5. Click the **Reload Required** button to reload VS Code. -->
 
+## Steps to preview with local changes
+
+- Run npm install command to install the dependencies
+- Run npm run compile to compile your changes
+- Run npm run package to generate the latest .vsix file
+ 
+`Always use npm package manager to generate the .vsix file for the extension`. 
+
 ## Shortcuts
 
 | Shortcut              | Description                                       |

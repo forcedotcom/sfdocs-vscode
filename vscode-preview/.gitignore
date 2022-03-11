@@ -4,4 +4,4 @@ out/
 ../.DS_Store
 .vscode-test/
 .idea/
-package-lock.json
+yarn-lock.json
