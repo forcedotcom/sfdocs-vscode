@@ -280,10 +280,10 @@
 		"test": "node ./out/src/test/runTest.js"
 	},
 	"dependencies": {
-		"@sfdocs-internal/logger": "alpha",
-		"@sfdocs-internal/types": "alpha",
-		"@sfdocs-internal/generic-directive-plugin": "alpha",
-		"@sfdocs-internal/sfdocs-directive-plugin": "alpha",
+		"@sfdocs-internal/logger": "latest",
+		"@sfdocs-internal/types": "latest",
+		"@sfdocs-internal/generic-directive-plugin": "latest",
+		"@sfdocs-internal/sfdocs-directive-plugin": "latest",
 		"@lwrjs/compiler":"0.5.11",
 		"@lwrjs/shared-utils": "0.5.11",
 		"@lwrjs/diagnostics": "0.3.14",

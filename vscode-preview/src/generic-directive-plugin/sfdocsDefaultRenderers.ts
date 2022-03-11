@@ -2,7 +2,7 @@ import renderCodeBlock from './renderers/codeBlockRenderer';
 import renderVideo from './renderers/videoPreviewRenderer';
 import renderBanner from './renderers/bannerRenderer';
 import renderCallout from './renderers/calloutRenderer';
-import renderMockCodeContent from './renderers/remoteMockRenderer';
+import renderSampleCodeContent from './renderers/sampleCodeContent';
 import type { RenderFunction } from '@sfdocs-internal/types';
 
 /**
@@ -16,6 +16,6 @@ export default function sfdocsRenderFunctions(): { [key: string]: RenderFunction
         renderBanner,
         renderCodeBlock,
         renderCallout,
-        renderMockCodeContent
+        renderSampleCodeContent
     };
 }
