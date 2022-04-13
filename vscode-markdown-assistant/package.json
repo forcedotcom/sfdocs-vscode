@@ -214,8 +214,8 @@
 				"category": "Salesforcedocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.definitionList",
-				"title": "Definition List",
+				"command": "sfdocs.editing.descriptionList",
+				"title": "Description List",
 				"category": "Salesforcedocs Markdown Assistant"
 			}
 		],
@@ -394,7 +394,7 @@
 				},
 				{
 				
-					"command": "sfdocs.editing.definitionList",
+					"command": "sfdocs.editing.descriptionList",
 					"group": "aa_author@14"
 				
 				}
