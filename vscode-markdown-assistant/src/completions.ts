@@ -20,7 +20,7 @@ const customPlugins = [
     {label: ':::warning', insertText: new SnippetString(`\n:::warning\n$1\n:::\n`)},
     {label: '```sfdocs-code', insertText: new SnippetString('\n```sfdocs-code {"lang":"$1", "title": "$2", "src": "$3" }\n\n```\n')},
     {label: '```Codeblock```', insertText: new SnippetString('\n```\n$1\n```\n')},
-    {label: '-definition list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')}
+    {label: '-description list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')}
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {
