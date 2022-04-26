@@ -13,10 +13,10 @@ import sfdocsRenderFunctions from './generic-directive-plugin/sfdocsDefaultRende
 import genericRenderFunctions from './generic-directive-plugin/genericDefaultRenderers';
 
 export function markdownCompiler(currentFilePath: string) {
-	
-    const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
+
+	const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
     const genericPlugin = genericDirective(genericRenderFunctions());
-   const definitionListPlugin = defListPlugin();
+    const definitionListPlugin = defListPlugin();
     return remark()
             .use(remarkGfm)
             .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
