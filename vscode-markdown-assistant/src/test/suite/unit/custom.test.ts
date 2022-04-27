@@ -147,7 +147,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Insert Definition List", () => {
-        return testCommand('sfdocs.editing.definitionList',
+        return testCommand('sfdocs.editing.descriptionList',
             [
                 ''
             ],
