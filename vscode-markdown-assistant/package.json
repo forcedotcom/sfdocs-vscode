@@ -214,9 +214,9 @@
 				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "SFDocs.editing.definitionList",
-				"title": "Definition List",
-				"category": "SFDocs Markdown Assistant"
+				"command": "sfdocs.editing.descriptionList",
+				"title": "Description List",
+				"category": "Salesforcedocs Markdown Assistant"
 			}
 		],
 		"menus": {
@@ -393,7 +393,8 @@
 					"group": "aa_author1@3"
 				},
 				{
-					"command": "SFDocs.editing.definitionList",
+				
+					"command": "sfdocs.editing.descriptionList",
 					"group": "aa_author@14"
 				}
 			],

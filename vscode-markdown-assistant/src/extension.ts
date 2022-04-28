@@ -12,7 +12,7 @@ import { moveRow, moveColumn } from './table/move';
 import { pasteTable } from './table/pasteTable';
 import { copyColumn, pasteColumn } from './table/copyPasteColumn';
 import { onBackspaceKey, onEnterKey} from './keyBehaviour';
-import { contentReuse, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDefinitionList } from './custom';
+import { contentReuse, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDescriptionList } from './custom';
 import { format, removeFormatting } from './table/format';
 
 export function activate(context: ExtensionContext) {
@@ -34,7 +34,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.editing.toggleCheckList', toggleCheckList),
         commands.registerCommand('SFDocs.editing.toggleBulletList', toggleBulletList),
         commands.registerCommand('SFDocs.editing.toggleNumberList', toggleNumberList),
-        commands.registerCommand('SFDocs.editing.definitionList', insertDefinitionList),
+        commands.registerCommand('SFDocs.editing.descriptionList', insertDescriptionList),
         commands.registerCommand('SFDocs.editing.checkList', checkTaskList),
 
         commands.registerCommand('SFDocs.onEnterKey', onEnterKey),

@@ -28,7 +28,7 @@ export async function insertVideoShortcut(){
     }
 }
 
-export async function insertDefinitionList() {
+export async function insertDescriptionList() {
     let editor = window.activeTextEditor;
     return editor!.insertSnippet(new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n'));
 }
