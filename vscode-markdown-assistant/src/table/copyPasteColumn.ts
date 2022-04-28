@@ -102,6 +102,6 @@ export async function pasteColumn(toLeft:boolean, withFormat: boolean){
         await editor.edit(edit => {
             edit.replace(table_selection, table_text);
         });
-        vscode.commands.executeCommand('sfdocs.table.nextCell');
+        vscode.commands.executeCommand('SFDocs.table.nextCell');
     }
 }

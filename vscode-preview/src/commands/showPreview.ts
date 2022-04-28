@@ -29,7 +29,7 @@ async function showPreview(
 	if (!(resource instanceof vscode.Uri)) {
 		if (!vscode.window.activeTextEditor) {
 			// this is most likely toggling the preview
-			return vscode.commands.executeCommand('salesforcedocs.showSource');
+			return vscode.commands.executeCommand('SFDocs.showSource');
 		}
 		// nothing found that could be shown or toggled
 		return;
@@ -44,7 +44,7 @@ async function showPreview(
 }
 
 export class ShowPreviewCommand implements Command {
-	public readonly id = 'salesforcedocs.showPreview';
+	public readonly id = 'SFDocs.showPreview';
 
 	public constructor(
 		private readonly webviewManager: MarkdownPreviewManager
@@ -61,7 +61,7 @@ export class ShowPreviewCommand implements Command {
 }
 
 export class ShowPreviewToSideCommand implements Command {
-	public readonly id = 'salesforcedocs.showPreviewToSide';
+	public readonly id = 'SFDocs.showPreviewToSide';
 
 	public constructor(
 		private readonly webviewManager: MarkdownPreviewManager
@@ -77,7 +77,7 @@ export class ShowPreviewToSideCommand implements Command {
 
 
 export class ShowLockedPreviewToSideCommand implements Command {
-	public readonly id = 'salesforcedocs.showLockedPreviewToSide';
+	public readonly id = 'SFDocs.showLockedPreviewToSide';
 
 	public constructor(
 		private readonly webviewManager: MarkdownPreviewManager

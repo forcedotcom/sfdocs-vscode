@@ -40,7 +40,7 @@ To run the above created .vsix, you can run the below command.
 code --install-extension myextension.vsix
 ```
 
-Example: `code --install-extension ~/sfdocs-vscode/vscode-preview/salesforce-docs-markdown-preview-1.0.5.vsix`
+Example: `code --install-extension ~/sfdocs-vscode/vscode-preview/sfdocs-markdown-preview-1.0.5.vsix`
 
 If the above command doesn't work - follow the below procedure mentioned here:  
 https://stackoverflow.com/questions/42017617/how-to-install-vs-code-extension-manually

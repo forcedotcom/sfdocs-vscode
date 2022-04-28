@@ -28,7 +28,7 @@ export function onEnterKey(modifier?: string){
             }).then(() => { editor!.revealRange(editor!.selection) });
         } else if ((matches = /^(\s*)([0-9]+)([.)])( +)((\[[ x]\] +)?)/.exec(textBeforeCursor)) !== null) {
             // Ordered list
-            let config = workspace.getConfiguration('Salesforcedocs.markdownAssistant.orderedList').get<string>('marker');
+            let config = workspace.getConfiguration('SFDocs.markdownAssistant.orderedList').get<string>('marker');
             let marker = '1';
             let leadingSpace = matches[1];
             let previousMarker = matches[2];
@@ -123,7 +123,7 @@ function outdent(editor?: TextEditor) {
         editor = window.activeTextEditor;
     }
 
-    if (workspace.getConfiguration("sfdocs.list", editor!.document.uri).get<string>("indentationSize") === "adaptive") {
+    if (workspace.getConfiguration("SFDocs.list", editor!.document.uri).get<string>("indentationSize") === "adaptive") {
         try {
             const selection = editor!.selection;
             const indentationSize = tryDetermineIndentationSize(editor!, selection.start.line, editor!.document.lineAt(selection.start.line).firstNonWhitespaceCharacterIndex);
@@ -168,7 +168,7 @@ function indent(editor?: TextEditor) {
         editor = window.activeTextEditor;
     }
 
-    if (workspace.getConfiguration("sfdocs.list", editor!.document.uri).get<string>("indentationSize") === "adaptive") {
+    if (workspace.getConfiguration("SFDocs.list", editor!.document.uri).get<string>("indentationSize") === "adaptive") {
         try {
             const selection = editor!.selection;
             const indentationSize = tryDetermineIndentationSize(editor!, selection.start.line, editor!.document.lineAt(selection.start.line).firstNonWhitespaceCharacterIndex);

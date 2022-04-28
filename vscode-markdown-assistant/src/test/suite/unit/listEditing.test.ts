@@ -11,7 +11,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. Continue list item", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '- item1'
             ],
@@ -24,7 +24,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. Don't continue empty list item", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '- item1',
                 '- '
@@ -39,7 +39,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. List marker `*`", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '* item1'],
             new Selection(0, 7, 0, 7),
@@ -51,7 +51,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. Continue GFM checkbox item. '- [ ] item1|'", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '- [ ] item1'
             ],
@@ -64,7 +64,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. Keep list item text indentation. '1.  item1|'", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '1.  item1'
             ],
@@ -77,7 +77,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. Keep list item text indentation. '9.  item9|'", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '9.  item9'
             ],
@@ -90,7 +90,7 @@ suite("List editing.", () => {
     });
 
     test("Enter key. '- [test]|'. #122", () => {
-        return testCommand('sfdocs.onEnterKey',
+        return testCommand('SFDocs.onEnterKey',
             [
                 '- [test]'
             ],
@@ -103,7 +103,7 @@ suite("List editing.", () => {
     });
 
     test("Backspace key: '- |'", () => {
-        return testCommand('sfdocs.onBackspaceKey',
+        return testCommand('SFDocs.onBackspaceKey',
             [
                 '- item1'
             ],
@@ -115,7 +115,7 @@ suite("List editing.", () => {
     });
 
     test("Backspace key: '- [ ] |'", () => {
-        return testCommand('sfdocs.onBackspaceKey',
+        return testCommand('SFDocs.onBackspaceKey',
             [
                 '- [ ] item1'
             ],
@@ -127,7 +127,7 @@ suite("List editing.", () => {
     });
 
     test("Backspace key: '  - [ ] |'", () => {
-        return testCommand('sfdocs.onBackspaceKey',
+        return testCommand('SFDocs.onBackspaceKey',
             [
                 '  - [ ] item1'
             ],
@@ -139,7 +139,7 @@ suite("List editing.", () => {
     });
 
     test("Backspace key: '-  |'", () => {
-        return testCommand('sfdocs.onBackspaceKey',
+        return testCommand('SFDocs.onBackspaceKey',
             [
                 '-  item1'
             ],
@@ -151,7 +151,7 @@ suite("List editing.", () => {
     });
 
     test("Backspace key: '  -  |'", () => {
-        return testCommand('sfdocs.onBackspaceKey',
+        return testCommand('SFDocs.onBackspaceKey',
             [
                 '  -  item1'
             ],
@@ -163,7 +163,7 @@ suite("List editing.", () => {
     });
 
     test("Backspace key: '- [ ]  |'", () => {
-        return testCommand('sfdocs.onBackspaceKey',
+        return testCommand('SFDocs.onBackspaceKey',
             [
                 '- [ ]  item1'
             ],
@@ -175,7 +175,7 @@ suite("List editing.", () => {
     });
 
     test("Shift tab key: '    text'", () => {
-        return testCommand('sfdocs.table.prevCell',
+        return testCommand('SFDocs.table.prevCell',
             [
                 '    text'
             ],
@@ -187,7 +187,7 @@ suite("List editing.", () => {
     });
 
     test("Tab key. 1: '- |'", () => {
-        return testCommand('sfdocs.table.nextCell',
+        return testCommand('SFDocs.table.nextCell',
             [
                 '- item1'
             ],
@@ -199,7 +199,7 @@ suite("List editing.", () => {
     });
 
     test("Tab key. 2: '-  |'", () => {
-        return testCommand('sfdocs.table.nextCell',
+        return testCommand('SFDocs.table.nextCell',
             [
                 '-  item1'
             ],
@@ -211,7 +211,7 @@ suite("List editing.", () => {
     });
 
     test("Tab key. 3: '- [ ] |'", () => {
-        return testCommand('sfdocs.table.nextCell',
+        return testCommand('SFDocs.table.nextCell',
             [
                 '- [ ] item1'
             ],
@@ -223,7 +223,7 @@ suite("List editing.", () => {
     });
 
     test("List toggle. 1: Check single line", () => {
-        return testCommand('sfdocs.editing.checkList',
+        return testCommand('SFDocs.editing.checkList',
             [
                 '- [ ] test'
             ],
@@ -236,7 +236,7 @@ suite("List editing.", () => {
     });
 
     test("List toggle. 2: Check multiple lines", () => {
-        return testCommand('sfdocs.editing.checkList',
+        return testCommand('SFDocs.editing.checkList',
             [
                 '- [ ] test',
                 '- [ ] test',
@@ -253,7 +253,7 @@ suite("List editing.", () => {
     });
 
     test("List toggle. 3: Ignore already unchecked lines when unchecking", () => {
-        return testCommand('sfdocs.editing.checkList',
+        return testCommand('SFDocs.editing.checkList',
             [
                 '- [x] test',
                 '- [ ] test',
@@ -270,7 +270,7 @@ suite("List editing.", () => {
     });
 
     test("List toggle. 4: Only touch lines that has selections", () => {
-        return testCommand('sfdocs.editing.checkList',
+        return testCommand('SFDocs.editing.checkList',
             [
                 '- [ ] test',
                 '- [ ] test',

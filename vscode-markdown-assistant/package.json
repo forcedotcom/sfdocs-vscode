@@ -1,6 +1,6 @@
 {
 	"name": "sfdocs-markdown-assistant",
-	"displayName": "SalesforceDocs Markdown Assistant",
+	"displayName": "SFDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
 	"version": "0.1.0",
@@ -24,540 +24,537 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "sfdocs.editing.toggleBold",
+				"command": "SFDocs.editing.toggleBold",
 				"title": "Toggle Bold",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleItalic",
+				"command": "SFDocs.editing.toggleItalic",
 				"title": "Toggle Italic",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleStrikethrough",
+				"command": "SFDocs.editing.toggleStrikethrough",
 				"title": "Toggle Strikethrough",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleCodeblock",
+				"command": "SFDocs.editing.toggleCodeblock",
 				"title": "Toggle Codeblock",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleInlineCode",
+				"command": "SFDocs.editing.toggleInlineCode",
 				"title": "Toggle Inline Code",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleBlockquote",
+				"command": "SFDocs.editing.toggleBlockquote",
 				"title": "Toggle Blockquote",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.pasteHyperlink",
+				"command": "SFDocs.editing.pasteHyperlink",
 				"title": "Make a Hyperlink",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.insertImage",
+				"command": "SFDocs.editing.insertImage",
 				"title": "Insert Image",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleBulletList",
+				"command": "SFDocs.editing.toggleBulletList",
 				"title": "Toggle Bulleted List",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleNumberList",
+				"command": "SFDocs.editing.toggleNumberList",
 				"title": "Toggle Numbered List",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.checkList",
+				"command": "SFDocs.editing.checkList",
 				"title": "Check the List Items",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.toggleCheckList",
+				"command": "SFDocs.editing.toggleCheckList",
 				"title": "Toggle Check List",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.generateWithAlignment",
+				"command": "SFDocs.table.generateWithAlignment",
 				"title": "Table: Add with Alignment",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.generate",
+				"command": "SFDocs.table.generate",
 				"title": "Table: Add",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.insertColumnRight",
+				"command": "SFDocs.table.insertColumnRight",
 				"title": "Table: Insert Column - Right",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.insertColumnLeft",
+				"command": "SFDocs.table.insertColumnLeft",
 				"title": "Table: Insert Column - Left",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.insertRow",
+				"command": "SFDocs.table.insertRow",
 				"title": "Table: Insert Row",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.deleteRows",
+				"command": "SFDocs.table.deleteRows",
 				"title": "Table: Delete Selected Rows",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.deleteColumns",
+				"command": "SFDocs.table.deleteColumns",
 				"title": "Table: Delete Selected Columns",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.moveRowUp",
+				"command": "SFDocs.table.moveRowUp",
 				"title": "Table: Move Row Up",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.moveRowDown",
+				"command": "SFDocs.table.moveRowDown",
 				"title": "Table: Move Row Down",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.moveColumnLeft",
+				"command": "SFDocs.table.moveColumnLeft",
 				"title": "Table: Move Column Left",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.moveColumnRight",
+				"command": "SFDocs.table.moveColumnRight",
 				"title": "Table: Move Column Right",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.pasteTable",
+				"command": "SFDocs.table.pasteTable",
 				"title": "Table: Paste Table",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.copyColumn",
+				"command": "SFDocs.table.copyColumn",
 				"title": "Table: Copy Column",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.pasteColumnLeft",
+				"command": "SFDocs.table.pasteColumnLeft",
 				"title": "Table: Paste Column - Left",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.pasteColumnRight",
+				"command": "SFDocs.table.pasteColumnRight",
 				"title": "Table: Paste Column - Right",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.format",
+				"command": "SFDocs.table.format",
 				"title": "Table: Format",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.table.removeFormatting",
+				"command": "SFDocs.table.removeFormatting",
 				"title": "Table: Remove Formatting",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.enhancedCallouts.tip",
+				"command": "SFDocs.custom.enhancedCallouts.tip",
 				"title": "Enhanced Callouts: Tip",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.enhancedCallouts.warning",
+				"command": "SFDocs.custom.enhancedCallouts.warning",
 				"title": "Enhanced Callouts: Warning",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.enhancedCallouts.caution",
+				"command": "SFDocs.custom.enhancedCallouts.caution",
 				"title": "Enhanced Callouts: Caution",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.enhancedCallouts.note",
+				"command": "SFDocs.custom.enhancedCallouts.note",
 				"title": "Enhanced Callouts: Note",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.insertVideo.vidyard",
+				"command": "SFDocs.custom.insertVideo.vidyard",
 				"title": "Insert Video: VidYard",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.insertVideo.youtube",
+				"command": "SFDocs.custom.insertVideo.youtube",
 				"title": "Insert Video: YouTube",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.insertVideo.local",
+				"command": "SFDocs.custom.insertVideo.local",
 				"title": "Insert Video: File Path",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.contentReuse",
+				"command": "SFDocs.custom.contentReuse",
 				"title": "Shared Markdown File (Include)",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.custom.enhancedCodeblock",
+				"command": "SFDocs.custom.enhancedCodeblock",
 				"title": "Enhanced Codeblock",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.definitionList",
+				"command": "SFDocs.editing.definitionList",
 				"title": "Definition List",
-				"category": "Salesforcedocs Markdown Assistant"
+				"category": "SFDocs Markdown Assistant"
 			}
 		],
 		"menus": {
 			"commandPalette": [
 				{
-				  "command": "sfdocs.custom.enhancedCallouts.tip",
-				  "when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.enhancedCallouts.tip",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.warning",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.enhancedCallouts.warning",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.caution",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.enhancedCallouts.caution",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.note",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.enhancedCallouts.note",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.insertVideo.vidyard",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.insertVideo.vidyard",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.insertVideo.youtube",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.insertVideo.youtube",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.insertVideo.local",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.insertVideo.local",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.contentReuse",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.contentReuse",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCodeblock",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"command": "SFDocs.custom.enhancedCodeblock",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				}
 			],
 			"editor/context": [
 				{
-					"command": "sfdocs.editing.toggleBold",
+					"command": "SFDocs.editing.toggleBold",
 					"group": "aa_author@4",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"command": "sfdocs.editing.toggleItalic",
+					"command": "SFDocs.editing.toggleItalic",
 					"group": "aa_author@5",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"command": "sfdocs.editing.toggleStrikethrough",
+					"command": "SFDocs.editing.toggleStrikethrough",
 					"group": "aa_author@6",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"command": "sfdocs.editing.toggleCodeblock",
+					"command": "SFDocs.editing.toggleCodeblock",
 					"group": "aa_author@2",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"command": "sfdocs.editing.toggleInlineCode",
+					"command": "SFDocs.editing.toggleInlineCode",
 					"group": "aa_author@1",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"command": "sfdocs.editing.toggleBlockquote",
+					"command": "SFDocs.editing.toggleBlockquote",
 					"group": "aa_author@3",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"submenu": "sfdocs.editing.insert",
+					"submenu": "SFDocs.editing.insert",
 					"group": "aa_author1@2",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"submenu": "sfdocs.editing.lists",
+					"submenu": "SFDocs.editing.lists",
 					"group": "aa_author1@1",
 					"when": "!editorReadonly && editorLangId == markdown"
 				},
 				{
-					"submenu": "sfdocs.table",
+					"submenu": "SFDocs.table",
 					"group": "aa_author1@3",
 					"when": "!editorReadonly && editorLangId == markdown"
 				}
 			],
-			"sfdocs.table": [
+			"SFDocs.table": [
 				{
-					"command": "sfdocs.table.generateWithAlignment",
+					"command": "SFDocs.table.generateWithAlignment",
 					"group": "aa_author2@2"
 				},
 				{
-					"command": "sfdocs.table.generate",
+					"command": "SFDocs.table.generate",
 					"group": "aa_author2@2"
 				},
 				{
-					"command": "sfdocs.table.insertColumnRight",
+					"command": "SFDocs.table.insertColumnRight",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.insertColumnLeft",
+					"command": "SFDocs.table.insertColumnLeft",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.insertRow",
+					"command": "SFDocs.table.insertRow",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.deleteRows",
+					"command": "SFDocs.table.deleteRows",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.deleteColumns",
+					"command": "SFDocs.table.deleteColumns",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.moveRowUp",
+					"command": "SFDocs.table.moveRowUp",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.moveRowDown",
+					"command": "SFDocs.table.moveRowDown",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.moveColumnLeft",
+					"command": "SFDocs.table.moveColumnLeft",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.moveColumnRight",
+					"command": "SFDocs.table.moveColumnRight",
 					"group": "aa_author3@3"
 				},
 				{
-					"command": "sfdocs.table.pasteTable",
+					"command": "SFDocs.table.pasteTable",
 					"group": "aa_author1@1"
 				},
 				{
-					"command": "sfdocs.table.copyColumn",
+					"command": "SFDocs.table.copyColumn",
 					"group": "aa_author4@4"
 				},
 				{
-					"command": "sfdocs.table.pasteColumnLeft",
+					"command": "SFDocs.table.pasteColumnLeft",
 					"group": "aa_author4@4"
 				},
 				{
-					"command": "sfdocs.table.pasteColumnRight",
+					"command": "SFDocs.table.pasteColumnRight",
 					"group": "aa_author4@4"
 				},
 				{
-					"command": "sfdocs.table.format",
+					"command": "SFDocs.table.format",
 					"group": "aa_author5@5"
 				},
 				{
-					"command": "sfdocs.table.removeFormatting",
+					"command": "SFDocs.table.removeFormatting",
 					"group": "aa_author5@5"
 				}
 			],
-			"sfdocs.editing.lists":[
+			"SFDocs.editing.lists": [
 				{
-					"command": "sfdocs.editing.toggleBulletList",
+					"command": "SFDocs.editing.toggleBulletList",
 					"group": "aa_author1@1"
 				},
 				{
-					"command": "sfdocs.editing.toggleNumberList",
+					"command": "SFDocs.editing.toggleNumberList",
 					"group": "aa_author1@2"
 				},
 				{
-					"command": "sfdocs.editing.checkList",
+					"command": "SFDocs.editing.checkList",
 					"group": "aa_author1@4"
 				},
 				{
-					"command": "sfdocs.editing.toggleCheckList",
+					"command": "SFDocs.editing.toggleCheckList",
 					"group": "aa_author1@3"
 				},
 				{
-				
-					"command": "sfdocs.editing.definitionList",
+					"command": "SFDocs.editing.definitionList",
 					"group": "aa_author@14"
-				
 				}
-
 			],
-			"sfdocs.editing.insert": [
+			"SFDocs.editing.insert": [
 				{
-					"command": "sfdocs.editing.insertImage",
+					"command": "SFDocs.editing.insertImage",
 					"group": "aa_author@2"
 				},
 				{
-					"command": "sfdocs.editing.pasteHyperlink",
+					"command": "SFDocs.editing.pasteHyperlink",
 					"group": "aa_author@1"
 				},
 				{
-					"command": "sfdocs.custom.insertVideo.vidyard",
+					"command": "SFDocs.custom.insertVideo.vidyard",
 					"group": "aa_author@3",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.insertVideo.youtube",
+					"command": "SFDocs.custom.insertVideo.youtube",
 					"group": "aa_author@4",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.insertVideo.local",
+					"command": "SFDocs.custom.insertVideo.local",
 					"group": "aa_author@5",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.tip",
+					"command": "SFDocs.custom.enhancedCallouts.tip",
 					"group": "aa_author@6",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.warning",
+					"command": "SFDocs.custom.enhancedCallouts.warning",
 					"group": "aa_author@7",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.caution",
+					"command": "SFDocs.custom.enhancedCallouts.caution",
 					"group": "aa_author@8",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCallouts.note",
+					"command": "SFDocs.custom.enhancedCallouts.note",
 					"group": "aa_author@9",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.enhancedCodeblock",
+					"command": "SFDocs.custom.enhancedCodeblock",
 					"group": "aa_author@10",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
-					"command": "sfdocs.custom.contentReuse",
+					"command": "SFDocs.custom.contentReuse",
 					"group": "aa_author@11",
-					"when": "!config.Salesforcedocs.markdownAssistant.disableCustom"
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				}
 			]
 		},
 		"submenus": [
 			{
-				"id": "sfdocs.table",
+				"id": "SFDocs.table",
 				"label": "Table"
 			},
 			{
-				"id": "sfdocs.custom.enhancedCallouts",
+				"id": "SFDocs.custom.enhancedCallouts",
 				"label": "Enhanced Callouts"
 			},
 			{
-				"id": "sfdocs.editing.insert",
+				"id": "SFDocs.editing.insert",
 				"label": "Insert"
 			},
 			{
-				"id": "sfdocs.editing.lists",
+				"id": "SFDocs.editing.lists",
 				"label": "Lists"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "sfdocs.editing.toggleBold",
+				"command": "SFDocs.editing.toggleBold",
 				"key": "ctrl+b",
 				"mac": "cmd+b",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
 			},
 			{
-				"command": "sfdocs.editing.toggleItalic",
+				"command": "SFDocs.editing.toggleItalic",
 				"key": "ctrl+i",
 				"mac": "cmd+i",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
 			},
 			{
-				"command": "sfdocs.editing.toggleStrikethrough",
+				"command": "SFDocs.editing.toggleStrikethrough",
 				"key": "alt+s",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
 			},
 			{
-				"command": "sfdocs.editing.checkList",
+				"command": "SFDocs.editing.checkList",
 				"key": "alt+c",
 				"when": "editorTextFocus && editorLangId == markdown"
 			},
 			{
-				"command": "sfdocs.editing.pasteHyperlink",
+				"command": "SFDocs.editing.pasteHyperlink",
 				"key": "ctrl+l",
 				"mac": "cmd+l",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown"
 			},
 			{
-				"command": "sfdocs.onEnterKey",
+				"command": "SFDocs.onEnterKey",
 				"key": "enter",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorHasMultipleSelections && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
 			},
 			{
-				"command": "sfdocs.onShiftEnterKey",
+				"command": "SFDocs.onShiftEnterKey",
 				"key": "shift+enter",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorHasMultipleSelections"
 			},
 			{
-				"command": "sfdocs.onBackspaceKey",
+				"command": "SFDocs.onBackspaceKey",
 				"key": "backspace",
 				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !suggestWidgetVisible && !editorHasMultipleSelections && vim.mode != 'Normal' && vim.mode != 'Visual' && vim.mode != 'VisualBlock' && vim.mode != 'VisualLine' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress' && vim.mode != 'Replace' && vim.mode != 'EasyMotionMode' && vim.mode != 'EasyMotionInputMode' && vim.mode != 'SurroundInputMode'"
 			},
 			{
-				"command": "sfdocs.table.nextCell",
+				"command": "SFDocs.table.nextCell",
 				"key": "tab",
 				"when": "editorLangId == markdown && editorTextFocus && !editorReadonly && !editorTabMovesFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !inSnippetMode"
 			},
 			{
-				"command": "sfdocs.table.prevCell",
+				"command": "SFDocs.table.prevCell",
 				"key": "shift+tab",
 				"when": "editorLangId == markdown && editorTextFocus && !editorReadonly && !editorTabMovesFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !inSnippetMode"
 			},
 			{
-				"command": "sfdocs.custom.contentReuse",
+				"command": "SFDocs.custom.contentReuse",
 				"key": "ctrl+r",
 				"mac": "cmd+r",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !config.Salesforcedocs.markdownAssistant.disableCustom"
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !config.SFDocs.markdownAssistant.disableCustom"
 			},
 			{
-				"command": "sfdocs.custom.insertVideoShortcut",
+				"command": "SFDocs.custom.insertVideoShortcut",
 				"key": "ctrl+shift+m",
 				"mac": "cmd+shift+m",
-				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !config.Salesforcedocs.markdownAssistant.disableCustom"
+				"when": "editorTextFocus && !editorReadonly && editorLangId == markdown && !config.SFDocs.markdownAssistant.disableCustom"
 			}
 		],
 		"configuration": {
 			"type": "object",
-			"title": "Salesforcedocs Markdown Assistant",
+			"title": "SFDocs Markdown Assistant",
 			"properties": {
-				"Salesforcedocs.markdownAssistant.completion.respectVscodeSearchExclude": {
+				"SFDocs.markdownAssistant.completion.respectVscodeSearchExclude": {
 					"type": "boolean",
 					"default": true,
 					"markdownDescription": "Select this to exclude files from auto-completion using VS Code's `#search.exclude#` setting. (`node_modules`, `bower_components` and `*.code-search` are **always excluded**, not affected by this option.)",
 					"scope": "resource"
 				},
-				"Salesforcedocs.markdownAssistant.completion.root": {
+				"SFDocs.markdownAssistant.completion.root": {
 					"type": "string",
 					"default": "",
 					"description": "The root folder used for the auto-completion.",
 					"scope": "resource"
 				},
-				"Salesforcedocs.markdownAssistant.italic.indicator": {
+				"SFDocs.markdownAssistant.italic.indicator": {
 					"type": "string",
 					"default": "_",
 					"description": "Use `*` or `_` to wrap italic text.",
@@ -566,12 +563,12 @@
 						"*"
 					]
 				},
-				"Salesforcedocs.markdownAssistant.orderedList.autoRenumber": {
+				"SFDocs.markdownAssistant.orderedList.autoRenumber": {
 					"type": "boolean",
 					"default": true,
 					"description": "Auto-fix ordered list markers."
 				},
-				"Salesforcedocs.markdownAssistant.orderedList.marker": {
+				"SFDocs.markdownAssistant.orderedList.marker": {
 					"type": "string",
 					"default": "ordered",
 					"description": "Ordered list marker.",
@@ -584,26 +581,26 @@
 						"Use increasing numbers as ordered list marker."
 					]
 				},
-				"Salesforcedocs.markdownAssistant.list.indentationSize": {
+				"SFDocs.markdownAssistant.list.indentationSize": {
 					"type": "string",
 					"enum": [
 						"adaptive",
 						"inherit"
 					],
 					"markdownEnumDescriptions": [
-						"%config.list.indentationSize.enumDescriptions.adaptive%",
-						"%config.list.indentationSize.enumDescriptions.inherit%"
+						"Adaptive indentation size according to the context, trying to **left align the sublist with its parent's content**. For example:\n\n```markdown\n- Parent\n  - Sublist\n\n1. Parent\n   1. Sublist\n\n10. Parent with longer marker\n    1. Sublist\n```",
+						"Use the configured tab size of the current document (see the status bar). For example (with `tabSize: 4`):\n\n```markdown\n- Parent\n    - Sublist\n\n1. Parent\n    1. Sublist\n\n10. Parent with longer marker\n    1. Sublist\n```"
 					],
 					"default": "adaptive",
-					"markdownDescription": "%config.list.indentationSize.description%",
+					"markdownDescription": "List indentation scheme. \n\nWhether to use different indentation sizes on different list contexts or stick to VS Code's tab size.",
 					"scope": "resource"
 				},
-				"Salesforcedocs.markdownAssistant.table.autoFormat": {
+				"SFDocs.markdownAssistant.table.autoFormat": {
 					"type": "boolean",
 					"default": true,
 					"description": "Auto Format tables while editing"
 				},
-				"Salesforcedocs.markdownAssistant.disableCustom": {
+				"SFDocs.markdownAssistant.disableCustom": {
 					"type": "boolean",
 					"default": false,
 					"description": "Disable Custom Salesforce Plugins"

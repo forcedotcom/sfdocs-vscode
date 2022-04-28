@@ -8,7 +8,7 @@ import { MarkdownPreviewManager } from '../features/previewManager';
 import { MarkdownEngine } from '../markdownEngine';
 
 export class RefreshPreviewCommand implements Command {
-	public readonly id = 'salesforcedocs.preview.refresh';
+	public readonly id = 'SFDocs.preview.refresh';
 
 	public constructor(
 		private readonly webviewManager: MarkdownPreviewManager,

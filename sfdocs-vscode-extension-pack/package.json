@@ -1,6 +1,6 @@
 {
     "name": "sfdocs-vscode-extension-pack",
-    "displayName": "SalesforceDocs Extension Pack",
+    "displayName": "SFDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "icon": "icon.png",
     "version": "0.0.2",
@@ -19,7 +19,7 @@
         "Extension Packs"
     ],
     "extensionPack": [
-        "salesforce.salesforce-docs-markdown-preview",
+        "salesforce.sfdocs-markdown-preview",
         "salesforce.sfdocs-markdown-assistant",
         "MuleSoftInc.aml-vscode",
         "vsls-contrib.codetour",

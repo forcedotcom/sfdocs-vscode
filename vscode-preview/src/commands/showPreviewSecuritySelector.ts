@@ -10,7 +10,7 @@ import { isMarkdownFile } from '../util/file';
 import { MarkdownPreviewManager } from '../features/previewManager';
 
 export class ShowPreviewSecuritySelectorCommand implements Command {
-	public readonly id = 'salesforcedocs.showPreviewSecuritySelector';
+	public readonly id = 'SFDocs.showPreviewSecuritySelector';
 
 	public constructor(
 		private readonly previewSecuritySelector: PreviewSecuritySelector,

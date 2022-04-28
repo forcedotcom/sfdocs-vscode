@@ -13,7 +13,7 @@ import * as highlight from 'remark-highlight.js';
 import sfdocsRenderFunctions from './generic-directive-plugin/sfdocsDefaultRenderers';
 import genericRenderFunctions from './generic-directive-plugin/genericDefaultRenderers';
 
-export function markdownCompiler(currentFilePath: string) {
+export function markdownCompiler() {
 
 	const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
     const genericPlugin = genericDirective(genericRenderFunctions());

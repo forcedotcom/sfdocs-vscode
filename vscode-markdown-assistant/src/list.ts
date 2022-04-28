@@ -204,8 +204,8 @@ function toggleCheckListSingleLine(doc: TextDocument, line: number, wsEdit: Work
 
 //@ts-ignore
 export function fixMarker(line?: number) {
-    if (!workspace.getConfiguration('sfdocsSalesforcedocs.markdownAssistant.orderedList').get<boolean>('autoRenumber')) { return; };
-    if (workspace.getConfiguration('sfdocsSalesforcedocs.markdownAssistant.orderedList').get<string>('marker') === 'one') { return; };
+    if (!workspace.getConfiguration('SFDocs.markdownAssistant.orderedList').get<boolean>('autoRenumber')) { return; };
+    if (workspace.getConfiguration('SFDocs.markdownAssistant.orderedList').get<string>('marker') === 'one') { return; };
 
     let editor = window.activeTextEditor;
     if (line === undefined) {

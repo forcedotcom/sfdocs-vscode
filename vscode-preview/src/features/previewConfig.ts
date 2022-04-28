@@ -22,7 +22,7 @@ export class MarkdownPreviewConfiguration {
 
 	private constructor(resource: vscode.Uri) {
 		const editorConfig = vscode.workspace.getConfiguration('editor', resource);
-		const markdownConfig = vscode.workspace.getConfiguration('salesforcedocs', resource);
+		const markdownConfig = vscode.workspace.getConfiguration('SFDocs', resource);
 		const markdownEditorConfig = vscode.workspace.getConfiguration('[markdown]', resource);
 
 		this.scrollBeyondLastLine = editorConfig.get<boolean>('scrollBeyondLastLine', false);
