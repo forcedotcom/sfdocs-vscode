@@ -19,7 +19,7 @@
         "Extension Packs"
     ],
     "extensionPack": [
-        "salesforce.sfdocs-markdown-preview",
+        "salesforce.salesforce-docs-markdown-preview",
         "salesforce.sfdocs-markdown-assistant",
         "MuleSoftInc.aml-vscode",
         "vsls-contrib.codetour",

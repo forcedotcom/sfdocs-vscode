@@ -6,7 +6,7 @@ The extension pack is good for beginning and professional authors.
 
 ## Extensions
 
-- [SFDocs Markdown Preview](https://marketplace.visualstudio.com/items?itemName=salesforce.sfdocs-markdown-preview)–Provides Micromark-compliant Markdown previews.
+- [SFDocs Markdown Preview](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforce-docs-markdown-preview)–Provides Micromark-compliant Markdown previews.
 - [SFDocs Markdown Assistant](https://marketplace.visualstudio.com/items?itemName=salesforce.sfdocs-markdown-assistant)–Provides palette commands and shortcuts that make it easy to write Markdown.
 - [AML Support](https://marketplace.visualstudio.com/items?itemName=MuleSoftInc.aml-vscode)–Implements AML Language Server for use with RAML and OpenAPI specs.
 - [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)–Allows you to record and play back guided walkthroughs of your codebases.

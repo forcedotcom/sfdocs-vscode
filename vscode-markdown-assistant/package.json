@@ -214,7 +214,7 @@
 				"category": "SFDocs Markdown Assistant"
 			},
 			{
-				"command": "sfdocs.editing.descriptionList",
+				"command": "SFDocs.editing.descriptionList",
 				"title": "Description List",
 				"category": "Salesforcedocs Markdown Assistant"
 			}
@@ -394,7 +394,7 @@
 				},
 				{
 				
-					"command": "sfdocs.editing.descriptionList",
+					"command": "SFDocs.editing.descriptionList",
 					"group": "aa_author@14"
 				}
 			],
