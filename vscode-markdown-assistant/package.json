@@ -3,7 +3,7 @@
 	"displayName": "SFDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
@@ -393,7 +393,6 @@
 					"group": "aa_author1@3"
 				},
 				{
-				
 					"command": "SFDocs.editing.descriptionList",
 					"group": "aa_author@14"
 				}
