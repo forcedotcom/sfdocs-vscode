@@ -30,13 +30,13 @@
 			{
 				"command": "SFDocs.showPreview",
 				"title": "%SFDocs.preview.title%",
-				"category": "SFDoc",
+				"category": "SFDocs Markdown Preview",
 				"icon": "$(open-preview)"
 			},
 			{
 				"command": "SFDocs.showPreviewToSide",
 				"title": "%SFDocs.previewSide.title%",
-				"category": "SFDoc",
+				"category": "SFDocs Markdown Preview",
 				"icon": {
 					"light": "./media/preview-light.svg",
 					"dark": "./media/preview-dark.svg"
@@ -45,7 +45,7 @@
 			{
 				"command": "SFDocs.showLockedPreviewToSide",
 				"title": "%SFDocs.showLockedPreviewToSide.title%",
-				"category": "SFDoc",
+				"category": "SFDocs Markdown Preview",
 				"icon": {
 					"light": "./media/preview-light.svg",
 					"dark": "./media/preview-dark.svg"
@@ -54,18 +54,18 @@
 			{
 				"command": "SFDocs.showSource",
 				"title": "%SFDocs.showSource.title%",
-				"category": "SFDoc",
+				"category": "SFDocs Markdown Preview",
 				"icon": "$(go-to-file)"
 			},
 			{
 				"command": "SFDocs.preview.refresh",
 				"title": "%SFDocs.preview.refresh.title%",
-				"category": "SFDoc"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.preview.toggleLock",
 				"title": "%SFDocs.preview.toggleLock.title%",
-				"category": "SFDoc"
+				"category": "SFDocs Markdown Preview"
 			}
 		],
 		"menus": {
