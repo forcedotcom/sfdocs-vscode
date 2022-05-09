@@ -21,9 +21,10 @@ export function markdownCompiler() {
             .use(remarkGfm)
             .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
             .use(internalReferencePlugin({}))
-            .use(highlight)
             .use(remark_directive)
             .use(genericPlugin)
             .use(sfdocsPlugin)
-            .use(definitionListPlugin);
+            .use(definitionListPlugin)
+            .use(highlight);
 }
+
