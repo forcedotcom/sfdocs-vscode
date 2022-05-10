@@ -46,6 +46,7 @@ Apply a blockquote to a single line. Click the line and select **Toggle Blockquo
 -   Toggle numbered list.
 -   Toggle check list.
 -   Select a subset of check boxes.
+-   Description list.
 
 Select the lines to convert to a list and toggle the list type (bullet, numbered, checklist).
 
