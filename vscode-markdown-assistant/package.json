@@ -26,197 +26,197 @@
 			{
 				"command": "SFDocs.editing.toggleBold",
 				"title": "Toggle Bold",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleItalic",
 				"title": "Toggle Italic",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleStrikethrough",
 				"title": "Toggle Strikethrough",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleCodeblock",
 				"title": "Toggle Codeblock",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleInlineCode",
 				"title": "Toggle Inline Code",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleBlockquote",
 				"title": "Toggle Blockquote",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.pasteHyperlink",
 				"title": "Make a Hyperlink",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.insertImage",
 				"title": "Insert Image",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleBulletList",
 				"title": "Toggle Bulleted List",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleNumberList",
 				"title": "Toggle Numbered List",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.checkList",
-				"title": "Check the List Items",
-				"category": "SFDocs Markdown Assistant"
+				"title": "Select Checkbox List Item",
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.toggleCheckList",
-				"title": "Toggle Check List",
-				"category": "SFDocs Markdown Assistant"
+				"title": "Toggle Checklist",
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.generateWithAlignment",
 				"title": "Table: Add with Alignment",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.generate",
 				"title": "Table: Add",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.insertColumnRight",
-				"title": "Table: Insert Column - Right",
-				"category": "SFDocs Markdown Assistant"
+				"title": "Table: Insert Column Right",
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.insertColumnLeft",
-				"title": "Table: Insert Column - Left",
-				"category": "SFDocs Markdown Assistant"
+				"title": "Table: Insert Column Left",
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.insertRow",
 				"title": "Table: Insert Row",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.deleteRows",
 				"title": "Table: Delete Selected Rows",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.deleteColumns",
 				"title": "Table: Delete Selected Columns",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.moveRowUp",
 				"title": "Table: Move Row Up",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.moveRowDown",
 				"title": "Table: Move Row Down",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.moveColumnLeft",
 				"title": "Table: Move Column Left",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.moveColumnRight",
 				"title": "Table: Move Column Right",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.pasteTable",
 				"title": "Table: Paste Table",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.copyColumn",
 				"title": "Table: Copy Column",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.pasteColumnLeft",
-				"title": "Table: Paste Column - Left",
-				"category": "SFDocs Markdown Assistant"
+				"title": "Table: Paste Column Left",
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.pasteColumnRight",
-				"title": "Table: Paste Column - Right",
-				"category": "SFDocs Markdown Assistant"
+				"title": "Table: Paste Column Right",
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.format",
 				"title": "Table: Format",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.table.removeFormatting",
 				"title": "Table: Remove Formatting",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.tip",
 				"title": "Enhanced Callouts: Tip",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.warning",
 				"title": "Enhanced Callouts: Warning",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.caution",
 				"title": "Enhanced Callouts: Caution",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.note",
 				"title": "Enhanced Callouts: Note",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.insertVideo.vidyard",
 				"title": "Insert Video: VidYard",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.insertVideo.youtube",
 				"title": "Insert Video: YouTube",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.insertVideo.local",
 				"title": "Insert Video: File Path",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.contentReuse",
 				"title": "Shared Markdown File (Include)",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCodeblock",
 				"title": "Enhanced Codeblock",
-				"category": "SFDocs Markdown Assistant"
+				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.descriptionList",
-				"title": "Description List",
-				"category": "Salesforcedocs Markdown Assistant"
+				"title": "Insert Description List Entry",
+				"category": "SFDocs"
 			}
 		],
 		"menus": {
