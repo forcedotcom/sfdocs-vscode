@@ -30,13 +30,13 @@
 			{
 				"command": "SFDocs.showPreview",
 				"title": "%SFDocs.preview.title%",
-				"category": "SFDocs Markdown Preview",
+				"category": "SFDocs",
 				"icon": "$(open-preview)"
 			},
 			{
 				"command": "SFDocs.showPreviewToSide",
 				"title": "%SFDocs.previewSide.title%",
-				"category": "SFDocs Markdown Preview",
+				"category": "SFDocs",
 				"icon": {
 					"light": "./media/preview-light.svg",
 					"dark": "./media/preview-dark.svg"
@@ -45,7 +45,7 @@
 			{
 				"command": "SFDocs.showLockedPreviewToSide",
 				"title": "%SFDocs.showLockedPreviewToSide.title%",
-				"category": "SFDocs Markdown Preview",
+				"category": "SFDocs",
 				"icon": {
 					"light": "./media/preview-light.svg",
 					"dark": "./media/preview-dark.svg"
@@ -54,7 +54,7 @@
 			{
 				"command": "SFDocs.showSource",
 				"title": "%SFDocs.showSource.title%",
-				"category": "SFDocs Markdown Preview",
+				"category": "SFDocs",
 				"icon": "$(go-to-file)"
 			},
 			{
@@ -65,7 +65,7 @@
 			{
 				"command": "SFDocs.preview.toggleLock",
 				"title": "%SFDocs.preview.toggleLock.title%",
-				"category": "SFDocs Markdown Preview"
+				"category": "SFDocs"
 			}
 		],
 		"menus": {
