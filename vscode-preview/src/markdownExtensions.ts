@@ -79,14 +79,14 @@ export namespace MarkdownContributions {
 		contributes: any,
 		extension: vscode.Extension<any>
 	) {
-		return resolveExtensionResources(extension, contributes['salesforcedocs.previewScripts']);
+		return resolveExtensionResources(extension, contributes['SFDocs.previewScripts']);
 	}
 
 	function getContributedStyles(
 		contributes: any,
 		extension: vscode.Extension<any>
 	) {
-		const config = vscode.workspace.getConfiguration('salesforcedocs');
+		const config = vscode.workspace.getConfiguration('SFDocs');
 		return resolveExtensionResources(extension, contributes['markdown.default.previewStyles']);
 	}
 }
@@ -109,7 +109,7 @@ class VSCodeExtensionMarkdownContributionProvider extends Disposable implements 
 		super();
 
 		vscode.workspace.onDidChangeConfiguration(event => {
-			let affected = event.affectsConfiguration("salesforcedocs.preview.style.preset");
+			let affected = event.affectsConfiguration("SFDocs.preview.style.preset");
 			if (affected) {
 				this.updateContributions();
 			}

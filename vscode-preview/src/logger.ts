@@ -33,7 +33,7 @@ function isString(value: any): value is string {
 export class Logger {
 	private trace?: Trace;
 
-	private readonly outputChannel = lazy(() => vscode.window.createOutputChannel('SalesforceDocs Preview'));
+	private readonly outputChannel = lazy(() => vscode.window.createOutputChannel('SFDocs Preview'));
 
 	constructor() {
 		this.updateConfiguration();

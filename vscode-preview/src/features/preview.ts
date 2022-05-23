@@ -345,7 +345,7 @@ class MarkdownPreview extends Disposable implements WebviewResourceProvider {
 
 	private async onDidClickPreview(line: number): Promise<void> {
 		// fix #82457, find currently opened but unfocused source tab
-		await vscode.commands.executeCommand('salesforcedocs.showSource');
+		await vscode.commands.executeCommand('SFDocs.showSource');
 
 		for (const visibleEditor of vscode.window.visibleTextEditors) {
 			if (this.isPreviewOf(visibleEditor.document.uri)) {
@@ -415,7 +415,7 @@ class MarkdownPreview extends Disposable implements WebviewResourceProvider {
 			hrefPath = path.join(path.dirname(this.resource.fsPath), hrefPath);
 		}
 
-		const config = vscode.workspace.getConfiguration('salesforcedocs', this.resource);
+		const config = vscode.workspace.getConfiguration('SFDocs', this.resource);
 		const openLinks = config.get<string>('preview.openMarkdownLinks', 'inPreview');
 		if (openLinks === 'inPreview') {
 			const markdownLink = await resolveLinkToMarkdownFile(hrefPath);
@@ -568,7 +568,7 @@ interface DynamicPreviewInput {
  */
 export class DynamicMarkdownPreview extends Disposable implements ManagedMarkdownPreview {
 
-	public static readonly viewType = 'salesforcedocs.preview';
+	public static readonly viewType = 'SFDocs.preview';
 
 	private readonly _resourceColumn: vscode.ViewColumn;
 	private _locked: boolean;

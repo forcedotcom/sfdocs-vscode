@@ -5,9 +5,9 @@ import * as path from "path";
 type IConfigurationRecord<T = unknown> = readonly [string, T];
 
 const Default_Config: readonly IConfigurationRecord[] = [
-    ["Salesforcedocs.markdownAssistant.italic.indicator", "_"],
-    ["Salesforcedocs.markdownAssistant.orderedList.marker", "ordered"],
-    ["Salesforcedocs.markdownAssistant.table.autoFormat", true],
+    ["SFDocs.markdownAssistant.italic.indicator", "_"],
+    ["SFDocs.markdownAssistant.orderedList.marker", "ordered"],
+    ["SFDocs.markdownAssistant.table.autoFormat", true],
     ["editor.insertSpaces", true],
     ["editor.tabSize", 4],
 ];

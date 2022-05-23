@@ -1,6 +1,6 @@
 # SFDocs Markdown Assistant
 
-SFDocs Markdown Assistant makes it easier to write Markdown. Use shortcuts and easy routes for adding markdown syntax. Furthermore, you get authoring support for GFM tables and some advanced Markdown plugins. With SalesforceDocs Markdown Assistant, we got you covered for the markdown authoring experience inside Visual Studio Code.
+SFDocs Markdown Assistant makes it easier to write Markdown. Use shortcuts and easy routes for adding markdown syntax. Furthermore, you get authoring support for GFM tables and some advanced Markdown plugins. With SFDocs Markdown Assistant, we got you covered for the markdown authoring experience inside Visual Studio Code.
 
 SFDocs Markdown Assistant is compliant with CommonMark and GitHub Flavored Markdown (GFM).
 
@@ -117,13 +117,13 @@ You can also type `:` or ` followed by first letter of the desired Markdown.
 
 SFDocs Markdown Assistant uses these settings:
 
--   `Salesforcedocs.markdownAssistant.completion.respectVscodeSearchExclude`: Whether to exclude files from auto-completion using VS Code's `#search.exclude#` setting (`node_modules`, `bower_components`, and `*.code-search` are always excluded).
--   `Salesforcedocs.markdownAssistant.completion.root`: The root folder for path auto-completion.
--   `Salesforcedocs.markdownAssistant.italic.indicator`: Use `*` or `_` to wrap italic text.
--   `Salesforcedocs.markdownAssistant.orderedList.autoRenumber`: Auto fix ordered list markers.
--   `Salesforcedocs.markdownAssistant.orderedList.marker`: Ordered list marker (1. everywhere or 1., 2. and so on).
--   `Salesforcedocs.markdownAssistant.table.autoFormat`: Whether to auto format tables while editing.
--   `Salesforcedocs.markdownAssistant.disableCustom`: Whether to disable custom Salesforce plugins (Video, Include, and so on).
+-   `SFDocs.markdownAssistant.completion.respectVscodeSearchExclude`: Whether to exclude files from auto-completion using VS Code's `#search.exclude#` setting (`node_modules`, `bower_components`, and `*.code-search` are always excluded).
+-   `SFDocs.markdownAssistant.completion.root`: The root folder for path auto-completion.
+-   `SFDocs.markdownAssistant.italic.indicator`: Use `*` or `_` to wrap italic text.
+-   `SFDocs.markdownAssistant.orderedList.autoRenumber`: Auto fix ordered list markers.
+-   `SFDocs.markdownAssistant.orderedList.marker`: Ordered list marker (1. everywhere or 1., 2. and so on).
+-   `SFDocs.markdownAssistant.table.autoFormat`: Whether to auto format tables while editing.
+-   `SFDocs.markdownAssistant.disableCustom`: Whether to disable custom Salesforce plugins (Video, Include, and so on).
 
 ## Known Issues
 

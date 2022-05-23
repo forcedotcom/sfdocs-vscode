@@ -12,7 +12,7 @@ import * as highlight from 'remark-highlight.js';
 import sfdocsRenderFunctions from './generic-directive-plugin/sfdocsDefaultRenderers';
 import genericRenderFunctions from './generic-directive-plugin/genericDefaultRenderers';
 
-export function markdownCompiler(currentFilePath: string) {
+export function markdownCompiler() {
 
 	const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
     const genericPlugin = genericDirective(genericRenderFunctions());
@@ -21,9 +21,10 @@ export function markdownCompiler(currentFilePath: string) {
             .use(remarkGfm)
             .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
             .use(internalReferencePlugin({}))
-            .use(highlight)
             .use(remark_directive)
             .use(genericPlugin)
             .use(sfdocsPlugin)
-            .use(definitionListPlugin);
+            .use(definitionListPlugin)
+            .use(highlight);
 }
+

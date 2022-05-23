@@ -85,7 +85,7 @@ export async function moveColumn(left:boolean, withFormat: boolean){
             await editor.edit(edit => {
                 edit.replace(table_selection, table_text);
             });
-            vscode.commands.executeCommand('sfdocs.table.prevCell');
+            vscode.commands.executeCommand('SFDocs.table.prevCell');
         }
     }else{
         if(columnNum<tableData.cells[0].length-1){
@@ -98,7 +98,7 @@ export async function moveColumn(left:boolean, withFormat: boolean){
             await editor.edit(edit => {
                 edit.replace(table_selection, table_text);
             });
-            vscode.commands.executeCommand('sfdocs.table.nextCell');
+            vscode.commands.executeCommand('SFDocs.table.nextCell');
         }
     }
 }

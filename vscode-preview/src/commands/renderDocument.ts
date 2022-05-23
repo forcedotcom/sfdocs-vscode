@@ -8,7 +8,7 @@ import { MarkdownEngine } from '../markdownEngine';
 import { SkinnyTextDocument } from '../tableOfContentsProvider';
 
 export class RenderDocument implements Command {
-	public readonly id = 'salesforcedocs.api.render';
+	public readonly id = 'SFDocs.api.render';
 
 	public constructor(
 		private readonly engine: MarkdownEngine

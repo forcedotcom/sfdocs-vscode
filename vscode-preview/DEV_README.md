@@ -1,4 +1,4 @@
-# Developer instructions 
+# Developer instructions
 
 ## Build
 
@@ -17,9 +17,9 @@ In order to build you should have nodejs set up and either npm or yarn should in
 - open a file and click on the extension icon.
 - If you keep any breakpoint it will stop based on the condition.
 
-### Dev tools 
+### Dev tools
 
-- On the developer extension window, you can open developer tool by 
+- On the developer extension window, you can open developer tool by
 `ctrl + shift + P` and then select `Open webview Developer tools`
 
 ### Create pakcage
@@ -46,4 +46,3 @@ If the above command doesn't work - follow the below procedure mentioned here:
 https://stackoverflow.com/questions/42017617/how-to-install-vs-code-extension-manually
 
 ![Local Extension](https://i.stack.imgur.com/nPF49.png)
-

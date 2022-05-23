@@ -65,7 +65,7 @@ export class MarkdownPreviewManager extends Disposable implements vscode.Webview
 
 	private _activePreview: ManagedMarkdownPreview | undefined = undefined;
 
-	private readonly customEditorViewType = 'vscode.salesforcedocs.preview.editor';
+	private readonly customEditorViewType = 'vscode.SFDocs.preview.editor';
 
 	public constructor(
 		private readonly _contentProvider: MarkdownContentProvider,

@@ -11,7 +11,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Enhanced Callouts: Caution", () => {
-        return testCommand('sfdocs.custom.enhancedCallouts.caution',
+        return testCommand('SFDocs.custom.enhancedCallouts.caution',
             [
                 ''
             ],
@@ -27,7 +27,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Enhanced Callouts: Tip", () => {
-        return testCommand('sfdocs.custom.enhancedCallouts.tip',
+        return testCommand('SFDocs.custom.enhancedCallouts.tip',
             [
                 ''
             ],
@@ -43,7 +43,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Enhanced Callouts: Note", () => {
-        return testCommand('sfdocs.custom.enhancedCallouts.note',
+        return testCommand('SFDocs.custom.enhancedCallouts.note',
             [
                 ''
             ],
@@ -59,7 +59,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Enhanced Callouts: Warning", () => {
-        return testCommand('sfdocs.custom.enhancedCallouts.warning',
+        return testCommand('SFDocs.custom.enhancedCallouts.warning',
             [
                 ''
             ],
@@ -75,7 +75,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Enhanced Codeblocks", () => {
-        return testCommand('sfdocs.custom.enhancedCodeblock',
+        return testCommand('SFDocs.custom.enhancedCodeblock',
             [
                 ''
             ],
@@ -91,7 +91,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Insert Video: VidYard", () => {
-        return testCommand('sfdocs.custom.insertVideo.vidyard',
+        return testCommand('SFDocs.custom.insertVideo.vidyard',
             [
                 ''
             ],
@@ -105,7 +105,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Insert Video: YouTube", () => {
-        return testCommand('sfdocs.custom.insertVideo.youtube',
+        return testCommand('SFDocs.custom.insertVideo.youtube',
             [
                 ''
             ],
@@ -119,7 +119,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Insert Video: Local", () => {
-        return testCommand('sfdocs.custom.insertVideo.local',
+        return testCommand('SFDocs.custom.insertVideo.local',
             [
                 ''
             ],
@@ -133,7 +133,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Content Reuse: Include", () => {
-        return testCommand('sfdocs.custom.contentReuse',
+        return testCommand('SFDocs.custom.contentReuse',
             [
                 ''
             ],
@@ -147,7 +147,7 @@ suite("Custom Plugins", () => {
     });
 
     test("Insert Definition List", () => {
-        return testCommand('sfdocs.editing.descriptionList',
+        return testCommand('SFDocs.editing.descriptionList',
             [
                 ''
             ],

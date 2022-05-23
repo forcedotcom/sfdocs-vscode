@@ -1,9 +1,9 @@
 {
     "name": "sfdocs-vscode-extension-pack",
-    "displayName": "SalesforceDocs Extension Pack",
+    "displayName": "SFDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "icon": "icon.png",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",

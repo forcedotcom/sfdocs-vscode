@@ -36,6 +36,6 @@ To run the above created .vsix, you can run the below command.
 code --install-extension myextension.vsix
 ```
 
-Example: `code --install-extension ./salesforce-docs-markdown-assistant-1.0.5.vsix`
+Example: `code --install-extension ./sfdocs-markdown-assistant-1.0.5.vsix`
 
 If the above command doesn't work, right click the .vsix file in VS Code's Explorer and select _Install Extension VSIX_ .

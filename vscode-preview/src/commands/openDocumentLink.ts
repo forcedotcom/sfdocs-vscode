@@ -24,7 +24,7 @@ enum OpenMarkdownLinks {
 }
 
 export class OpenDocumentLinkCommand implements Command {
-	private static readonly id = '_salesforcedocs.openDocumentLink';
+	private static readonly id = 'SFDocs.openDocumentLink';
 	public readonly id = OpenDocumentLinkCommand.id;
 
 	public static createCommandUri(
@@ -89,7 +89,7 @@ export class OpenDocumentLinkCommand implements Command {
 	}
 
 	private static getViewColumn(resource: vscode.Uri): vscode.ViewColumn {
-		const config = vscode.workspace.getConfiguration('salesforcedocs', resource);
+		const config = vscode.workspace.getConfiguration('SFDocs', resource);
 		const openLinks = config.get<OpenMarkdownLinks>('links.openLocation', OpenMarkdownLinks.currentGroup);
 		switch (openLinks) {
 			case OpenMarkdownLinks.beside:

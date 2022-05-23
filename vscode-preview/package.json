@@ -2,7 +2,7 @@
 	"name": "salesforce-docs-markdown-preview",
 	"displayName": "%displayName%",
 	"description": "%description%",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"icon": "icon.png",
 	"preview": true,
 	"publisher": "salesforce",
@@ -16,140 +16,140 @@
 	],
 	"activationEvents": [
 		"onLanguage:markdown",
-		"onCommand:salesforcedocs.preview.toggleLock",
-		"onCommand:salesforcedocs.preview.refresh",
-		"onCommand:salesforcedocs.showPreview",
-		"onCommand:salesforcedocs.showPreviewToSide",
-		"onCommand:salesforcedocs.showLockedPreviewToSide",
-		"onCommand:salesforcedocs.showSource",
-		"onWebviewPanel:salesforcedocs.preview",
-		"onCustomEditor:vscode.salesforcedocs.preview.editor"
+		"onCommand:SFDocs.preview.toggleLock",
+		"onCommand:SFDocs.preview.refresh",
+		"onCommand:SFDocs.showPreview",
+		"onCommand:SFDocs.showPreviewToSide",
+		"onCommand:SFDocs.showLockedPreviewToSide",
+		"onCommand:SFDocs.showSource",
+		"onWebviewPanel:SFDocs.preview",
+		"onCustomEditor:vscode.SFDocs.preview.editor"
 	],
 	"contributes": {
 		"commands": [
 			{
-				"command": "salesforcedocs.showPreview",
-				"title": "%salesforcedocs.preview.title%",
-				"category": "SFDoc",
+				"command": "SFDocs.showPreview",
+				"title": "%SFDocs.preview.title%",
+				"category": "SFDocs",
 				"icon": "$(open-preview)"
 			},
 			{
-				"command": "salesforcedocs.showPreviewToSide",
-				"title": "%salesforcedocs.previewSide.title%",
-				"category": "SFDoc",
+				"command": "SFDocs.showPreviewToSide",
+				"title": "%SFDocs.previewSide.title%",
+				"category": "SFDocs",
 				"icon": {
 					"light": "./media/preview-light.svg",
 					"dark": "./media/preview-dark.svg"
 				}
 			},
 			{
-				"command": "salesforcedocs.showLockedPreviewToSide",
-				"title": "%salesforcedocs.showLockedPreviewToSide.title%",
-				"category": "SFDoc",
+				"command": "SFDocs.showLockedPreviewToSide",
+				"title": "%SFDocs.showLockedPreviewToSide.title%",
+				"category": "SFDocs",
 				"icon": {
 					"light": "./media/preview-light.svg",
 					"dark": "./media/preview-dark.svg"
 				}
 			},
 			{
-				"command": "salesforcedocs.showSource",
-				"title": "%salesforcedocs.showSource.title%",
-				"category": "SFDoc",
+				"command": "SFDocs.showSource",
+				"title": "%SFDocs.showSource.title%",
+				"category": "SFDocs",
 				"icon": "$(go-to-file)"
 			},
 			{
-				"command": "salesforcedocs.preview.refresh",
-				"title": "%salesforcedocs.preview.refresh.title%",
-				"category": "SFDoc"
+				"command": "SFDocs.preview.refresh",
+				"title": "%SFDocs.preview.refresh.title%",
+				"category": "SFDocs"
 			},
 			{
-				"command": "salesforcedocs.preview.toggleLock",
-				"title": "%salesforcedocs.preview.toggleLock.title%",
-				"category": "SFDoc"
+				"command": "SFDocs.preview.toggleLock",
+				"title": "%SFDocs.preview.toggleLock.title%",
+				"category": "SFDocs"
 			}
 		],
 		"menus": {
 			"editor/title": [
 				{
-					"command": "salesforcedocs.showPreviewToSide",
+					"command": "SFDocs.showPreviewToSide",
 					"when": "editorLangId == markdown && !notebookEditorFocused",
-					"alt": "salesforcedocs.showPreview",
+					"alt": "SFDocs.showPreview",
 					"group": "navigation"
 				},
 				{
-					"command": "salesforcedocs.showSource",
+					"command": "SFDocs.showSource",
 					"when": "markdownPreviewFocus",
 					"group": "navigation"
 				},
 				{
-					"command": "salesforcedocs.preview.refresh",
+					"command": "SFDocs.preview.refresh",
 					"when": "markdownPreviewFocus",
 					"group": "1_markdown"
 				},
 				{
-					"command": "salesforcedocs.preview.toggleLock",
+					"command": "SFDocs.preview.toggleLock",
 					"when": "markdownPreviewFocus",
 					"group": "1_markdown"
 				}
 			],
 			"explorer/context": [
 				{
-					"command": "salesforcedocs.showPreview",
+					"command": "SFDocs.showPreview",
 					"when": "resourceLangId == markdown",
 					"group": "navigation"
 				}
 			],
 			"editor/title/context": [
 				{
-					"command": "salesforcedocs.showPreview",
+					"command": "SFDocs.showPreview",
 					"when": "resourceLangId == markdown",
 					"group": "1_open"
 				}
 			],
 			"commandPalette": [
 				{
-					"command": "salesforcedocs.showPreview",
+					"command": "SFDocs.showPreview",
 					"when": "editorLangId == markdown && !notebookEditorFocused",
 					"group": "navigation"
 				},
 				{
-					"command": "salesforcedocs.showPreviewToSide",
+					"command": "SFDocs.showPreviewToSide",
 					"when": "editorLangId == markdown && !notebookEditorFocused",
 					"group": "navigation"
 				},
 				{
-					"command": "salesforcedocs.showLockedPreviewToSide",
+					"command": "SFDocs.showLockedPreviewToSide",
 					"when": "editorLangId == markdown && !notebookEditorFocused",
 					"group": "navigation"
 				},
 				{
-					"command": "salesforcedocs.showSource",
+					"command": "SFDocs.showSource",
 					"when": "markdownPreviewFocus",
 					"group": "navigation"
 				},
 				{
-					"command": "salesforcedocs.preview.toggleLock",
+					"command": "SFDocs.preview.toggleLock",
 					"when": "markdownPreviewFocus"
 				},
 				{
-					"command": "salesforcedocs.preview.refresh",
+					"command": "SFDocs.preview.refresh",
 					"when": "editorLangId == markdown && !notebookEditorFocused"
 				},
 				{
-					"command": "salesforcedocs.preview.refresh",
+					"command": "SFDocs.preview.refresh",
 					"when": "markdownPreviewFocus"
 				}
 			]
 		},
 		"keybindings": [
 			{
-				"command": "salesforcedocs.showPreview",
+				"command": "SFDocs.showPreview",
 				"key": "ctrl+k f",
 				"mac": "cmd+k f",
 				"when": "editorLangId == markdown && !notebookEditorFocused"
 			},
 			{
-				"command": "salesforcedocs.showPreviewToSide",
+				"command": "SFDocs.showPreviewToSide",
 				"key": "ctrl+k s",
 				"mac": "cmd+k s",
 				"when": "editorLangId == markdown && !notebookEditorFocused"
@@ -157,90 +157,90 @@
 		],
 		"configuration": {
 			"type": "object",
-			"title": "SalesforceDocs Preview",
+			"title": "SFDocs Preview",
 			"order": 20,
 			"properties": {
-				"salesforcedocs.preview.styles": {
+				"SFDocs.preview.styles": {
 					"type": "array",
 					"items": {
 						"type": "string"
 					},
 					"default": [],
-					"description": "%salesforcedocs.styles.dec%",
+					"description": "%SFDocs.styles.desc%",
 					"scope": "resource"
 				},
-				"salesforcedocs.preview.breaks": {
+				"SFDocs.preview.breaks": {
 					"type": "boolean",
 					"default": false,
-					"description": "%salesforcedocs.preview.breaks.desc%",
+					"description": "%SFDocs.preview.breaks.desc%",
 					"scope": "resource"
 				},
-				"salesforcedocs.preview.scrollPreviewWithEditor": {
+				"SFDocs.preview.scrollPreviewWithEditor": {
 					"type": "boolean",
 					"default": true,
-					"description": "%salesforcedocs.preview.scrollPreviewWithEditor.desc%",
+					"description": "%SFDocs.preview.scrollPreviewWithEditor.desc%",
 					"scope": "resource"
 				},
-				"salesforcedocs.preview.markEditorSelection": {
+				"SFDocs.preview.markEditorSelection": {
 					"type": "boolean",
 					"default": true,
-					"description": "%salesforcedocs.preview.markEditorSelection.desc%",
+					"description": "%SFDocs.preview.markEditorSelection.desc%",
 					"scope": "resource"
 				},
-				"salesforcedocs.preview.scrollEditorWithPreview": {
+				"SFDocs.preview.scrollEditorWithPreview": {
 					"type": "boolean",
 					"default": true,
-					"description": "%salesforcedocs.preview.scrollEditorWithPreview.desc%",
+					"description": "%SFDocs.preview.scrollEditorWithPreview.desc%",
 					"scope": "resource"
 				},
-				"salesforcedocs.preview.doubleClickToSwitchToEditor": {
+				"SFDocs.preview.doubleClickToSwitchToEditor": {
 					"type": "boolean",
 					"default": true,
-					"description": "%salesforcedocs.preview.doubleClickToSwitchToEditor.desc%",
+					"description": "%SFDocs.preview.doubleClickToSwitchToEditor.desc%",
 					"scope": "resource"
 				},
-				"salesforcedocs.preview.openMarkdownLinks": {
+				"SFDocs.preview.openMarkdownLinks": {
 					"type": "string",
 					"default": "inPreview",
-					"description": "%configuration.salesforcedocs.preview.openMarkdownLinks.description%",
+					"description": "%configuration.SFDocs.preview.openMarkdownLinks.description%",
 					"scope": "resource",
 					"enum": [
 						"inPreview",
 						"inEditor"
 					],
 					"enumDescriptions": [
-						"%configuration.salesforcedocs.preview.openMarkdownLinks.inPreview%",
-						"%configuration.salesforcedocs.preview.openMarkdownLinks.inEditor%"
+						"%configuration.SFDocs.preview.openMarkdownLinks.inPreview%",
+						"%configuration.SFDocs.preview.openMarkdownLinks.inEditor%"
 					]
 				},
-				"salesforcedocs.links.openLocation": {
+				"SFDocs.links.openLocation": {
 					"type": "string",
 					"default": "currentGroup",
-					"description": "%configuration.salesforcedocs.links.openLocation.description%",
+					"description": "%configuration.SFDocs.links.openLocation.description%",
 					"scope": "resource",
 					"enum": [
 						"currentGroup",
 						"beside"
 					],
 					"enumDescriptions": [
-						"%configuration.salesforcedocs.links.openLocation.currentGroup%",
-						"%configuration.salesforcedocs.links.openLocation.beside%"
+						"%configuration.SFDocs.links.openLocation.currentGroup%",
+						"%configuration.SFDocs.links.openLocation.beside%"
 					]
 				},
-				"salesforcedocs.trace": {
+				"SFDocs.trace": {
 					"type": "string",
 					"enum": [
 						"off",
 						"verbose"
 					],
 					"default": "off",
-					"description": "%salesforcedocs.trace.desc%",
+					"description": "%SFDocs.trace.desc%",
 					"scope": "window"
 				}
 			}
 		},
 		"configurationDefaults": {
-			"[salesforcedocs]": {
+			"[SFDocs]": {
 				"editor.wordWrap": "on",
 				"editor.quickSuggestions": false
 			}
@@ -249,7 +249,7 @@
 			"./media/css/markdown.css",
 			"./media/css/highlight.css"
 		],
-		"salesforcedocs.previewScripts": [
+		"SFDocs.previewScripts": [
 			"./media/pre.js",
 			"./media/index.js",
 			"./media/main.js",
@@ -257,8 +257,8 @@
 		],
 		"customEditors": [
 			{
-				"viewType": "vscode.salesforcedocs.preview.editor",
-				"displayName": "SalesforceDocs Preview (Experimental)",
+				"viewType": "vscode.SFDocs.preview.editor",
+				"displayName": "SFDocs Preview (Experimental)",
 				"priority": "option",
 				"selector": [
 					{
@@ -285,7 +285,7 @@
 		"@sfdocs-internal/generic-directive-plugin": "latest",
 		"@sfdocs-internal/sfdocs-directive-plugin": "latest",
 		"@sfdocs-internal/definition-list-plugin": "latest",
-		"@lwrjs/compiler":"0.5.11",
+		"@lwrjs/compiler": "0.5.11",
 		"@lwrjs/shared-utils": "0.5.11",
 		"@lwrjs/diagnostics": "0.3.14",
 		"resolve": "1.21.0",

@@ -43,7 +43,7 @@ suite("Table", function () {
     });
 
     test("Tables: Next Cell", () => {
-        return testCommand('sfdocs.table.nextCell',
+        return testCommand('SFDocs.table.nextCell',
             [
                 "|       |       |       |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -63,8 +63,8 @@ suite("Table", function () {
     });
 
     test("Tables: Next Cell, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.nextCell',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.nextCell',
             [
                 "|       |       |       |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -85,7 +85,7 @@ suite("Table", function () {
     });
 
     test("Tables: Previous Cell", () => {
-        return testCommand('sfdocs.table.prevCell',
+        return testCommand('SFDocs.table.prevCell',
             [
                 "|       |       |       |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -105,8 +105,8 @@ suite("Table", function () {
     });
 
     test("Tables: Previous Cell, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.prevCell',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.prevCell',
             [
                 "|       |       |       |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -128,7 +128,7 @@ suite("Table", function () {
 
     test("Tables: Insert Row", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.insertRow',
+        return testCommand('SFDocs.table.insertRow',
             [
                 "|       |       |       |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -149,8 +149,8 @@ suite("Table", function () {
     });
 
     test("Tables: Insert Row, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.insertRow',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.insertRow',
         [
             "|       |       |       |" ,    
             "| :---: | :---: | :---: |" ,
@@ -173,7 +173,7 @@ suite("Table", function () {
 
     test("Tables: Move Column Right", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.moveColumnRight',
+        return testCommand('SFDocs.table.moveColumnRight',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -193,8 +193,8 @@ suite("Table", function () {
     });
 
     test("Tables: Move Column Right, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.moveColumnRight',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.moveColumnRight',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -216,7 +216,7 @@ suite("Table", function () {
 
     test("Tables: Move Column Left", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.moveColumnLeft',
+        return testCommand('SFDocs.table.moveColumnLeft',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -236,8 +236,8 @@ suite("Table", function () {
     });
 
     test("Tables: Move Column Left, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.moveColumnLeft',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.moveColumnLeft',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -285,7 +285,7 @@ suite("Table", function () {
         
         env.clipboard.writeText(sampleTable);
         await resetConfiguration();
-        return testCommand('sfdocs.table.pasteTable',
+        return testCommand('SFDocs.table.pasteTable',
         [], new Selection(0, 0, 0, 0),
         [expectedMarkdownTable], new Selection(11, 57, 11, 57)
         );
@@ -318,8 +318,8 @@ suite("Table", function () {
 | Total | ₹ 2,200.00 | ₹ 1,202.75 | ₹ 997.25 |`;
         
         env.clipboard.writeText(sampleTable);
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.pasteTable',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.pasteTable',
         [], new Selection(0, 0, 0, 0),
         [expectedMarkdownTable], new Selection(11, 46, 11, 46));
         await resetConfiguration();
@@ -327,7 +327,7 @@ suite("Table", function () {
 
     test("Tables: Delete Selected Columns", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.deleteColumns',
+        return testCommand('SFDocs.table.deleteColumns',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -347,8 +347,8 @@ suite("Table", function () {
     });
 
     test("Tables: Delete Selected Columns, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.deleteColumns',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.deleteColumns',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -370,7 +370,7 @@ suite("Table", function () {
 
     test("Tables: Delete Selected Rows", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.deleteRows',
+        return testCommand('SFDocs.table.deleteRows',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -389,8 +389,8 @@ suite("Table", function () {
     });
 
     test("Tables: Delete Selected Rows, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.deleteRows',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.deleteRows',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -411,7 +411,7 @@ suite("Table", function () {
 
     test("Tables: Insert Columns Right", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.insertColumnRight',
+        return testCommand('SFDocs.table.insertColumnRight',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -431,8 +431,8 @@ suite("Table", function () {
     });
 
     test("Tables: Insert Column Right, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.insertColumnRight',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.insertColumnRight',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -454,7 +454,7 @@ suite("Table", function () {
 
     test("Tables: Insert Columns Left", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.insertColumnLeft',
+        return testCommand('SFDocs.table.insertColumnLeft',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -474,8 +474,8 @@ suite("Table", function () {
     });
 
     test("Tables: Insert Column Left, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.insertColumnLeft',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.insertColumnLeft',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -497,7 +497,7 @@ suite("Table", function () {
 
     test("Tables: Move Row Down", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.moveRowDown',
+        return testCommand('SFDocs.table.moveRowDown',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -517,8 +517,8 @@ suite("Table", function () {
     });
 
     test("Tables: Move Row Down, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.moveRowDown',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.moveRowDown',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -540,7 +540,7 @@ suite("Table", function () {
 
     test("Tables: Move Row Up", async() => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.moveRowUp',
+        return testCommand('SFDocs.table.moveRowUp',
             [
                 "|   A   |   B   |   C   |" ,    
                 "| :---: | :---: | :---: |" ,
@@ -560,8 +560,8 @@ suite("Table", function () {
     });
 
     test("Tables: Move Row Up, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
-        await testCommand('sfdocs.table.moveRowUp',
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
+        await testCommand('SFDocs.table.moveRowUp',
         [
             "|   A   |   B   |   C   |" ,    
             "| :---: | :---: | :---: |" ,
@@ -582,7 +582,7 @@ suite("Table", function () {
     });
 
     test("Tables: Copy Column", async () => {
-        await testCommand('sfdocs.table.copyColumn',
+        await testCommand('SFDocs.table.copyColumn',
             [
                 "| A   | B   | C   |",
                 "| :-: | :-: | :-: |",
@@ -608,7 +608,7 @@ suite("Table", function () {
         await resetConfiguration();
         const copyColumn = `| C |\r\n| :-- |\r\n| Z |\r\n| F |\r\n| K |\r\n`;
         env.clipboard.writeText(copyColumn);
-        return testCommand('sfdocs.table.pasteColumnRight',
+        return testCommand('SFDocs.table.pasteColumnRight',
             [
                 "| A   | B   | C   |",
                 "| :-: | :-: | :-: |",
@@ -628,10 +628,10 @@ suite("Table", function () {
     });
 
     test("Tables: Paste Column Right, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
         const copyColumn = `| C |\r\n| :-- |\r\n| Z |\r\n| F |\r\n| K |\r\n`;
         env.clipboard.writeText(copyColumn);
-        await testCommand('sfdocs.table.pasteColumnRight',
+        await testCommand('SFDocs.table.pasteColumnRight',
         [
             "| A   | B   | C   |",
             "| :-: | :-: | :-: |",
@@ -655,7 +655,7 @@ suite("Table", function () {
         await resetConfiguration();
         const copyColumn = `| C |\r\n| :-- |\r\n| Z |\r\n| F |\r\n| K |\r\n`;
         env.clipboard.writeText(copyColumn);
-        return testCommand('sfdocs.table.pasteColumnLeft',
+        return testCommand('SFDocs.table.pasteColumnLeft',
             [
                 "| A   | B   | C   |",
                 "| :-: | :-: | :-: |",
@@ -675,10 +675,10 @@ suite("Table", function () {
     });
 
     test("Tables: Paste Column Left, without formating", async () => {
-        await updateConfiguration({ config: [["Salesforcedocs.markdownAssistant.table.autoFormat", false]] });
+        await updateConfiguration({ config: [["SFDocs.markdownAssistant.table.autoFormat", false]] });
         const copyColumn = `| C |\r\n| :-- |\r\n| Z |\r\n| F |\r\n| K |\r\n`;
         env.clipboard.writeText(copyColumn);
-        await testCommand('sfdocs.table.pasteColumnLeft',
+        await testCommand('SFDocs.table.pasteColumnLeft',
         [
             "| A   | B   | C   |",
             "| :-: | :-: | :-: |",
@@ -700,7 +700,7 @@ suite("Table", function () {
 
     test("Table: Format", async () => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.format',
+        return testCommand('SFDocs.table.format',
         [
             '| Category | Budget | Actual | Difference |',
             '| :-- | :-- | :-- | :-- |',
@@ -736,7 +736,7 @@ suite("Table", function () {
 
     test("Table: Remove Formatting", async () => {
         await resetConfiguration();
-        return testCommand('sfdocs.table.removeFormatting',
+        return testCommand('SFDocs.table.removeFormatting',
         [
             '| Category       | Budget     | Actual     | Difference |',
             '| :------------- | :--------- | :--------- | :--------- |',

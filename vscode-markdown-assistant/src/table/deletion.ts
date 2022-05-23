@@ -61,5 +61,5 @@ export async function deleteColumns(withFormat: boolean){
     await editor.edit(edit => {
         edit.replace(table_selection, table_text);
     });
-    vscode.commands.executeCommand('sfdocs.table.prevCell');
+    vscode.commands.executeCommand('SFDocs.table.prevCell');
 }

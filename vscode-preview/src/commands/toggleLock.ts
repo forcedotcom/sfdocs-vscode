@@ -7,7 +7,7 @@ import { Command } from '../commandManager';
 import { MarkdownPreviewManager } from '../features/previewManager';
 
 export class ToggleLockCommand implements Command {
-	public readonly id = 'salesforcedocs.preview.toggleLock';
+	public readonly id = 'SFDocs.preview.toggleLock';
 
 	public constructor(
 		private readonly previewManager: MarkdownPreviewManager

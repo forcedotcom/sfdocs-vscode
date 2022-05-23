@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-    const sidebarUrl = getMeta('salesforcedocs:sidebar');
+    const sidebarUrl = getMeta('SFDocs:sidebar');
 
     if (sidebarUrl) {
         const sidebar = await getHtmlContent(sidebarUrl);

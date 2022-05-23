@@ -96,9 +96,9 @@ export class MarkdownEngine {
 		image: this.imageHandler
 	}
 
-	private async getEngine(currentFilePath: string): Promise<any> {
+	private async getEngine(): Promise<any> {
 		if (!this.md) {
-			this.md = markdownCompiler(currentFilePath)
+			this.md = markdownCompiler()
 			.use(html, { handlers: this.commonHandler });
 		}
 
@@ -123,7 +123,7 @@ export class MarkdownEngine {
 	}
 
 	public async render(input: any | string): Promise<string> {
-		const engine = await this.getEngine(input.fileName);
+		const engine = await this.getEngine();
 
 		const tokens = typeof input === 'string'
 			? input

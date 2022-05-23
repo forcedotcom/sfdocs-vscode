@@ -2,7 +2,7 @@
 
 This repository contains the source code for the Visual Studio Code extensions for Salesforce documentation. 
 
-Currently, we have [SalesforceDocs Markdown Preview](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-preview/README.md) extension. It extends the out of the box Markdown Preview provided by VSCode by adding support for MicroMark parser. 
+Currently, we have [SFDocs Markdown Preview](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-preview/README.md) extension. It extends the out of the box Markdown Preview provided by VSCode by adding support for MicroMark parser. 
 
 ## Getting Started
 
