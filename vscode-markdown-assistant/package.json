@@ -140,7 +140,7 @@
 			},
 			{
 				"command": "SFDocs.table.pasteTable",
-				"title": "Table: Paste Table",
+				"title": "Table: Paste from Another App",
 				"category": "SFDocs"
 			},
 			{
