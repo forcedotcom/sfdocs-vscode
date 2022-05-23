@@ -291,7 +291,7 @@
 		"resolve": "1.21.0",
 		"path-to-regexp": "6.2.0",
 		"find-up": "5.0.0",
-		"highlight.js": "9.15.10",
+		"highlight.js": "10.4.1",
 		"hastscript": "6.0.0",
 		"mdurl": "^1.0.0",
 		"node-html-parser": "2.0.2",
