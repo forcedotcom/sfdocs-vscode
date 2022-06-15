@@ -400,17 +400,17 @@ div.video-toolbar {background-color: rgba(229, 229, 229, 1); color: black; min-h
   }
   
   .admonition-important {
-    background-color: rgba(238, 244, 255, 1);
-    border-left: 6px solid rgba(1, 118, 211, 1);
+    background-color: rgb(254, 243, 217);
+    border-left: 6px solid rgba(252, 192, 3, 1);
   }
   
   .admonition-important h5 {
-    color: rgba(1, 118, 211, 1);
+    color: rgba(252, 192, 3, 1);
   }
   
   .admonition-important .admonition-icon svg {
-    stroke: rgba(1, 118, 211, 1);
-    fill: rgba(1, 118, 211, 1);
+    stroke: rgba(11, 11, 11, 1);
+    fill: rgba(11, 11, 11, 1);
   }
   
   .admonition-note {
