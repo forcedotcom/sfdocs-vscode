@@ -103,7 +103,7 @@ The columns corresponding to Budget and Actual were selected, and **Table > Dele
 
 ## Custom Salesforce Plugins
 
--   Enhanced Callouts–Tip, Warning, Note, Caution
+-   Enhanced Callouts–Tip, Warning, Note, Caution, Important
 -   Enhanced Code blocks
 -   Insert Video - VidYard, YouTube, Local file
 -   Content Reuse (Include)

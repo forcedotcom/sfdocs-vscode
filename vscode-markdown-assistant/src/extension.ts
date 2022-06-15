@@ -67,6 +67,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.custom.enhancedCallouts.warning', ()=>styleByWrapping('\n:::warning\n', '\n:::\n')),
         commands.registerCommand('SFDocs.custom.enhancedCallouts.caution', ()=>styleByWrapping('\n:::caution\n', '\n:::\n')),
         commands.registerCommand('SFDocs.custom.enhancedCallouts.note', ()=>styleByWrapping('\n:::note\n', '\n:::\n')),
+        commands.registerCommand('SFDocs.custom.enhancedCallouts.important', ()=>styleByWrapping('\n:::important\n', '\n:::\n')),
 
         commands.registerCommand('SFDocs.custom.insertVideo.vidyard', ()=>{insertVideo("vidyard");}),
         commands.registerCommand('SFDocs.custom.insertVideo.youtube', ()=>{insertVideo("youtube");}),
