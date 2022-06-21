@@ -13,6 +13,7 @@ In order to build you should have nodejs set up and either npm or yarn installed
 ### How do you debug
 
 - In order to open a sandbox kind of Developer extension - make sure _Run Extension_ is selected in the Run and Debug menu and press the play button or `fn + F5` in mac.
+- Ensure you open in a new window.
   
   ![Debug](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/Debug.gif?raw=true)
 - Once you have a new window, add a project that you want to see the work of extension (in our case any content-repo) and open any file.
