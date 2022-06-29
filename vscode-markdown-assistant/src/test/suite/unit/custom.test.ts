@@ -74,6 +74,22 @@ suite("Custom Plugins", () => {
             new Selection(2, 0, 2, 0));
     });
 
+    test("Enhanced Callouts: Important", () => {
+        return testCommand('SFDocs.custom.enhancedCallouts.important',
+            [
+                ''
+            ],
+            new Selection(0, 1, 0, 1),
+            [
+                '',
+                ':::important',
+                '',
+                ':::',
+                ''
+            ],
+            new Selection(2, 0, 2, 0));
+    });
+
     test("Enhanced Codeblocks", () => {
         return testCommand('SFDocs.custom.enhancedCodeblock',
             [
