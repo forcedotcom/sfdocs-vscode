@@ -14,3 +14,4 @@ shared.tsconfig.js
 dependency_license_report.json
 test-workspace
 package.schema.json
+node_modules/**
