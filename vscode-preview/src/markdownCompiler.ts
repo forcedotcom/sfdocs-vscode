@@ -4,6 +4,7 @@ import {
     internalReferencePlugin,
     remark_directive,
 } from '@sfdocs-internal/generic-directive-plugin';
+import imageTransformerPlugin from '@sfdocs-internal/image-transformer';
 import { sfdocsCustomPlugin } from '@sfdocs-internal/sfdocs-directive-plugin';
 import { defListPlugin } from '@sfdocs-internal/definition-list-plugin';
 import * as remarkGfm from 'remark-gfm';
@@ -14,17 +15,18 @@ import genericRenderFunctions from './generic-directive-plugin/genericDefaultRen
 
 export function markdownCompiler() {
 
-	const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
+    const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
     const genericPlugin = genericDirective(genericRenderFunctions());
     const definitionListPlugin = defListPlugin();
     return remark()
-            .use(remarkGfm)
-            .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
-            .use(internalReferencePlugin({}))
-            .use(remark_directive)
-            .use(genericPlugin)
-            .use(sfdocsPlugin)
-            .use(definitionListPlugin)
-            .use(highlight);
+        .use(remarkGfm)
+        .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
+        .use(internalReferencePlugin({}))
+        .use(remark_directive)
+        .use(imageTransformerPlugin)
+        .use(genericPlugin)
+        .use(sfdocsPlugin)
+        .use(definitionListPlugin)
+        .use(highlight);
 }
 

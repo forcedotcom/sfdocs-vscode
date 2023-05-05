@@ -436,3 +436,70 @@ dl > dd {
     margin-bottom: 24px;
     margin-left: 24px;
   }
+
+/* Image resize classes starts here */
+img.content-image {
+  height: auto;
+  display: unset;
+}
+
+.content-image.image-framed {
+  border: 1px solid black;
+}
+
+.content-image.image-framed-light {
+  border: 1px solid rgba(229, 229, 229, 1);
+}
+
+.content-image.image-xxl,
+.content-image.image-full {
+  max-width: 100%;
+  width: 100%;
+}
+
+.content-image.image-xl {
+  max-width: 75%;
+  width: 100%;
+}
+
+.content-image.image-lg {
+  max-width: 66%;
+  width: 100%;
+}
+
+.content-image.image-md {
+  max-width: 50%;
+  width: 100%;
+}
+
+.content-image.image-sm {
+  max-width: 33%;
+  width: 100%;
+}
+
+.content-image.image-xs {
+  max-width: 25%;
+  width: 100%;
+}
+
+.content-image.image-xxs {
+  max-width: 12.5%;
+  width: 100%;
+}
+
+.content-image.image-icon-lg {
+  max-width: 32px;
+  width: 100%;
+}
+
+.content-image.image-icon-md {
+  max-width: 20px;
+  width: 100%;
+}
+
+.content-image.image-icon-sm {
+  max-width: 16px;
+  width: 100%;
+}
+
+/* Image resize classes ends here */
