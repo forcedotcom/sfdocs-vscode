@@ -55,12 +55,17 @@
 			},
 			{
 				"command": "SFDocs.editing.pasteHyperlink",
-				"title": "Make a Hyperlink",
+				"title": "Hyperlink",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.editing.insertImage",
-				"title": "Insert Image",
+				"title": "Image",
+				"category": "SFDocs"
+			},
+			{
+				"command": "SFDocs.custom.insertEnhancedImage",
+				"title": "Image: Enhanced",
 				"category": "SFDocs"
 			},
 			{
@@ -170,42 +175,42 @@
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.tip",
-				"title": "Enhanced Callouts: Tip",
+				"title": "Callout: Tip",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.warning",
-				"title": "Enhanced Callouts: Warning",
+				"title": "Callout: Warning",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.caution",
-				"title": "Enhanced Callouts: Caution",
+				"title": "Callout: Caution",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.note",
-				"title": "Enhanced Callouts: Note",
+				"title": "Callout: Note",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.enhancedCallouts.important",
-				"title": "Enhanced Callouts: Important",
+				"title": "Callout: Important",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.insertVideo.vidyard",
-				"title": "Insert Video: VidYard",
+				"title": "Video: VidYard",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.insertVideo.youtube",
-				"title": "Insert Video: YouTube",
+				"title": "Video: YouTube",
 				"category": "SFDocs"
 			},
 			{
 				"command": "SFDocs.custom.insertVideo.local",
-				"title": "Insert Video: File Path",
+				"title": "Video: File Path",
 				"category": "SFDocs"
 			},
 			{
@@ -215,7 +220,7 @@
 			},
 			{
 				"command": "SFDocs.custom.enhancedCodeblock",
-				"title": "Enhanced Codeblock",
+				"title": "Code Block: Enhanced",
 				"category": "SFDocs"
 			},
 			{
@@ -408,61 +413,66 @@
 			],
 			"SFDocs.editing.insert": [
 				{
-					"command": "SFDocs.editing.insertImage",
-					"group": "aa_author@2"
-				},
-				{
-					"command": "SFDocs.editing.pasteHyperlink",
-					"group": "aa_author@1"
-				},
-				{
-					"command": "SFDocs.custom.insertVideo.vidyard",
-					"group": "aa_author@3",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.insertVideo.youtube",
-					"group": "aa_author@4",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.insertVideo.local",
-					"group": "aa_author@5",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.enhancedCallouts.tip",
-					"group": "aa_author@6",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.enhancedCallouts.warning",
-					"group": "aa_author@7",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
 					"command": "SFDocs.custom.enhancedCallouts.caution",
-					"group": "aa_author@8",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.enhancedCallouts.note",
-					"group": "aa_author@9",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.enhancedCodeblock",
-					"group": "aa_author@10",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.contentReuse",
-					"group": "aa_author@11",
+					"group": "aa_author1@1",
 					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
 					"command": "SFDocs.custom.enhancedCallouts.important",
-					"group": "aa_author@12",
+					"group": "aa_author1@2",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.enhancedCallouts.note",
+					"group": "aa_author1@3",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.enhancedCallouts.tip",
+					"group": "aa_author1@4",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.enhancedCallouts.warning",
+					"group": "aa_author1@5",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.enhancedCodeblock",
+					"group": "aa_author2@1",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.editing.pasteHyperlink",
+					"group": "aa_author3@1"
+				},
+				{
+					"command": "SFDocs.editing.insertImage",
+					"group": "aa_author4@1"
+				},
+				{
+					"command": "SFDocs.custom.insertEnhancedImage",
+					"group": "aa_author4@2",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.contentReuse",
+					"group": "aa_author5@1",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.insertVideo.local",
+					"group": "aa_author6@1",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.insertVideo.vidyard",
+					"group": "aa_author6@2",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.insertVideo.youtube",
+					"group": "aa_author6@3",
 					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				}
 			]
@@ -649,7 +659,8 @@
 		"typescript": "^4.3.2",
 		"vscode-test": "^1.5.2",
 		"webpack": "^5.38.1",
-		"webpack-cli": "^4.7.0"
+		"webpack-cli": "^4.7.0",
+		"vsce": "1.88.0"
 	},
 	"dependencies": {}
 }

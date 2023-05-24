@@ -3,7 +3,7 @@ import { styleByWrapping, toggleBlockquote } from './basicStyling';
 import { paste } from './Hyperlink';
 import { Document_Selector_Markdown, MdCompletionItemProvider } from './completions';
 import { toggleBulletList, toggleNumberList, checkTaskList, toggleCheckList} from './list';
-import { imagePaste } from './image';
+import { imagePaste, insertEnhancedImage } from './image';
 import { generateTable, generateTableWithAlignment } from './table/generator';
 import { navigateNextCell, navigatePrevCell } from './table/navigate';
 import { insertColumn, insertRow } from './table/insertion';
@@ -30,6 +30,7 @@ export function activate(context: ExtensionContext) {
 
         commands.registerCommand('SFDocs.editing.pasteHyperlink', paste),
         commands.registerCommand('SFDocs.editing.insertImage', imagePaste),
+        commands.registerCommand('SFDocs.custom.insertEnhancedImage', insertEnhancedImage),
         
         commands.registerCommand('SFDocs.editing.toggleCheckList', toggleCheckList),
         commands.registerCommand('SFDocs.editing.toggleBulletList', toggleBulletList),
@@ -41,7 +42,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.onShiftEnterKey', ()=>{return onEnterKey("shift");}),
         commands.registerCommand('SFDocs.onBackspaceKey', onBackspaceKey),
 
-        languages.registerCompletionItemProvider(Document_Selector_Markdown, new MdCompletionItemProvider(), '(', '\\', '/', '[', '#', ':', '`'),
+        languages.registerCompletionItemProvider(Document_Selector_Markdown, new MdCompletionItemProvider(), '(', '\\', '/', '[', '#', ':', '`', '-'),
 
         commands.registerCommand('SFDocs.table.generateWithAlignment', generateTableWithAlignment),
         commands.registerCommand('SFDocs.table.generate', generateTable),

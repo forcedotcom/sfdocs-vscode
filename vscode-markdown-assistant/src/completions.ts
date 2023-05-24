@@ -2,6 +2,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { CancellationToken, CompletionContext, CompletionItem, CompletionItemKind, CompletionItemProvider, CompletionList, DocumentSelector, Position, Range, SnippetString, TextDocument, workspace } from 'vscode';
 
+/**
+ * Source: https://github.com/salesforcedevs/dsc-components/blob/main/packages/%40salesforcedevs/docs-components/src/modules/docHelpers/imgStyle/imgStyle.css
+ */
+export const imageClasses = ["image-xxl", "image-full", "image-xl", "image-lg", "image-md", "image-sm", "image-xs", "image-xxs", "image-icon-lg", "image-icon-md", "image-icon-sm", "image-framed", "image-framed-light"]
+
 let EXCLUDE_GLOB: string;
 
 export const Document_Selector_Markdown: DocumentSelector = [
@@ -21,7 +26,8 @@ const customPlugins = [
     {label: ':::important', insertText: new SnippetString(`\n:::important\n$1\n:::\n`)},
     {label: '```sfdocs-code', insertText: new SnippetString('\n```sfdocs-code {"lang":"$1", "title": "$2", "src": "$3" }\n\n```\n')},
     {label: '```Codeblock```', insertText: new SnippetString('\n```\n$1\n```\n')},
-    {label: '-description list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')}
+    {label: '-description list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')},
+    {label: 'sfdocs image', insertText: new SnippetString(`![alt]($1 '{"class": "$2", "title": "$3"}')\n`), needReplaceRange: false}
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {
@@ -58,14 +64,33 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
         }
         let typedDir: string;
         if (/!\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore) || /<img [^>]*src="[^"]*$/.test(lineTextBefore)) {
-            if (/!\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore)) {
-                typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('](') + 2);
+            /* Check if user is trying enter image class */
+            if (/!\[[^\]]*?\]\([^\}\)]*"class":\s?"/.test(lineTextBefore)) {
+                /**
+                 * Find the end position of `"class": "` to keep the selected class after it.
+                 */
+                const classRegex = /"class":\s?"/;
+                const matchItems = lineTextBefore.match(classRegex);
+                let match = lineTextBefore.search(classRegex);
+                if (matchItems?.length) {
+                    match = match + matchItems[0].length;
+                }
+                let replaceRange: Range = new Range(position.line, match, position.line, position.character);
+                return imageClasses.map((imageClass) => {
+                    const completionItem = new CompletionItem(imageClass, CompletionItemKind.Constant);
+                    completionItem.range = replaceRange;
+                    return completionItem;
+                });
             } else {
-                typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('="') + 2);
+                if (/!\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore)) {
+                    typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('](') + 2);
+                } else {
+                    typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('="') + 2);
+                }
+                const imageExtensions = ['png','jpg','jpeg','svg','gif','webp'];
+    
+                return getFileSuggestions(imageExtensions, document, typedDir);
             }
-            const imageExtensions = ['png','jpg','jpeg','svg','gif','webp'];
-
-            return getFileSuggestions(imageExtensions, document, typedDir);
         }else if(/\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore) || /::include{src="/.test(lineTextBefore)){
             if(/\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore)){
                 typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('](') + 2);
@@ -114,11 +139,15 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
             return getFileSuggestions(['c'], document, typedDir);
         }else if(/sfdocs-code {"lang":"apex", "title": ".*", "src": "/.test(lineTextBefore)){
 
-        typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-        
-        return getFileSuggestions(['apex'], document, typedDir);
-        //custom plugin suggestions
-        }else if(/(:)|(::)|(:::)|(`)|(``)|(-)|(```)$/.test(lineTextBefore)){
+            typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
+            
+            return getFileSuggestions(['apex'], document, typedDir);
+        }
+        /**
+         * Custom plugin suggestions
+         * Added s,i for "sfdocs image"
+         */
+        else if(/(:)|(::)|(:::)|(`)|(``)|(-)|(```)|(s)|(i)$/.test(lineTextBefore)){
             let match = lineTextBefore.search(/(:)|(::)|(:::)|(`)|(``)|(-)|(```)|$/);
             let replaceRange: Range = new Range(position.line, match, position.line, position.character);
             return customPluginSuggestions(replaceRange);
@@ -152,10 +181,12 @@ function getFileSuggestions(extensions:string[], document:TextDocument, typedDir
 }
 
 function customPluginSuggestions(replaceRange: Range){
-    return customPlugins.map(x => {
-        const item = new CompletionItem(`${x.label}`);
-        item.range = replaceRange;
-        item.insertText = x.insertText;
+    return customPlugins.map(customPlugin => {
+        const item = new CompletionItem(`${customPlugin.label}`);
+        if (customPlugin.needReplaceRange !== false) {
+            item.range = replaceRange;
+        }
+        item.insertText = customPlugin.insertText;
         return item;
     });
 }
