@@ -12,7 +12,7 @@ import { moveRow, moveColumn } from './table/move';
 import { pasteTable } from './table/pasteTable';
 import { copyColumn, pasteColumn } from './table/copyPasteColumn';
 import { onBackspaceKey, onEnterKey} from './keyBehaviour';
-import { contentReuse, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDescriptionList } from './custom';
+import { contentReuse, insertCodeblock, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDescriptionList } from './custom';
 import { format, removeFormatting } from './table/format';
 
 export function activate(context: ExtensionContext) {
@@ -76,6 +76,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.custom.insertVideoShortcut', insertVideoShortcut),
 
         commands.registerCommand('SFDocs.custom.contentReuse', contentReuse),
+        commands.registerCommand('SFDocs.editing.codeblock', insertCodeblock),
         commands.registerCommand('SFDocs.custom.enhancedCodeblock', enhancedCodeblock)
     );
 }
