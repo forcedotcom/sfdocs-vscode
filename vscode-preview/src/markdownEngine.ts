@@ -99,7 +99,7 @@ export class MarkdownEngine {
 	private async getEngine(): Promise<any> {
 		if (!this.md) {
 			this.md = markdownCompiler()
-			.use(html, { handlers: this.commonHandler });
+				.use(html, { handlers: this.commonHandler });
 		}
 
 		const md = await this.md!;
@@ -128,10 +128,10 @@ export class MarkdownEngine {
 		const tokens = typeof input === 'string'
 			? input
 			: input.getText();
-		const file : VFile = vfile({
+		const file: VFile = vfile({
 			dirname: path.dirname(input.fileName),
 			path: input.fileName,
-            contents: tokens.replace(UNICODE_NEWLINE_REGEX, ''),
+			contents: tokens.replace(UNICODE_NEWLINE_REGEX, ''),
 		});
 		const prossesedDoc = await engine.process(file);
 		return prossesedDoc.contents;
@@ -293,9 +293,9 @@ export class MarkdownEngine {
 			.replace(/\-+$/, '') // Remove trailing -
 		);
 		if (node.data) {
-			node.data.hProperties = { id: id, className: ['code-line'], dataLine: node.position.start.line-1 }
+			node.data.hProperties = { id: id, className: ['code-line'], dataLine: node.position.start.line - 1 }
 		} else {
-			node.data = { hProperties: { id: id, className: ['code-line'], dataLine: node.position.start.line-1 } }
+			node.data = { hProperties: { id: id, className: ['code-line'], dataLine: node.position.start.line - 1 } }
 		};
 		return h(node, 'h' + node.depth, all(h, node));
 	};
@@ -306,13 +306,15 @@ export class MarkdownEngine {
 		if (node.url !== null && node.url !== undefined) {
 			props.title = node.title;
 			const imgHash = hash(node.url);
-			const hProperties = {
+			let hProperties = {
 				id: `image-hash-${imgHash}`,
-				className: ['loading'],
 				dataLine: node.position.start.line,
 				dataHref: props.href,
 				src: props.href
 			};
+			if (node.data?.hProperties) {
+				hProperties = { ...hProperties, ...node.data.hProperties }
+			}
 			if (node.data) {
 				node.data.hProperties = hProperties;
 			} else {
