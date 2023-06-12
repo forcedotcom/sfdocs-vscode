@@ -177,4 +177,15 @@ suite("Custom Plugins", () => {
             new Selection(4, 0, 4, 0));
     });
 
+    test("Insert Image: Enhanced", () => {
+        return testCommand('SFDocs.custom.insertEnhancedImage',
+            [
+                ''
+            ],
+            new Selection(0, 1, 0, 1),
+            [`![]( '{"class": "", "title": ""}')`
+            ],
+            new Selection(0, 4, 0, 4));
+    });
+
 });

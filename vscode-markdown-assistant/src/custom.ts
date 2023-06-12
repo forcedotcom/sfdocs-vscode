@@ -15,6 +15,12 @@ export function enhancedCodeblock(){
     return editor!.insertSnippet(new SnippetString('\n```sfdocs-code {"lang":"$1", "title": "$2", "src": "$3" }\n\n```\n'));
 }
 
+
+export function insertCodeblock(){
+    let editor = window.activeTextEditor;
+    return editor!.insertSnippet(new SnippetString('\n```\n$1\n```\n'));
+}
+
 export async function insertVideoShortcut(){
     let items: QuickPickItem[] = [];
     items.push({ label: 'VidYard'});

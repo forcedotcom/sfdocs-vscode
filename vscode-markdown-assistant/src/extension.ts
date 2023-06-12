@@ -3,7 +3,7 @@ import { styleByWrapping, toggleBlockquote } from './basicStyling';
 import { paste } from './Hyperlink';
 import { Document_Selector_Markdown, MdCompletionItemProvider } from './completions';
 import { toggleBulletList, toggleNumberList, checkTaskList, toggleCheckList} from './list';
-import { imagePaste } from './image';
+import { imagePaste, insertEnhancedImage } from './image';
 import { generateTable, generateTableWithAlignment } from './table/generator';
 import { navigateNextCell, navigatePrevCell } from './table/navigate';
 import { insertColumn, insertRow } from './table/insertion';
@@ -12,7 +12,7 @@ import { moveRow, moveColumn } from './table/move';
 import { pasteTable } from './table/pasteTable';
 import { copyColumn, pasteColumn } from './table/copyPasteColumn';
 import { onBackspaceKey, onEnterKey} from './keyBehaviour';
-import { contentReuse, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDescriptionList } from './custom';
+import { contentReuse, insertCodeblock, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDescriptionList } from './custom';
 import { format, removeFormatting } from './table/format';
 
 export function activate(context: ExtensionContext) {
@@ -30,6 +30,7 @@ export function activate(context: ExtensionContext) {
 
         commands.registerCommand('SFDocs.editing.pasteHyperlink', paste),
         commands.registerCommand('SFDocs.editing.insertImage', imagePaste),
+        commands.registerCommand('SFDocs.custom.insertEnhancedImage', insertEnhancedImage),
         
         commands.registerCommand('SFDocs.editing.toggleCheckList', toggleCheckList),
         commands.registerCommand('SFDocs.editing.toggleBulletList', toggleBulletList),
@@ -41,7 +42,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.onShiftEnterKey', ()=>{return onEnterKey("shift");}),
         commands.registerCommand('SFDocs.onBackspaceKey', onBackspaceKey),
 
-        languages.registerCompletionItemProvider(Document_Selector_Markdown, new MdCompletionItemProvider(), '(', '\\', '/', '[', '#', ':', '`'),
+        languages.registerCompletionItemProvider(Document_Selector_Markdown, new MdCompletionItemProvider(), '(', '\\', '/', '[', '#', ':', '`', '-'),
 
         commands.registerCommand('SFDocs.table.generateWithAlignment', generateTableWithAlignment),
         commands.registerCommand('SFDocs.table.generate', generateTable),
@@ -75,6 +76,7 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.custom.insertVideoShortcut', insertVideoShortcut),
 
         commands.registerCommand('SFDocs.custom.contentReuse', contentReuse),
+        commands.registerCommand('SFDocs.editing.codeblock', insertCodeblock),
         commands.registerCommand('SFDocs.custom.enhancedCodeblock', enhancedCodeblock)
     );
 }
