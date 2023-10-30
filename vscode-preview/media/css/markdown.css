@@ -447,9 +447,6 @@ img.content-image {
   border: 1px solid black;
 }
 
-.content-image.image-framed-light {
-  border: 1px solid rgba(229, 229, 229, 1);
-}
 
 .content-image.image-xxl,
 .content-image.image-full {
