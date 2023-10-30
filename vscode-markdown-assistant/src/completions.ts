@@ -5,7 +5,7 @@ import { CancellationToken, CompletionContext, CompletionItem, CompletionItemKin
 /**
  * Source: https://github.com/salesforcedevs/dsc-components/blob/main/packages/%40salesforcedevs/docs-components/src/modules/docHelpers/imgStyle/imgStyle.css
  */
-export const imageClasses = ["image-xxl", "image-full", "image-xl", "image-lg", "image-md", "image-sm", "image-xs", "image-xxs", "image-icon-lg", "image-icon-md", "image-icon-sm", "image-framed", "image-framed-light"]
+export const imageClasses = ["image-xxl", "image-full", "image-xl", "image-lg", "image-md", "image-sm", "image-xs", "image-xxs", "image-icon-lg", "image-icon-md", "image-icon-sm", "image-framed"]
 
 let EXCLUDE_GLOB: string;
 
