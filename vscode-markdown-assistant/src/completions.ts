@@ -65,9 +65,9 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
         let typedDir: string;
         if (/!\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore) || /<img [^>]*src="[^"]*$/.test(lineTextBefore)) {
             /* Check if user is trying enter image class */
-            if (/!\[[^\]]*?\]\([^\}\)]*"class":\s?"/.test(lineTextBefore)) {
+            if (/!\[[^\]]*?\]\([^\}\)]*"class":\s?.*"/.test(lineTextBefore)) {
                 /**
-                 * Find the end position of `"class": "` to keep the selected class after it.
+                 * Find the end position of `"class": "` to calculate the match.
                  */
                 const classRegex = /"class":\s?"/;
                 const matchItems = lineTextBefore.match(classRegex);
@@ -75,8 +75,22 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
                 if (matchItems?.length) {
                     match = match + matchItems[0].length;
                 }
+
+                const classText = lineTextBefore.substring(match); // Extract text after "class": "
+                // Split the class text by space and generate completion items for each class
+                const classes = classText.split(" ").filter(Boolean); // Split by space, filter out empty strings
+                const filteredImageClasses = imageClasses.filter((imageClass) => {
+                    // Check if the class is already present to avoid suggesting duplicates
+                    if (!classes.includes(imageClass)) {
+                        return true;
+                    } else {
+                        match = match + imageClass.length + 1;
+                        return false;
+                    }
+                });
+
                 let replaceRange: Range = new Range(position.line, match, position.line, position.character);
-                return imageClasses.map((imageClass) => {
+                return filteredImageClasses.map((imageClass) => {
                     const completionItem = new CompletionItem(imageClass, CompletionItemKind.Constant);
                     completionItem.range = replaceRange;
                     return completionItem;
