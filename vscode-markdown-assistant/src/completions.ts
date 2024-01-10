@@ -19,7 +19,6 @@ const customPlugins = [
     {label: '::video(VidYard)', insertText: new SnippetString(`\n::video{src="$1" title="$2" type="vidyard"}\n`)},
     {label: '::video(Youtube)', insertText: new SnippetString(`\n::video{src="$1" title="$2" type="youtube"}\n`)},
     {label: '::video(Local)', insertText: new SnippetString(`\n::video{src="$1" title="$2" type="local"}\n`)},
-    {label: ':::caution', insertText: new SnippetString(`\n:::caution\n$1\n:::\n`)},
     {label: ':::tip', insertText: new SnippetString(`\n:::tip\n$1\n:::\n`)},
     {label: ':::note', insertText: new SnippetString(`\n:::note\n$1\n:::\n`)},
     {label: ':::warning', insertText: new SnippetString(`\n:::warning\n$1\n:::\n`)},
@@ -31,7 +30,7 @@ const customPlugins = [
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {
-    
+
     constructor(){
         // Pretend to support multi-workspacefolders
         let resource = null;
@@ -57,7 +56,7 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
     async provideCompletionItems(document: TextDocument, position: Position, token: CancellationToken, _context: CompletionContext): Promise<CompletionItem[] | CompletionList<CompletionItem> | undefined> {
         const lineTextBefore = document.lineAt(position.line).text.substring(0, position.character);
         const lineTextAfter = document.lineAt(position.line).text.substring(position.character);
-        
+
         //file suggestions
         if (workspace.getWorkspaceFolder(document.uri) === undefined) {
             return [];
@@ -102,7 +101,7 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
                     typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('="') + 2);
                 }
                 const imageExtensions = ['png','jpg','jpeg','svg','gif','webp'];
-    
+
                 return getFileSuggestions(imageExtensions, document, typedDir);
             }
         }else if(/\[[^\]]*?\]\([^\)]*$/.test(lineTextBefore) || /::include{src="/.test(lineTextBefore)){
@@ -111,50 +110,50 @@ export class MdCompletionItemProvider implements CompletionItemProvider {
             }else{
                 typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 5);
             }
-            
+
             return getFileSuggestions(['md'], document, typedDir);
         }else if(/::video{src="/.test(lineTextBefore) && /type="local"/.test(lineTextAfter)){
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 5);
-            
+
             return getFileSuggestions(['mp4','mov'], document, typedDir);
         }else if(/sfdocs-code {"lang":"java", "title": ".*", "src": "/.test(lineTextBefore)){
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['java'], document, typedDir);
         }else if(/sfdocs-code {"lang":"py", "title": ".*", "src": "/.test(lineTextBefore)
             || /sfdocs-code {"lang":"python", "title": ".*", "src": "/.test(lineTextBefore)){
 
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['py'], document, typedDir);
         }else if(/sfdocs-code {"lang":"text", "title": ".*", "src": "/.test(lineTextBefore)
             || /sfdocs-code {"lang":"txt", "title": ".*", "src": "/.test(lineTextBefore)){
 
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['txt'], document, typedDir);
         }else if(/sfdocs-code {"lang":"js", "title": ".*", "src": "/.test(lineTextBefore)
             || /sfdocs-code {"lang":"javascript", "title": ".*", "src": "/.test(lineTextBefore)){
 
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['js'], document, typedDir);
         }else if(/sfdocs-code {"lang":"markdown", "title": ".*", "src": "/.test(lineTextBefore)
             || /sfdocs-code {"lang":"md", "title": ".*", "src": "/.test(lineTextBefore)){
 
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['md'], document, typedDir);
         }else if(/sfdocs-code {"lang":"c", "title": ".*", "src": "/.test(lineTextBefore)
             || /sfdocs-code {"lang":"C", "title": ".*", "src": "/.test(lineTextBefore)){
 
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['c'], document, typedDir);
         }else if(/sfdocs-code {"lang":"apex", "title": ".*", "src": "/.test(lineTextBefore)){
 
             typedDir = lineTextBefore.substr(lineTextBefore.lastIndexOf('src') + 7);
-            
+
             return getFileSuggestions(['apex'], document, typedDir);
         }
         /**
@@ -177,7 +176,7 @@ function getFileSuggestions(extensions:string[], document:TextDocument, typedDir
         let items = uris.map(uri => {
             const label = path.relative(basePath, uri.fsPath).replace(/\\/g, '/');
             let item = new CompletionItem(label.replace(/ /g, '%20'), CompletionItemKind.File);
-            
+
             item.sortText = label.replace(/\./g, '{');
 
             return item;

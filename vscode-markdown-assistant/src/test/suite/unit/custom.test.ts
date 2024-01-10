@@ -10,22 +10,6 @@ suite("Custom Plugins", () => {
         await resetConfiguration();
     });
 
-    test("Enhanced Callouts: Caution", () => {
-        return testCommand('SFDocs.custom.enhancedCallouts.caution',
-            [
-                ''
-            ],
-            new Selection(0, 1, 0, 1),
-            [
-                '',
-                ':::caution',
-                '',
-                ':::',
-                ''
-            ],
-            new Selection(2, 0, 2, 0));
-    });
-
     test("Enhanced Callouts: Tip", () => {
         return testCommand('SFDocs.custom.enhancedCallouts.tip',
             [

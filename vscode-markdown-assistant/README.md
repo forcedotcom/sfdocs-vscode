@@ -35,7 +35,7 @@ Without a selection, enter Cmd+B to toggle bold on and off.
 To style a word, click the word and toggle the styles, no selection required.
 
 To revert styling, click the start or end of the stylized text and toggle the style.
-   
+
 ![RevertBoldNoSelection](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/BeforeBoldStartPattern.gif?raw=true)
 
 Apply a blockquote to a single line. Click the line and select **Toggle Blockquote** .
@@ -60,9 +60,9 @@ To cross out a list item, click the list item and toggle strikethrough.
 - `Enter` key at the end of a list item creates a list item on the next line. If `Enter` is pressed again without typing anything for this list item, the list item is removed and the cursor goes to the next line. If you want a newline instead of a new list item, press `Shift+Enter`.
 - `Tab` key converts the selected list item into  a sublist item.
 - `Backspace` converts a sublist item into a normal list item, and a normal list item into normal text.
-  
 
-  
+
+
 ## Tables
 
 -   Add a table (with default (left) alignment)
@@ -86,24 +86,24 @@ Tables reformat as you type into a more readable format (if you navigate using T
 Tab (Next Cell) and Shift+Tab (Previous Cell) are the easiest ways to navigate through the cells.
 
 To copy a table from a source other than Markdown and paste it in Markdown format, select **Table** > **Paste Table** from the context menu.
-  
+
 ### Table Columns/Rows Editing
 
 Select any portion of the rows or columns to delete and select **Table > Delete Selected Rows/Columns** from the context menu.
 
-![DeleteRows](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/DeleteRows.gif?raw=true). 
+![DeleteRows](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/DeleteRows.gif?raw=true).
 
 In the following example, the rows corresponding to Food, Home and Medical were selected, and **Table > Delete Selected Rows/Columns** is chosen from the right click menu.
-    
+
 ![DeleteColumns](https://github.com/forcedotcom/sfdocs-vscode/blob/master/vscode-markdown-assistant/images/DeleteColumns.gif?raw=true)
 
 The columns corresponding to Budget and Actual were selected, and **Table > Delete Selected Columns** is chosen from the right click menu.
-  
+
 **Insert, move, copy, or paste a table row or a column**: Place the cursor on the required row/column and use the feature. (**Insert Row** on the header row inserts a new first row.)
 
 ## Custom Salesforce Plugins
 
--   Enhanced Callouts–Tip, Warning, Note, Caution, Important
+-   Enhanced Callouts–Tip, Warning, Note, Important
 -   Enhanced Code blocks
 -   Insert Video - VidYard, YouTube, Local file
 -   Content Reuse (Include)

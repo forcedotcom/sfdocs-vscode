@@ -27,12 +27,12 @@ Before you use the plugin, disable the default markdown-language-feature extensi
 - Run npm run compile to compile your changes
 - fn + F5 to test locally . It will open the vs code in local mode and open the markdown file you want to test in a new window.
 - Run npm run package to generate the latest .vsix file
- 
-`Always use npm package manager to generate the .vsix file for the extension`. 
 
-## For debugging 
+`Always use npm package manager to generate the .vsix file for the extension`.
 
-- For debugging the css you can use the Webview Developer tools 
+## For debugging
+
+- For debugging the css you can use the Webview Developer tools
 
 ## Shortcuts
 
@@ -94,9 +94,6 @@ An example of a tip
 An example of a warning
 :::
 
-:::caution
-An example of a caution
-:::
 
 :::note
 An example of a note
