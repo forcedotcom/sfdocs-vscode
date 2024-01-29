@@ -45,18 +45,21 @@ const types = {
         const mdLineNumber = node.position.start.line;
         const inputDom = metadata.get('inputDom');
         if (calloutType) {
-            const domResponse = new Map<string, string>();
-            const typeDetails = types[calloutType];
-            const outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${mdLineNumber}>
-            <div class="admonition-heading">
-                <h5>
-                    <span class="admonition-icon">${typeDetails.svg}</span>
-                    ${calloutTitle}
-                </h5>
-            </div>
-            <div class="admonition-content">${inputDom}</div>
-            </div>`;
-            domResponse.set('outputDom', outputDom);
-            return domResponse;
+          const domResponse = new Map<string, string>();
+          const typeDetails = types[calloutType];
+          let outputDom = `<div>${inputDom}</div>`
+          if (typeDetails) {
+            outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${mdLineNumber}>
+                  <div class="admonition-heading">
+                      <h5>
+                          <span class="admonition-icon">${typeDetails.svg}</span>
+                          ${calloutTitle}
+                      </h5>
+                  </div>
+                  <div class="admonition-content">${inputDom}</div>
+                  </div>`;
+          }
+          domResponse.set('outputDom', outputDom);
+          return domResponse;
         }
     }
