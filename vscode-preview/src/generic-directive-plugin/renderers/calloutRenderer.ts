@@ -27,22 +27,15 @@ const types = {
       keyword: "Important",
       emoji: "📢" ,//'&#x1f4e2;'
       svg:'<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 52 52" id="announcement"><path d="M22.7 45.4l-1.3-1c-1.4-1-1.4-3-1.4-4v-2.9c0-.8-.7-1.5-1.5-1.5h-6c-.8 0-1.5.7-1.5 1.5v7.7c0 2.7 1.6 4.8 4.1 4.8H20c2.9 0 3.1-2 3.1-2s.5-1.8-.4-2.6zM45 18V4.4v-.1c0-2.4-3-3.1-4.6-1.5l-8.9 8.4c-1.4 1.2-3.2 1.7-5 1.7H11.3C6.1 13 2 17.5 2 22.7v.2c0 5.2 4.1 9.1 9.3 9.1h15.2c1.9 0 3.7.8 5.1 2l8.8 8.6c1.6 1.6 4.6 1 4.6-1.4V27.6c3 0 4.8-2.1 4.8-4.8 0-2.7-1.8-4.8-4.8-4.8z"></path></svg>'
-    },
-    caution: {
-      ifmClass: "warning",
-      keyword: "Caution",
-      emoji: "⚠️", // '&#x26A0;&#xFE0F;'
-      svg:
-        '<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 52 52" id="alert"><path d="M34.7 31l-.4.1c-1.5.5-3.1-.2-3.7-1.7l-3.3-8.8c-2.6-7-10.5-10.4-17.4-7.5C3.4 15.8.5 23.4 2.9 30L6 38.5c.5 1.5-.3 3.1-1.7 3.6l-.4.1c-1.7.6-2.5 2.6-1.9 4.3l.4 1.1c.2.5.9.9 1.5.6l34.4-12.7c.6-.2.9-1 .7-1.6l-.4-1.1c-.3-1.6-2.2-2.5-3.9-1.8zm-8.4 12.6l-7.5 2.8c-.5.2-.7.8-.4 1.2 1.2 2 3.7 2.8 5.9 2 2.2-.8 3.5-3.1 3.2-5.3-.2-.5-.8-.8-1.2-.7zM49.2 28.6c1.7-5.7.8-11.8-2.3-16.8-3.1-5.1-8.2-8.6-14-9.7-.5-.1-.9.2-.9.6l-.5 2.8c-.1.4.2.7.6.8 4.5.9 8.5 3.7 11 7.7s3.1 8.8 1.9 13.3c-.1.4.1.8.5.9l2.7.9c.5 0 .9-.1 1-.5zM38.2 17c-1.6-2.6-4.2-4.3-7.2-4.9-.4-.1-.8.2-.9.6l-.3 2.9c0 .4.2.7.6.8 1.7.4 3.2 1.4 4.1 2.9.9 1.5 1.2 3.3.7 4.9-.1.3.1.7.4.8l2.7 1.1c.4.2.8-.1 1-.5.9-2.9.5-6-1.1-8.6z"></path></svg>'
     }
   };
 /**
- * This renderer is useful to convert 
- * 
+ * This renderer is useful to convert
+ *
     :::tip
         First line of tip text
     :::
- * 
+ *
  * @param metadata Contains all the information need to create a new DOM
  */
   export default function calloutTransform(metadata: Map<string, string>): Map<string, string> {
@@ -52,19 +45,21 @@ const types = {
         const mdLineNumber = node.position.start.line;
         const inputDom = metadata.get('inputDom');
         if (calloutType) {
-            const domResponse = new Map<string, string>();
-            const typeDetails = types[calloutType];
-            const outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${mdLineNumber}>
-            <div class="admonition-heading">
-                <h5>
-                    <span class="admonition-icon">${typeDetails.svg}</span>
-                    ${calloutTitle}
-                </h5>
-            </div>
-            <div class="admonition-content">${inputDom}</div>
-            </div>`;
-            domResponse.set('outputDom', outputDom);
-            return domResponse;
+          const domResponse = new Map<string, string>();
+          const typeDetails = types[calloutType];
+          let outputDom = `<div>${inputDom}</div>`
+          if (typeDetails) {
+            outputDom = `<div class="admonition-parent-container admonition admonition-${calloutType} alert alert--secondary code-line" data-line=${mdLineNumber}>
+                  <div class="admonition-heading">
+                      <h5>
+                          <span class="admonition-icon">${typeDetails.svg}</span>
+                          ${calloutTitle}
+                      </h5>
+                  </div>
+                  <div class="admonition-content">${inputDom}</div>
+                  </div>`;
+          }
+          domResponse.set('outputDom', outputDom);
+          return domResponse;
         }
     }
-    

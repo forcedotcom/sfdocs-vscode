@@ -3,7 +3,7 @@
 	"displayName": "SFDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
@@ -184,11 +184,6 @@
 				"category": "SFDocs"
 			},
 			{
-				"command": "SFDocs.custom.enhancedCallouts.caution",
-				"title": "Callout: Caution",
-				"category": "SFDocs"
-			},
-			{
 				"command": "SFDocs.custom.enhancedCallouts.note",
 				"title": "Callout: Note",
 				"category": "SFDocs"
@@ -242,10 +237,6 @@
 				},
 				{
 					"command": "SFDocs.custom.enhancedCallouts.warning",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.enhancedCallouts.caution",
 					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				},
 				{
@@ -417,11 +408,6 @@
 				}
 			],
 			"SFDocs.editing.insert": [
-				{
-					"command": "SFDocs.custom.enhancedCallouts.caution",
-					"group": "aa_author1@1",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
 				{
 					"command": "SFDocs.custom.enhancedCallouts.important",
 					"group": "aa_author1@2",
