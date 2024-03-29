@@ -3,10 +3,10 @@ import {
     genericDirective,
     internalReferencePlugin,
     remark_directive,
-} from '@sfdocs-internal/generic-directive-plugin';
-import imageTransformerPlugin from '@sfdocs-internal/image-transformer';
-import { sfdocsCustomPlugin } from '@sfdocs-internal/sfdocs-directive-plugin';
-import { defListPlugin } from '@sfdocs-internal/definition-list-plugin';
+} from '@salesforcedevs/sfdocs-generic-directive-plugin';
+import imageTransformerPlugin from '@salesforcedevs/sfdocs-image-transformer';
+import { sfdocsCustomPlugin } from '@salesforcedevs/sfdocs-directive-plugin';
+import { defListPlugin } from '@salesforcedevs/sfdocs-definition-list-plugin';
 import * as remarkGfm from 'remark-gfm';
 import * as remarkFrontmatter from 'remark-frontmatter';
 import * as highlight from 'remark-highlight.js';
