@@ -4,7 +4,7 @@ import renderBanner from './renderers/bannerRenderer';
 import renderCallout from './renderers/calloutRenderer';
 import renderHeading from './renderers/anchorHeadingRenderer';
 import renderSampleCodeContent from './renderers/sampleCodeContent';
-import type { RenderFunction } from '@sfdocs-internal/types';
+import type { RenderFunction } from '@salesforcedevs/sfdocs-types';
 
 /**
  * These are default rendering functions which will be used in tandem with the lwr based themes.

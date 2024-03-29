@@ -21,10 +21,10 @@
     "path": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@babel/highlight",
     "licenseFile": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@babel/highlight/LICENSE"
   },
-  "@sfdocs-internal/markdown-compiler@0.1.52": {
+  "@salesforcedevs/sfdocs-markdown-compiler@0.1.52": {
     "licenses": "MIT",
     "publisher": "Kishore",
-    "path": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@sfdocs-internal/markdown-compiler"
+    "path": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@salesforcedevs/sfdocs-markdown-compiler"
   },
   "@sindresorhus/is@0.14.0": {
     "licenses": "MIT",
@@ -3755,8 +3755,8 @@
     "publisher": "Titus Wormer",
     "email": "tituswormer@gmail.com",
     "url": "https://wooorm.com",
-    "path": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@sfdocs-internal/markdown-compiler/node_modules/remark-html",
-    "licenseFile": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@sfdocs-internal/markdown-compiler/node_modules/remark-html/license"
+    "path": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@salesforcedevs/sfdocs-markdown-compiler/node_modules/remark-html",
+    "licenseFile": "/Users/subrat.thakur/CodeBase/extensions/vscode-SFDocs-preview/node_modules/@salesforcedevs/sfdocs-markdown-compiler/node_modules/remark-html/license"
   },
   "remark-html@12.0.0": {
     "licenses": "MIT",
