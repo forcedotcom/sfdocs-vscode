@@ -21,17 +21,10 @@
     "extensionPack": [
         "salesforce.salesforce-docs-markdown-preview",
         "salesforce.sfdocs-markdown-assistant",
-        "MuleSoftInc.aml-vscode",
-        "vsls-contrib.codetour",
-        "donjayamanne.githistory",
-        "GitHub.vscode-pull-request-github",
-        "oderwat.indent-rainbow",
-        "Tyriar.lorem-ipsum",
-        "PKief.material-icon-theme",
-        "philosowaffle.openapi-designer",
-        "ionutvmi.path-autocomplete",
         "esbenp.prettier-vscode",
-        "redhat.vscode-yaml",
-        "acrolinx.vscode-sidebar"
+        "ChrisChinchilla.vale-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "ltex-plus.vscode-ltex-plus",
+        "dbaeumer.vscode-eslint"
     ]
 }
