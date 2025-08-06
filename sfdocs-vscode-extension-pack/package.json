@@ -3,7 +3,7 @@
     "displayName": "SFDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "icon": "icon.png",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
