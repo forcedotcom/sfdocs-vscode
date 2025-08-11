@@ -13,7 +13,9 @@
     },
     "scripts": {
         "package": "vsce package",
-        "vscode:publish": "vsce publish"
+        "vscode:publish": "vsce publish",
+        "setup": "node setup-vale.js",
+        "configure": "node setup-vale.js"
     },
     "categories": [
         "Extension Packs"
