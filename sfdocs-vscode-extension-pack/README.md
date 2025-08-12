@@ -8,18 +8,11 @@ The extension pack is good for beginning and professional authors.
 
 - [SFDocs Markdown Preview](https://marketplace.visualstudio.com/items?itemName=salesforce.salesforce-docs-markdown-preview)–Provides Micromark-compliant Markdown previews.
 - [SFDocs Markdown Assistant](https://marketplace.visualstudio.com/items?itemName=salesforce.sfdocs-markdown-assistant)–Provides palette commands and shortcuts that make it easy to write Markdown.
-- [AML Support](https://marketplace.visualstudio.com/items?itemName=MuleSoftInc.aml-vscode)–Implements AML Language Server for use with RAML and OpenAPI specs.
-- [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)–Allows you to record and play back guided walkthroughs of your codebases.
-- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)–View and search git log.
-- [GitHub Pull Requests & Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)–Allows you to review and manage GitHub pull requests and issues in Visual Studio Code.
-- [Indent Rainbow](https://marketplace.visualstudio.com/items?itemName=oderwat.indent-rainbow)–Colorizes the indentation of your text alternating four different colors on each step.
-- [Lorem Ipsum](https://marketplace.visualstudio.com/items?itemName=Tyriar.lorem-ipsum)–Generates and inserts lorem ipsum text.
-- [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)–Allows VSCode to use Material Design icons.
-- [OpenAPI Designer](https://marketplace.visualstudio.com/items?itemName=philosowaffle.openapi-designer)–Previews OpenAPI schemas.
-- [Path Autocomplete](https://marketplace.visualstudio.com/items?itemName=ionutvmi.path-autocomplete)–Provides path completion for visual studio code.
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)–Enforces a consistent style by parsing your code and reprinting it with its own style rules.
-- [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)–Provides comprehensive YAML Language support to Visual Studio Code.
-- [Acrolinx for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=acrolinx.vscode-sidebar)-An AI-powered platform that eliminates content chaos and delivers strategy-aligned content, at scale.
+- [Vale](https://marketplace.visualstudio.com/items?itemName=ChrisChinchilla.vale-vscode)-Provides customizable spelling, style, and grammar checking for a variety of markup formats (Markdown, AsciiDoc, reStructuredText, HTML, and DITA)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker&ssr=false#overview)-help catch common spelling errors while keeping the number of false positives low.
+- [LTeX+](https://marketplace.visualstudio.com/items?itemName=ltex-plus.vscode-ltex-plus)-provides offline grammar checking of various markup languages in Visual Studio Code using LanguageTool (LT)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&ssr=false#overview)-Lints JavaScript and TypeScript code to enforce consistent style and catch common errors.
 
 ## Contribute
 
