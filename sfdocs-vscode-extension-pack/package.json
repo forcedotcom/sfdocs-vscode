@@ -1,19 +1,49 @@
 {
     "name": "sfdocs-vscode-extension-pack",
     "displayName": "SFDocs Extension Pack",
-    "description": "One stop shop for Salesforce Markdown writing productivity.",
+    "description": "One stop shop for Salesforce Markdown writing productivity with automatic Cursor AI rules setup.",
     "icon": "icon.png",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
     "repository": "https://github.com/forcedotcom/sfdocs-vscode/tree/master/sfdocs-vscode-extension-pack",
     "engines": {
-        "vscode": "^1.58.0"
+        "vscode": "^1.74.0"
+    },
+    "main": "./out/extension.js",
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "sfdocs.setupCursorRules",
+                "title": "SFDocs: Setup/Update .cursorrules File"
+            },
+            {
+                "command": "sfdocs.checkForUpdates",
+                "title": "SFDocs: Check for Extension Updates"
+            }
+        ],
+        "configuration": {
+            "title": "SFDocs Extension Pack",
+            "properties": {
+                "sfdocs.autoCheckUpdates": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Automatically check for extension updates daily"
+                }
+            }
+        }
     },
     "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "webpack --mode production",
+        "watch": "webpack --mode development --watch",
         "package": "vsce package",
-        "vscode:publish": "vsce publish"
+        "vscode:publish": "vsce publish",
+        "lint": "eslint src --ext ts"
     },
     "categories": [
         "Extension Packs"
@@ -26,5 +56,16 @@
         "streetsidesoftware.code-spell-checker",
         "ltex-plus.vscode-ltex-plus",
         "dbaeumer.vscode-eslint"
-    ]
+    ],
+    "devDependencies": {
+        "@types/node": "^18.0.0",
+        "@types/vscode": "^1.74.0",
+        "@typescript-eslint/eslint-plugin": "^6.0.0",
+        "@typescript-eslint/parser": "^6.0.0",
+        "eslint": "^8.0.0",
+        "ts-loader": "^9.4.0",
+        "typescript": "^5.0.0",
+        "webpack": "^5.80.0",
+        "webpack-cli": "^5.0.0"
+    }
 }
