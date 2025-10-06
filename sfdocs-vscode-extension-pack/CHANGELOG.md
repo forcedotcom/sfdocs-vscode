@@ -4,6 +4,64 @@ All notable changes to the "SFDocs-vscode-extension-pack" extension pack will be
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.1.6] - 2025-10-06
+
+### Changed
+- Repository detection is now **case-sensitive** to distinguish between `salesforcedocs` and `SalesforceDocs` organizations
+- Only `salesforcedocs` (lowercase) repositories will trigger the extension
+
+## [0.1.5] - 2025-10-06
+
+### Added
+- Repository detection: Extension now only activates for salesforcedocs GitHub repositories
+- Checks `.git/config` for salesforcedocs organization to determine if setup prompts should appear
+
+### Changed
+- Warnings and setup prompts only appear for salesforcedocs repositories
+- Non-salesforcedocs repositories are silently skipped
+
+## [0.1.4] - 2025-10-06
+
+### Changed
+- Notifications now use warning dialogs (yellow/orange) for better visibility and urgency
+- Updated message text to emphasize importance of SFDocs Cursor AI rules
+- Button text changed to "Yes, Set Up Now" for clearer call-to-action
+
+## [0.1.3] - 2025-10-06
+
+### Changed
+- Notifications now use modal dialogs that stay visible until user responds (won't auto-dismiss)
+
+## [0.1.2] - 2025-10-06
+
+### Added
+- **Auto-setup Configuration**: New setting `sfdocs.autoSetupCursorRules` (default: false)
+  - When enabled, automatically sets up `.cursorrules` without prompting
+  - Automatically updates existing `.cursorrules` files when new versions are available
+  - Runs silently in the background
+
+### Changed
+- Reduced delay for auto-setup from 2 seconds to 1 second when `autoSetupCursorRules` is enabled
+- Setup function now accepts parameter to suppress notifications during auto-setup
+
+## [0.1.1] - 2025-10-05
+
+### Added
+- **Cursor Editor Detection**: Extension now detects if running in Cursor vs VS Code and only activates Cursor rules management in Cursor
+- **Auto-check on Every Folder Open**: Extension checks for `.cursorrules` existence and updates every time a folder is opened
+- **Automatic .gitignore Management**: Automatically adds `.cursorrules` to `.gitignore` when setting up the file
+- **"Never for this workspace" Option**: Users can permanently disable setup prompts for specific workspaces
+- **Update Notifications**: When `.cursorrules` file exists but is outdated, shows update notification with options to update or view changes
+
+### Changed
+- Extension now runs check on every workspace folder open (not just first time)
+- Improved notification messages with emojis for better visibility
+- Manual setup command now warns when running in VS Code (not Cursor)
+
+### Fixed
+- Extension now properly detects and handles workspace-specific preferences
+- Better handling of workspace folder changes
+
 ## [0.1.0] - 2025-10-05
 
 ### Added

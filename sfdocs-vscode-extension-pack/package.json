@@ -3,7 +3,7 @@
     "displayName": "SFDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity with automatic Cursor AI rules setup.",
     "icon": "icon.png",
-    "version": "0.1.0",
+    "version": "0.1.6",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
@@ -15,6 +15,12 @@
     "activationEvents": [
         "onStartupFinished"
     ],
+    "enabledApiProposals": [],
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
     "contributes": {
         "commands": [
             {
@@ -33,6 +39,11 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Automatically check for extension updates daily"
+                },
+                "sfdocs.autoSetupCursorRules": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Automatically setup .cursorrules without prompting (default: false, will prompt user)"
                 }
             }
         }

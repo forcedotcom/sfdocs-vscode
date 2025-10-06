@@ -169,6 +169,41 @@ function simpleHash(content: string): string {
 }
 
 /**
+ * Checks if the current editor is Cursor (vs regular VS Code)
+ */
+function isCursorEditor(): boolean {
+    // Cursor is a fork of VS Code and identifies itself differently
+    const appName = vscode.env.appName.toLowerCase();
+    const appRoot = (vscode.env as any).appRoot || '';
+    
+    // Check if app name contains 'cursor' or app root contains cursor
+    return appName.includes('cursor') || appRoot.toLowerCase().includes('cursor');
+}
+
+/**
+ * Checks if the workspace is a salesforcedocs repository (case-sensitive)
+ */
+async function isSalesforceDocsRepo(workspaceRoot: string): Promise<boolean> {
+    try {
+        const gitConfigPath = path.join(workspaceRoot, '.git', 'config');
+        
+        if (!fs.existsSync(gitConfigPath)) {
+            return false;
+        }
+        
+        const gitConfig = fs.readFileSync(gitConfigPath, 'utf8');
+        
+        // Check if remote URL contains salesforcedocs (case-sensitive to distinguish from SalesforceDocs)
+        return gitConfig.includes('salesforcedocs') || 
+               gitConfig.includes('github.com/salesforcedocs') ||
+               gitConfig.includes('github.com:salesforcedocs');
+    } catch (error) {
+        console.error('Failed to check git config:', error);
+        return false;
+    }
+}
+
+/**
  * Gets the workspace root path where .cursorrules should be placed
  */
 function getWorkspaceRoot(): string | undefined {
@@ -178,6 +213,44 @@ function getWorkspaceRoot(): string | undefined {
     }
     // Use the first workspace folder
     return workspaceFolders[0].uri.fsPath;
+}
+
+/**
+ * Ensures .cursorrules is in .gitignore
+ */
+async function ensureGitIgnore(workspaceRoot: string): Promise<void> {
+    const gitignorePath = path.join(workspaceRoot, '.gitignore');
+    const cursorrulesEntry = '.cursorrules';
+    
+    try {
+        let gitignoreContent = '';
+        let fileExists = false;
+        
+        // Read existing .gitignore if it exists
+        if (fs.existsSync(gitignorePath)) {
+            gitignoreContent = fs.readFileSync(gitignorePath, 'utf8');
+            fileExists = true;
+        }
+        
+        // Check if .cursorrules is already in .gitignore
+        const lines = gitignoreContent.split('\n');
+        const alreadyIgnored = lines.some(line => 
+            line.trim() === cursorrulesEntry || 
+            line.trim() === '/.cursorrules'
+        );
+        
+        if (!alreadyIgnored) {
+            const newContent = gitignoreContent.trim() 
+                ? `${gitignoreContent.trim()}\n\n${cursorrulesEntry}\n`
+                : `${cursorrulesEntry}\n`;
+            
+            fs.writeFileSync(gitignorePath, newContent, 'utf8');
+            console.log('Added .cursorrules to .gitignore');
+        }
+    } catch (error) {
+        console.error('Failed to update .gitignore:', error);
+        // Don't fail the whole operation if .gitignore update fails
+    }
 }
 
 /**
@@ -252,6 +325,9 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
         // Write the file
         fs.writeFileSync(cursorRulesPath, templateContent, 'utf8');
         
+        // Ensure .cursorrules is in .gitignore
+        await ensureGitIgnore(workspaceRoot);
+        
         // Update version and setup time
         await context.globalState.update(CONTENT_VERSION_KEY, CURRENT_CONTENT_VERSION);
         await context.globalState.update(LAST_SETUP_KEY, Date.now());
@@ -278,15 +354,131 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
 }
 
 
+/**
+ * Checks and sets up .cursorrules if needed when workspace is opened
+ */
+async function checkAndSetupCursorRules(context: vscode.ExtensionContext): Promise<void> {
+    // Only run if we're in Cursor editor
+    if (!isCursorEditor()) {
+        console.log('Not running in Cursor editor, skipping .cursorrules setup');
+        return;
+    }
+
+    const workspaceRoot = getWorkspaceRoot();
+    if (!workspaceRoot) {
+        return;
+    }
+
+    // Check if this is a salesforcedocs repository
+    const isSalesforceRepo = await isSalesforceDocsRepo(workspaceRoot);
+    if (!isSalesforceRepo) {
+        console.log('Not a salesforcedocs repository, skipping .cursorrules setup');
+        return;
+    }
+
+    const cursorRulesPath = path.join(workspaceRoot, CURSORRULES_FILENAME);
+    
+    // Check configuration for auto-setup
+    const config = vscode.workspace.getConfiguration('sfdocs');
+    const autoSetup = config.get<boolean>('autoSetupCursorRules', false);
+    
+    // Check if .cursorrules exists
+    if (!fs.existsSync(cursorRulesPath)) {
+        // File doesn't exist
+        if (autoSetup) {
+            // Auto-setup without prompting
+            console.log('Auto-setting up .cursorrules (autoSetupCursorRules: true)');
+            setTimeout(async () => {
+                await setupCursorRules(context, false);
+            }, 1000);
+        } else {
+            // Ask user with warning modal (more noticeable)
+            setTimeout(async () => {
+                const answer = await vscode.window.showWarningMessage(
+                    '⚠️ SFDocs Cursor AI rules are required for optimal documentation assistance. Set them up now?',
+                    { modal: true },
+                    'Yes, Set Up Now',
+                    'Not Now',
+                    'Never for this workspace'
+                );
+                
+                if (answer === 'Yes, Set Up Now') {
+                    await setupCursorRules(context, true);
+                } else if (answer === 'Never for this workspace') {
+                    const workspaceState = context.workspaceState;
+                    await workspaceState.update('sfdocs.skipCursorRulesSetup', true);
+                }
+            }, 2000);
+        }
+    } else {
+        // File exists, check if it needs updating
+        const templateContent = getEmbeddedTemplate(context);
+        if (templateContent) {
+            const existingContent = fs.readFileSync(cursorRulesPath, 'utf8');
+            const lastVersion = context.globalState.get<string>(CONTENT_VERSION_KEY);
+            
+            if (existingContent !== templateContent && lastVersion !== CURRENT_CONTENT_VERSION) {
+                if (autoSetup) {
+                    console.log('Auto-updating .cursorrules (autoSetupCursorRules: true)');
+                    setTimeout(async () => {
+                        await setupCursorRules(context, false);
+                    }, 1000);
+                } else {
+                    setTimeout(async () => {
+                        const answer = await vscode.window.showWarningMessage(
+                            '⚠️ Updated SFDocs Cursor AI rules are available. Update now to get the latest improvements.',
+                            { modal: true },
+                            'Update Now',
+                            'View Changes',
+                            'Later'
+                        );
+                        
+                        if (answer === 'Update Now') {
+                            await setupCursorRules(context, true);
+                        } else if (answer === 'View Changes') {
+                            const tempPath = path.join(workspaceRoot, `.cursorrules.new`);
+                            fs.writeFileSync(tempPath, templateContent, 'utf8');
+                            
+                            const originalUri = vscode.Uri.file(cursorRulesPath);
+                            const newUri = vscode.Uri.file(tempPath);
+                            await vscode.commands.executeCommand('vscode.diff', originalUri, newUri, '.cursorrules: Current ↔ New');
+                            
+                            setTimeout(() => {
+                                if (fs.existsSync(tempPath)) {
+                                    fs.unlinkSync(tempPath);
+                                }
+                            }, 60000);
+                        }
+                    }, 3000);
+                }
+            }
+        }
+    }
+}
+
 export function activate(context: vscode.ExtensionContext) {
     console.log('SFDocs Extension Pack is now active');
+    
+    if (isCursorEditor()) {
+        console.log('Running in Cursor editor - Cursor AI rules management enabled');
+    } else {
+        console.log('Running in VS Code - Cursor AI rules management disabled');
+    }
 
-    // Register command to set up .cursorrules
     const setupCommand = vscode.commands.registerCommand('sfdocs.setupCursorRules', async () => {
+        if (!isCursorEditor()) {
+            const answer = await vscode.window.showWarningMessage(
+                'This feature is designed for Cursor editor. You appear to be using VS Code. Continue anyway?',
+                'Yes',
+                'No'
+            );
+            if (answer !== 'Yes') {
+                return;
+            }
+        }
         await setupCursorRules(context, true);
     });
 
-    // Register command to manually check for extension updates
     const checkUpdateCommand = vscode.commands.registerCommand('sfdocs.checkForUpdates', async () => {
         vscode.window.showInformationMessage('Checking for SFDocs Extension Pack updates...');
         await checkForExtensionUpdate(context);
@@ -294,33 +486,25 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(setupCommand, checkUpdateCommand);
 
-    // Auto-setup on first workspace open (only if file doesn't exist)
-    const workspaceRoot = getWorkspaceRoot();
-    if (workspaceRoot) {
-        const cursorRulesPath = path.join(workspaceRoot, CURSORRULES_FILENAME);
-        const lastSetup = context.globalState.get<number>(LAST_SETUP_KEY, 0);
-        
-        // If file doesn't exist and we haven't set up before, offer to set up
-        if (!fs.existsSync(cursorRulesPath) && lastSetup === 0) {
-            setTimeout(async () => {
-                const answer = await vscode.window.showInformationMessage(
-                    'Would you like to set up SFDocs Cursor AI rules for this workspace?',
-                    'Yes',
-                    'Not Now'
-                );
-                
-                if (answer === 'Yes') {
-                    await setupCursorRules(context, true);
-                }
-            }, 2000); // 2 seconds delay after activation
-        }
+    const skipSetup = context.workspaceState.get<boolean>('sfdocs.skipCursorRulesSetup', false);
+    
+    if (!skipSetup) {
+        checkAndSetupCursorRules(context);
     }
 
-    // Check for extension updates (in background)
+    const workspaceFoldersChangeListener = vscode.workspace.onDidChangeWorkspaceFolders(() => {
+        const skipSetupNow = context.workspaceState.get<boolean>('sfdocs.skipCursorRulesSetup', false);
+        if (!skipSetupNow) {
+            checkAndSetupCursorRules(context);
+        }
+    });
+
+    context.subscriptions.push(workspaceFoldersChangeListener);
+
     if (shouldCheckForExtensionUpdate(context)) {
         setTimeout(() => {
             checkForExtensionUpdate(context);
-        }, 5000); // 5 seconds delay after activation
+        }, 5000);
     }
 }
 
