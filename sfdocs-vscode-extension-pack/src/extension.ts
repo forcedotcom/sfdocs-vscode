@@ -2,14 +2,16 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
 import * as https from 'https';
+import { exec } from 'child_process';
+import { promisify } from 'util';
 
 const CURSORRULES_FILENAME = '.cursorrules';
 const CURSORRULES_TEMPLATE = 'cursorrules-template.txt';
 const LAST_SETUP_KEY = 'sfdocs.cursorrules.lastSetup';
 const CONTENT_VERSION_KEY = 'sfdocs.cursorrules.contentVersion';
-const CURRENT_CONTENT_VERSION = '1.0.0'; // Increment this when template content changes
+const CURRENT_CONTENT_VERSION = '1.0.0';
 const LAST_VERSION_CHECK_KEY = 'sfdocs.extension.lastVersionCheck';
-const VERSION_CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000; // 24 hours
+const VERSION_CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000;
 const EXTENSION_ID = 'salesforce.sfdocs-vscode-extension-pack';
 
 /**
@@ -41,8 +43,8 @@ async function fetchLatestVersion(): Promise<string | undefined> {
             path: `/items?itemName=${EXTENSION_ID}`,
             method: 'GET',
             headers: {
-                'Accept': 'application/json',
-                'User-Agent': 'VSCode-Extension'
+                accept: 'application/json',
+                userAgent: 'VSCode-Extension'
             }
         };
 
@@ -55,7 +57,6 @@ async function fetchLatestVersion(): Promise<string | undefined> {
             
             response.on('end', () => {
                 try {
-                    // Try to extract version from the marketplace page
                     const versionMatch = data.match(/"version"\s*:\s*"([^"]+)"/);
                     if (versionMatch && versionMatch[1]) {
                         resolve(versionMatch[1]);
@@ -92,7 +93,6 @@ async function checkForExtensionUpdate(context: vscode.ExtensionContext): Promis
             return;
         }
 
-        // Update last check time
         await context.globalState.update(LAST_VERSION_CHECK_KEY, Date.now());
 
         if (compareVersions(latestVersion, currentVersion) > 0) {
@@ -104,7 +104,6 @@ async function checkForExtensionUpdate(context: vscode.ExtensionContext): Promis
             );
 
             if (answer === 'Update Now') {
-                // Open the extension in marketplace for update
                 vscode.commands.executeCommand('workbench.extensions.installExtension', EXTENSION_ID);
                 vscode.window.showInformationMessage(
                     'Opening extension in marketplace. Click "Update" to install the latest version.',
@@ -156,49 +155,50 @@ function getEmbeddedTemplate(context: vscode.ExtensionContext): string | undefin
 }
 
 /**
- * Calculate a simple hash of the content for change detection
- */
-function simpleHash(content: string): string {
-    let hash = 0;
-    for (let i = 0; i < content.length; i++) {
-        const char = content.charCodeAt(i);
-        hash = ((hash << 5) - hash) + char;
-        hash = hash & hash; // Convert to 32-bit integer
-    }
-    return hash.toString(36);
-}
-
-/**
  * Checks if the current editor is Cursor (vs regular VS Code)
  */
 function isCursorEditor(): boolean {
-    // Cursor is a fork of VS Code and identifies itself differently
     const appName = vscode.env.appName.toLowerCase();
-    const appRoot = (vscode.env as any).appRoot || '';
+    const appRoot = ((vscode.env as Record<string, unknown>).appRoot as string) || '';
     
-    // Check if app name contains 'cursor' or app root contains cursor
     return appName.includes('cursor') || appRoot.toLowerCase().includes('cursor');
 }
 
 /**
  * Checks if the workspace is a salesforcedocs repository (case-sensitive)
+ * Uses git command to properly parse remote URLs
+ * Only returns true if git is initialized AND has salesforcedocs remote
  */
 async function isSalesforceDocsRepo(workspaceRoot: string): Promise<boolean> {
     try {
-        const gitConfigPath = path.join(workspaceRoot, '.git', 'config');
+        const gitDir = path.join(workspaceRoot, '.git');
         
-        if (!fs.existsSync(gitConfigPath)) {
+        if (!fs.existsSync(gitDir)) {
             return false;
         }
         
-        const gitConfig = fs.readFileSync(gitConfigPath, 'utf8');
+        const execAsync = promisify(exec);
         
-        // Check if remote URL contains salesforcedocs (case-sensitive to distinguish from SalesforceDocs)
-        return gitConfig.includes('salesforcedocs') || 
-               gitConfig.includes('github.com/salesforcedocs') ||
-               gitConfig.includes('github.com:salesforcedocs');
+        try {
+            const { stdout } = await execAsync('git remote -v', { cwd: workspaceRoot });
+            
+            if (!stdout || stdout.trim().length === 0) {
+                return false;
+            }
+            
+            const hasSalesforceDocsRemote = stdout.split('\n').some((line: string) => {
+                return line.includes('salesforcedocs/') && 
+                       !line.includes('SalesforceDocs/');
+            });
+            
+            return hasSalesforceDocsRemote;
+            
+        } catch (gitError) {
+            return false;
+        }
+        
     } catch (error) {
-        console.error('Failed to check git config:', error);
+        console.error('Failed to check git remotes:', error);
         return false;
     }
 }
@@ -211,7 +211,6 @@ function getWorkspaceRoot(): string | undefined {
     if (!workspaceFolders || workspaceFolders.length === 0) {
         return undefined;
     }
-    // Use the first workspace folder
     return workspaceFolders[0].uri.fsPath;
 }
 
@@ -224,15 +223,11 @@ async function ensureGitIgnore(workspaceRoot: string): Promise<void> {
     
     try {
         let gitignoreContent = '';
-        let fileExists = false;
         
-        // Read existing .gitignore if it exists
         if (fs.existsSync(gitignorePath)) {
             gitignoreContent = fs.readFileSync(gitignorePath, 'utf8');
-            fileExists = true;
         }
         
-        // Check if .cursorrules is already in .gitignore
         const lines = gitignoreContent.split('\n');
         const alreadyIgnored = lines.some(line => 
             line.trim() === cursorrulesEntry || 
@@ -249,7 +244,6 @@ async function ensureGitIgnore(workspaceRoot: string): Promise<void> {
         }
     } catch (error) {
         console.error('Failed to update .gitignore:', error);
-        // Don't fail the whole operation if .gitignore update fails
     }
 }
 
@@ -269,7 +263,6 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
     const cursorRulesPath = path.join(workspaceRoot, CURSORRULES_FILENAME);
     
     try {
-        // Get the embedded template content
         const templateContent = getEmbeddedTemplate(context);
         
         if (!templateContent) {
@@ -279,11 +272,9 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
         
         const lastVersion = context.globalState.get<string>(CONTENT_VERSION_KEY);
         
-        // Check if file exists
         if (fs.existsSync(cursorRulesPath)) {
             const existingContent = fs.readFileSync(cursorRulesPath, 'utf8');
             
-            // Check if content is identical
             if (existingContent === templateContent && lastVersion === CURRENT_CONTENT_VERSION) {
                 if (showNotification) {
                     vscode.window.showInformationMessage('.cursorrules is already up to date.');
@@ -291,7 +282,6 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
                 return false;
             }
             
-            // Ask user if they want to update
             const answer = await vscode.window.showInformationMessage(
                 '.cursorrules file already exists. Do you want to update it with the latest version?',
                 'Yes',
@@ -300,21 +290,18 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
             );
             
             if (answer === 'View Changes') {
-                // Create a temp file with new content for comparison
                 const tempPath = path.join(workspaceRoot, `.cursorrules.new`);
                 fs.writeFileSync(tempPath, templateContent, 'utf8');
                 
-                // Open diff view
                 const originalUri = vscode.Uri.file(cursorRulesPath);
                 const newUri = vscode.Uri.file(tempPath);
                 await vscode.commands.executeCommand('vscode.diff', originalUri, newUri, '.cursorrules: Current ↔ New');
                 
-                // Clean up temp file after a delay
                 setTimeout(() => {
                     if (fs.existsSync(tempPath)) {
                         fs.unlinkSync(tempPath);
                     }
-                }, 60000); // 1 minute
+                }, 60000);
                 
                 return false;
             } else if (answer !== 'Yes') {
@@ -322,13 +309,10 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
             }
         }
 
-        // Write the file
         fs.writeFileSync(cursorRulesPath, templateContent, 'utf8');
         
-        // Ensure .cursorrules is in .gitignore
         await ensureGitIgnore(workspaceRoot);
         
-        // Update version and setup time
         await context.globalState.update(CONTENT_VERSION_KEY, CURRENT_CONTENT_VERSION);
         await context.globalState.update(LAST_SETUP_KEY, Date.now());
 
@@ -358,7 +342,6 @@ async function setupCursorRules(context: vscode.ExtensionContext, showNotificati
  * Checks and sets up .cursorrules if needed when workspace is opened
  */
 async function checkAndSetupCursorRules(context: vscode.ExtensionContext): Promise<void> {
-    // Only run if we're in Cursor editor
     if (!isCursorEditor()) {
         console.log('Not running in Cursor editor, skipping .cursorrules setup');
         return;
@@ -369,7 +352,6 @@ async function checkAndSetupCursorRules(context: vscode.ExtensionContext): Promi
         return;
     }
 
-    // Check if this is a salesforcedocs repository
     const isSalesforceRepo = await isSalesforceDocsRepo(workspaceRoot);
     if (!isSalesforceRepo) {
         console.log('Not a salesforcedocs repository, skipping .cursorrules setup');
@@ -378,21 +360,16 @@ async function checkAndSetupCursorRules(context: vscode.ExtensionContext): Promi
 
     const cursorRulesPath = path.join(workspaceRoot, CURSORRULES_FILENAME);
     
-    // Check configuration for auto-setup
     const config = vscode.workspace.getConfiguration('sfdocs');
     const autoSetup = config.get<boolean>('autoSetupCursorRules', false);
     
-    // Check if .cursorrules exists
     if (!fs.existsSync(cursorRulesPath)) {
-        // File doesn't exist
         if (autoSetup) {
-            // Auto-setup without prompting
             console.log('Auto-setting up .cursorrules (autoSetupCursorRules: true)');
             setTimeout(async () => {
                 await setupCursorRules(context, false);
             }, 1000);
         } else {
-            // Ask user with warning modal (more noticeable)
             setTimeout(async () => {
                 const answer = await vscode.window.showWarningMessage(
                     '⚠️ SFDocs Cursor AI rules are required for optimal documentation assistance. Set them up now?',
@@ -411,7 +388,6 @@ async function checkAndSetupCursorRules(context: vscode.ExtensionContext): Promi
             }, 2000);
         }
     } else {
-        // File exists, check if it needs updating
         const templateContent = getEmbeddedTemplate(context);
         if (templateContent) {
             const existingContent = fs.readFileSync(cursorRulesPath, 'utf8');

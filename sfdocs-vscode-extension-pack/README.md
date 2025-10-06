@@ -8,14 +8,14 @@ The extension pack is good for beginning and professional authors.
 
 ### Automatic Cursor AI Rules Setup
 
-This extension pack automatically sets up the `.cursorrules` file in your workspace, which configures Cursor AI to better assist with Salesforce documentation writing. The rules include:
+This extension pack automatically sets up and updates the `.cursorrules` file in your workspace, which configures Cursor AI to better assist with Salesforce documentation writing. The rules include:
 
 - **SFDocs-specific workflow guidance** for environment setup and troubleshooting
 - **Common command references** for yarn, git, and validation
 - **Proactive assistance** for detecting setup needs and errors
 - **Best practices** for Salesforce documentation development
 
-The extension will automatically offer to set up the `.cursorrules` file when you first open a workspace.
+The `.cursorrules` file is automatically created and updated without prompting when you open a salesforcedocs repository in Cursor. This ensures you always have the latest AI assistance rules.
 
 ### Manual Commands
 
@@ -50,16 +50,20 @@ The extension automatically checks for updates daily (every 24 hours) and notifi
 
 ### Configuration
 
-You can control update checking behavior in VS Code settings:
+You can control the extension's behavior in VS Code settings:
 
 - `sfdocs.autoCheckUpdates` - Enable or disable automatic daily update checks (default: `true`)
+- `sfdocs.autoSetupCursorRules` - Automatically setup/update `.cursorrules` without prompting (default: `true`)
 
-To disable automatic checks:
+To customize settings:
 ```json
 {
-  "sfdocs.autoCheckUpdates": false
+  "sfdocs.autoCheckUpdates": false,
+  "sfdocs.autoSetupCursorRules": false
 }
 ```
+
+**Note**: Setting `sfdocs.autoSetupCursorRules` to `false` will prompt you before updating `.cursorrules` files.
 
 ## How It Works
 
