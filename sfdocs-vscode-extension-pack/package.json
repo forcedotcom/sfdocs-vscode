@@ -3,7 +3,7 @@
     "displayName": "SFDocs Extension Pack",
     "description": "One stop shop for Salesforce Markdown writing productivity.",
     "icon": "icon.png",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "preview": true,
     "author": "Ayush Kumar Tarun",
     "publisher": "salesforce",
@@ -25,6 +25,7 @@
         "ChrisChinchilla.vale-vscode",
         "streetsidesoftware.code-spell-checker",
         "ltex-plus.vscode-ltex-plus",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "acrolinx.vscode-sidebar"
     ]
 }

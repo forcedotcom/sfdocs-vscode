@@ -13,6 +13,7 @@ The extension pack is good for beginning and professional authors.
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker&ssr=false#overview)-help catch common spelling errors while keeping the number of false positives low.
 - [LTeX+](https://marketplace.visualstudio.com/items?itemName=ltex-plus.vscode-ltex-plus)-provides offline grammar checking of various markup languages in Visual Studio Code using LanguageTool (LT)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint&ssr=false#overview)-Lints JavaScript and TypeScript code to enforce consistent style and catch common errors.
+- [Acrolinx for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=acrolinx.vscode-sidebar)-An AI-powered platform that eliminates content chaos and delivers strategy-aligned content, at scale.
 
 ## Contribute
 
