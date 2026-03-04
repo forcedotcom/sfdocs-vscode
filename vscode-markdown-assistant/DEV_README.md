@@ -23,7 +23,7 @@ In order to build you should have nodejs set up and either npm or yarn installed
 To build a package for your changes - run the below command
 
 ```bash
-npx vsce package
+vsce package
 ```
 
 Note: Please increase the version if this is a new package.
