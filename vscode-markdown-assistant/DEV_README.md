@@ -1,4 +1,4 @@
-# Developer instructions 
+# Developer instructions
 
 ## Build
 
@@ -39,4 +39,4 @@ code --install-extension myextension.vsix
 
 Example: `code --install-extension ./sfdocs-markdown-assistant-1.0.5.vsix`
 
-If the above command doesn't work, right click the .vsix file in VS Code's Explorer and select _Install Extension VSIX_ .
+If the above command doesn't work, right click the .vsix file in VS Code's Explorer and select _Install Extension VSIX_.
