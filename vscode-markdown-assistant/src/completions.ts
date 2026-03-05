@@ -27,8 +27,8 @@ const customPlugins = [
     {label: '```Codeblock```', insertText: new SnippetString('\n```\n$1\n```\n')},
     {label: '-description list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')},
     {label: 'sfdocs image', insertText: new SnippetString(`![alt]($1 '{"class": "$2", "title": "$3"}')\n`), needReplaceRange: false},
-    {label: ':sub (subscript)', insertText: new SnippetString(`:sub["$1"]`)},
-    {label: ':sup (superscript)', insertText: new SnippetString(`:sup["$1"]`)}
+    {label: ':sub (subscript)', insertText: new SnippetString(`:sub[$1]`)},
+    {label: ':sup (superscript)', insertText: new SnippetString(`:sup[$1]`)}
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {
