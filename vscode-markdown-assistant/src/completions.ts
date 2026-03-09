@@ -5,7 +5,7 @@ import { CancellationToken, CompletionContext, CompletionItem, CompletionItemKin
 /**
  * Source: https://github.com/salesforcedevs/dsc-components/blob/main/packages/%40salesforcedevs/docs-components/src/modules/docHelpers/imgStyle/imgStyle.css
  */
-export const imageClasses = ["image-xxl", "image-full", "image-xl", "image-lg", "image-md", "image-sm", "image-xs", "image-xxs", "image-icon-lg", "image-icon-md", "image-icon-sm", "image-framed"]
+export const imageClasses = ["image-xxl", "image-full", "image-xl", "image-lg", "image-md", "image-sm", "image-xs", "image-xxs", "image-icon-lg", "image-icon-md", "image-icon-sm", "image-framed"];
 
 let EXCLUDE_GLOB: string;
 
@@ -28,7 +28,8 @@ const customPlugins = [
     {label: '-description list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')},
     {label: 'sfdocs image', insertText: new SnippetString(`![alt]($1 '{"class": "$2", "title": "$3"}')\n`), needReplaceRange: false},
     {label: ':sub (subscript)', insertText: new SnippetString(`:sub[$1]`)},
-    {label: ':sup (superscript)', insertText: new SnippetString(`:sup[$1]`)}
+    {label: ':sup (superscript)', insertText: new SnippetString(`:sup[$1]`)},
+    {label: '::do-dont', insertText: new SnippetString('\n::do-dont{is-do=$1 img-src="$2" title="$3"}\n$4\n:::\n')}
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {

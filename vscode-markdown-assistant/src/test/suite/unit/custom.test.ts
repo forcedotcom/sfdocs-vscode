@@ -172,4 +172,34 @@ suite("Custom Plugins", () => {
             new Selection(0, 4, 0, 4));
     });
 
+    test(":sub (subscript)", () => {
+        return testCommand('SFDocs.custom.sub',
+            [''],
+            new Selection(0, 0, 0, 0),
+            [':sub[]'],
+            new Selection(0, 5, 0, 5));
+    });
+
+    test(":sup (superscript)", () => {
+        return testCommand('SFDocs.custom.sup',
+            [''],
+            new Selection(0, 0, 0, 0),
+            [':sup[]'],
+            new Selection(0, 5, 0, 5));
+    });
+
+    test("::do-dont", () => {
+        return testCommand('SFDocs.custom.doDont',
+            [''],
+            new Selection(0, 0, 0, 0),
+            [
+                '',
+                '::do-dont{is-do= img-src="" title=""}',
+                '',
+                ':::',
+                ''
+            ],
+            new Selection(1, 16, 1, 16));
+    });
+
 });
