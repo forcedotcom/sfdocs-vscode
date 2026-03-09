@@ -173,7 +173,7 @@ suite("Custom Plugins", () => {
     });
 
     test(":sub (subscript)", () => {
-        return testCommand('SFDocs.custom.sub',
+        return testCommand('SFDocs.custom.subscript',
             [''],
             new Selection(0, 0, 0, 0),
             [':sub[]'],
@@ -181,7 +181,7 @@ suite("Custom Plugins", () => {
     });
 
     test(":sup (superscript)", () => {
-        return testCommand('SFDocs.custom.sup',
+        return testCommand('SFDocs.custom.superscript',
             [''],
             new Selection(0, 0, 0, 0),
             [':sup[]'],

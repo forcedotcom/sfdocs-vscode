@@ -77,8 +77,8 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.custom.contentReuse', contentReuse),
         commands.registerCommand('SFDocs.editing.codeblock', insertCodeblock),
         commands.registerCommand('SFDocs.custom.enhancedCodeblock', enhancedCodeblock),
-        commands.registerCommand('SFDocs.custom.sub', insertSubscript),
-        commands.registerCommand('SFDocs.custom.sup', insertSuperscript),
+        commands.registerCommand('SFDocs.custom.subscript', insertSubscript),
+        commands.registerCommand('SFDocs.custom.superscript', insertSuperscript),
         commands.registerCommand('SFDocs.custom.doDont', insertDoDont)
     );
 }
