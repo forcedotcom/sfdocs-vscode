@@ -3,7 +3,7 @@
 	"displayName": "SFDocs Markdown Assistant",
 	"description": "Helps you to write clean Markdown files faster.",
 	"icon": "images/icon.png",
-	"version": "0.1.7",
+	"version": "0.1.8",
 	"engines": {
 		"vscode": "^1.57.0"
 	},
@@ -227,6 +227,21 @@
 				"command": "SFDocs.editing.descriptionList",
 				"title": "Insert Description List Entry",
 				"category": "SFDocs"
+			},
+			{
+				"command": "SFDocs.custom.subscript",
+				"title": "Insert Subscript",
+				"category": "SFDocs"
+			},
+			{
+				"command": "SFDocs.custom.superscript",
+				"title": "Insert Superscript",
+				"category": "SFDocs"
+			},
+			{
+				"command": "SFDocs.custom.doDont",
+				"title": "Insert Do/Don't",
+				"category": "SFDocs"
 			}
 		],
 		"menus": {
@@ -265,6 +280,18 @@
 				},
 				{
 					"command": "SFDocs.custom.enhancedCodeblock",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.subscript",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.superscript",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.doDont",
 					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				}
 			],
