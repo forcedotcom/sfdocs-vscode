@@ -48,8 +48,3 @@ export function insertSuperscript() {
     const editor = window.activeTextEditor;
     return editor!.insertSnippet(new SnippetString(':sup[$1]'));
 }
-
-export function insertDoDont() {
-    const editor = window.activeTextEditor;
-    return editor!.insertSnippet(new SnippetString('\n::do-dont{is-do=$1 img-src="$2" title="$3"}\n$4\n:::\n'));
-}

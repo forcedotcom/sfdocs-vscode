@@ -187,19 +187,4 @@ suite("Custom Plugins", () => {
             [':sup[]'],
             new Selection(0, 5, 0, 5));
     });
-
-    test("::do-dont", () => {
-        return testCommand('SFDocs.custom.doDont',
-            [''],
-            new Selection(0, 0, 0, 0),
-            [
-                '',
-                '::do-dont{is-do= img-src="" title=""}',
-                '',
-                ':::',
-                ''
-            ],
-            new Selection(1, 16, 1, 16));
-    });
-
 });

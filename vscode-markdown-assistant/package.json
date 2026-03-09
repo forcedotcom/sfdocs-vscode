@@ -237,11 +237,6 @@
 				"command": "SFDocs.custom.superscript",
 				"title": "Insert Superscript",
 				"category": "SFDocs"
-			},
-			{
-				"command": "SFDocs.custom.doDont",
-				"title": "Insert Do/Don't",
-				"category": "SFDocs"
 			}
 		],
 		"menus": {
@@ -288,10 +283,6 @@
 				},
 				{
 					"command": "SFDocs.custom.superscript",
-					"when": "!config.SFDocs.markdownAssistant.disableCustom"
-				},
-				{
-					"command": "SFDocs.custom.doDont",
 					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				}
 			],
