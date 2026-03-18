@@ -107,6 +107,7 @@ The columns corresponding to Budget and Actual were selected, and **Table > Dele
 - Insert Video - VidYard, YouTube, Local file
 - Content Reuse (Include)
 - Insert Subscript and Superscript
+- Insert Credit Card, Insert Debit Card
 
 These commands are available in the context menu.
 

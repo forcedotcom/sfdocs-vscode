@@ -237,6 +237,16 @@
 				"command": "SFDocs.custom.superscript",
 				"title": "Insert Superscript",
 				"category": "SFDocs"
+			},
+			{
+				"command": "SFDocs.custom.creditCard",
+				"title": "Insert Credit Card",
+				"category": "SFDocs"
+			},
+			{
+				"command": "SFDocs.custom.debitCard",
+				"title": "Insert Debit Card",
+				"category": "SFDocs"
 			}
 		],
 		"menus": {
@@ -283,6 +293,14 @@
 				},
 				{
 					"command": "SFDocs.custom.superscript",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.creditCard",
+					"when": "!config.SFDocs.markdownAssistant.disableCustom"
+				},
+				{
+					"command": "SFDocs.custom.debitCard",
 					"when": "!config.SFDocs.markdownAssistant.disableCustom"
 				}
 			],

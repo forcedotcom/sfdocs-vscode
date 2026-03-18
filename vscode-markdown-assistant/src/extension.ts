@@ -12,7 +12,7 @@ import { moveRow, moveColumn } from './table/move';
 import { pasteTable } from './table/pasteTable';
 import { copyColumn, pasteColumn } from './table/copyPasteColumn';
 import { onBackspaceKey, onEnterKey} from './keyBehaviour';
-import { contentReuse, insertCodeblock, enhancedCodeblock, insertVideo, insertVideoShortcut, insertDescriptionList, insertSubscript, insertSuperscript } from './custom';
+import { contentReuse, enhancedCodeblock, insertCodeblock, insertCreditCard, insertDebitCard, insertDescriptionList, insertSubscript, insertSuperscript, insertVideo, insertVideoShortcut } from './custom';
 import { format, removeFormatting } from './table/format';
 
 export function activate(context: ExtensionContext) {
@@ -78,6 +78,8 @@ export function activate(context: ExtensionContext) {
         commands.registerCommand('SFDocs.editing.codeblock', insertCodeblock),
         commands.registerCommand('SFDocs.custom.enhancedCodeblock', enhancedCodeblock),
         commands.registerCommand('SFDocs.custom.subscript', insertSubscript),
-        commands.registerCommand('SFDocs.custom.superscript', insertSuperscript)
+        commands.registerCommand('SFDocs.custom.superscript', insertSuperscript),
+        commands.registerCommand('SFDocs.custom.creditCard', insertCreditCard),
+        commands.registerCommand('SFDocs.custom.debitCard', insertDebitCard)
     );
 }

@@ -48,3 +48,13 @@ export function insertSuperscript() {
     const editor = window.activeTextEditor;
     return editor!.insertSnippet(new SnippetString(':sup[$1]'));
 }
+
+export function insertCreditCard() {
+    const editor = window.activeTextEditor;
+    return editor!.insertSnippet(new SnippetString('\n::credit{number="$1", name="$2", expires="$3" }\n'));
+}
+
+export function insertDebitCard() {
+    const editor = window.activeTextEditor;
+    return editor!.insertSnippet(new SnippetString('\n::debit{number="$1", name="$2", expires="$3" }\n'));
+}
