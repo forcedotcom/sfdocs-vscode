@@ -28,7 +28,9 @@ const customPlugins = [
     {label: '-description list', insertText: new SnippetString('\n- First Term\n\n\t- : This text defines the first term.\n')},
     {label: 'sfdocs image', insertText: new SnippetString(`![alt]($1 '{"class": "$2", "title": "$3"}')\n`), needReplaceRange: false},
     {label: ':sub (subscript)', insertText: new SnippetString(`:sub[$1]`)},
-    {label: ':sup (superscript)', insertText: new SnippetString(`:sup[$1]`)}
+    {label: ':sup (superscript)', insertText: new SnippetString(`:sup[$1]`)},
+    {label: '::credit card', insertText: new SnippetString(`\n::credit{number="$1" name="$2" expires="$3"}\n`)},
+    {label: '::debit card', insertText: new SnippetString(`\n::debit{number="$1" name="$2" expires="$3"}\n`)},
 ];
 
 export class MdCompletionItemProvider implements CompletionItemProvider {
