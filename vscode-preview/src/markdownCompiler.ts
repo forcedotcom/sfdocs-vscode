@@ -1,32 +1,36 @@
 import * as remark from 'remark';
-import {
-    genericDirective,
-    internalReferencePlugin,
-    remark_directive,
-} from '@salesforcedevs/sfdocs-generic-directive-plugin';
+import * as remark_directive from 'remark-directive';
+import includePlugin from '@salesforcedevs/sfdocs-remark-include-plugin';
+import videoPlugin from '@salesforcedevs/sfdocs-remark-video-plugin';
+import internalReferencePlugin from '@salesforcedevs/sfdocs-remark-internal-reference-plugin';
 import imageTransformerPlugin from '@salesforcedevs/sfdocs-image-transformer';
-import { sfdocsCustomPlugin } from '@salesforcedevs/sfdocs-directive-plugin';
-import { defListPlugin } from '@salesforcedevs/sfdocs-definition-list-plugin';
+import sfdocsHeadingPlugin from '@salesforcedevs/sfdocs-remark-heading-plugin';
+import sfdocsCodeBlockPlugin from '@salesforcedevs/sfdocs-remark-code-block-plugin';
+import { defListPlugin } from '@salesforcedevs/sfdocs-remark-definition-list-plugin';
 import * as remarkGfm from 'remark-gfm';
 import * as remarkFrontmatter from 'remark-frontmatter';
 import * as highlight from 'remark-highlight.js';
-import sfdocsRenderFunctions from './generic-directive-plugin/sfdocsDefaultRenderers';
-import genericRenderFunctions from './generic-directive-plugin/genericDefaultRenderers';
+import renderCodeBlock from './generic-directive-plugin/renderers/codeBlockRenderer';
+// import renderCallout from './generic-directive-plugin/renderers/calloutRenderer';
+import renderHeading from './generic-directive-plugin/renderers/anchorHeadingRenderer';
+import renderSampleCodeContent from './generic-directive-plugin/renderers/sampleCodeContent';
+import renderInclude from './generic-directive-plugin/renderers/includeRenderer';
+import renderVideo from './generic-directive-plugin/renderers/videoRenderer';
 
 export function markdownCompiler() {
 
-    const sfdocsPlugin = sfdocsCustomPlugin(sfdocsRenderFunctions());
-    const genericPlugin = genericDirective(genericRenderFunctions());
-    const definitionListPlugin = defListPlugin();
+    const includeDirPlugin = includePlugin({ renderInclude });
     return remark()
         .use(remarkGfm)
         .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
         .use(internalReferencePlugin({}))
         .use(remark_directive)
         .use(imageTransformerPlugin)
-        .use(genericPlugin)
-        .use(sfdocsPlugin)
-        .use(definitionListPlugin)
+        .use(includeDirPlugin)
+        .use(videoPlugin, { renderVideo })
+        .use(sfdocsCodeBlockPlugin, { renderCodeBlock, renderSampleCodeContent })
+        .use(sfdocsHeadingPlugin, { renderHeading })
+        .use(defListPlugin)
         .use(highlight);
 }
 
