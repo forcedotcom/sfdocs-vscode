@@ -11,11 +11,12 @@ import * as remarkGfm from 'remark-gfm';
 import * as remarkFrontmatter from 'remark-frontmatter';
 import * as highlight from 'remark-highlight.js';
 import renderCodeBlock from './generic-directive-plugin/renderers/codeBlockRenderer';
-// import renderCallout from './generic-directive-plugin/renderers/calloutRenderer';
+import renderCallout from './generic-directive-plugin/renderers/calloutRenderer';
 import renderHeading from './generic-directive-plugin/renderers/anchorHeadingRenderer';
 import renderSampleCodeContent from './generic-directive-plugin/renderers/sampleCodeContent';
 import renderInclude from './generic-directive-plugin/renderers/includeRenderer';
 import renderVideo from './generic-directive-plugin/renderers/videoRenderer';
+import calloutPlugin from '@salesforcedevs/sfdocs-remark-callout-plugin';
 
 export function markdownCompiler() {
 
@@ -23,14 +24,15 @@ export function markdownCompiler() {
     return remark()
         .use(remarkGfm)
         .use(remarkFrontmatter, { type: 'yaml', marker: '-' } as any)
-        .use(internalReferencePlugin({}))
         .use(remark_directive)
-        .use(imageTransformerPlugin)
         .use(includeDirPlugin)
+        .use(internalReferencePlugin({}))
+        .use(imageTransformerPlugin)
         .use(videoPlugin, { renderVideo })
-        .use(sfdocsCodeBlockPlugin, { renderCodeBlock, renderSampleCodeContent })
-        .use(sfdocsHeadingPlugin, { renderHeading })
         .use(defListPlugin)
+        .use(sfdocsHeadingPlugin, { renderHeading })
+        .use(sfdocsCodeBlockPlugin, { renderCodeBlock, renderSampleCodeContent })
+        .use(calloutPlugin, { renderCallout })
         .use(highlight);
 }
 

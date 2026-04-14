@@ -292,6 +292,7 @@
 		"@salesforcedevs/sfdocs-image-transformer": "1.0.4",
 		"@salesforcedevs/sfdocs-logger": "0.6.98",
 		"@salesforcedevs/sfdocs-types": "0.6.98",
+		"@salesforcedevs/sfdocs-remark-callout-plugin": "1.0.1-alpha",
 		"find-up": "5.0.0",
 		"hastscript": "6.0.0",
 		"highlight.js": "9.15.10",
