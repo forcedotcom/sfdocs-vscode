@@ -283,7 +283,7 @@
 		"@lwrjs/compiler": "0.5.11",
 		"@lwrjs/diagnostics": "0.3.14",
 		"@lwrjs/shared-utils": "0.5.11",
-		"@salesforcedevs/sfdocs-remark-definition-list-plugin":"0.1.0-alpha",
+		"@salesforcedevs/sfdocs-remark-definition-list-plugin": "0.1.0-alpha",
 		"@salesforcedevs/sfdocs-remark-include-plugin": "0.1.0-alpha",
     "@salesforcedevs/sfdocs-remark-video-plugin": "0.1.0-alpha",
     "@salesforcedevs/sfdocs-remark-internal-reference-plugin": "0.1.0-alpha",
