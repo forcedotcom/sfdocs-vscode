@@ -274,7 +274,7 @@
 		"package": "vsce package",
 		"vscode:publish": "vsce publish",
 		"vscode:prepublish": "npm run compile",
-		"build-preview": "webpack --mode production",
+		"build-preview": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
 		"lint": "eslint src --ext ts",
 		"pretest": "npm run compile && npm run lint",
 		"test": "node ./out/src/test/runTest.js"
