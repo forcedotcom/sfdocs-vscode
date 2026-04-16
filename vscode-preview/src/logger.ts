@@ -12,7 +12,10 @@ enum Trace {
 }
 
 namespace Trace {
-	export function fromString(value: string): Trace {
+	export function fromString(value: unknown): Trace {
+		if (typeof value !== 'string') {
+			return Trace.Off;
+		}
 		value = value.toLowerCase();
 		switch (value) {
 			case 'off':
@@ -65,7 +68,16 @@ export class Logger {
 	}
 
 	private readTrace(): Trace {
-		return Trace.fromString(vscode.workspace.getConfiguration().get<string>('markdown.trace', 'off'));
+		const config = vscode.workspace.getConfiguration();
+		// Prefer SFDocs.trace, then markdown.trace. Only accept real strings: workspace/user
+		// settings can store the wrong type, and `a ?? b` keeps a non-nullish non-string.
+		for (const key of ['SFDocs.trace', 'markdown.trace'] as const) {
+			const v = config.get(key);
+			if (typeof v === 'string') {
+				return Trace.fromString(v);
+			}
+		}
+		return Trace.Off;
 	}
 
 	private static data2String(data: any): string {
